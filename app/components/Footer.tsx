@@ -1,11 +1,11 @@
-import { Mail, MapPinIcon } from "lucide-react";
+import { Mail, MapPinIcon, Wheat } from "lucide-react";
 import { PhoneIcon } from "lucide-react";
 import Button from "@/components/ui/button";
 import { Instagram } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { Send } from "lucide-react";
-import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+
 function Footer() {
   return (
     <div>
@@ -63,7 +63,7 @@ function Footer() {
                     <Instagram className=" size-4" /> اینستاگرام
                   </Link>
                   <Link href="/Resturant" className="gap-2 flex align-middle">
-                    <WhatsAppIcon className="size-2 mb-2" /> واتساپ
+                    <Wheat className="size-2 mb-2" /> واتساپ
                   </Link>
                   <Link href="/About" className="gap-2 flex align-middle">
                     <Mail className="size-4 mb-2" /> ایمیل

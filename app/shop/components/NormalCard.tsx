@@ -8,6 +8,9 @@ const NormalCard = () => {
   return (
     <div className="w-[424px] h-[500px] border rounded-lg border-primaryBorder flex flex-col ">
       <div className="min-w-[424px] h-[321px]">
+        <div className="w-[97px] h-[34px] bg-primaryAccent rounded-2xl z-10 absolute mt-4 mr-4 flex flex-row justify-center items-center">
+          <span className="mt-1.5">محبوب ترین</span>
+        </div>
         <Image
           src={Dummy}
           width={422}
