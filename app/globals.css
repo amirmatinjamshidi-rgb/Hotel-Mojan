@@ -1,9 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-
+  --background: #f9fcfd;
 }
 
 @theme inline {
@@ -11,21 +9,43 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+  /* primary */
+  --color-primaryAccent: #e6f4f7;
+  --color-primaryBorder: #d8e3e7;
+  --color-primaryDisabled: #a6c5cf;
+  --color-primary: #1a6f8e;
+  --color-primaryHover: #155d74;
+  --color-primaryActive: #14596f;
 
+  /* secondary */
+  --color-secondary: #e9b872;
+  --color-secondaryHover: #dda75c;
+  --color-secondaryActive: #d6a25f;
+
+  /*others*/
+  --color-success: #157a6e;
+  --color-error: #e74c3c;
+  --color-info: #3a8dad;
+  --color-warning: #efb93e;
+
+  /*neutral*/
+  --color-textPrimary: #1e1e1e;
+  --color-textOnText: #ffffff;
+  --color-textSecondary: #6C757D;
+  --color-textOnTextSecondary: #2C2C2C;
+}
 
 body {
   background: var(--foreground);
   color: var(--foreground);
- font-family: "Vazirmatn", sans-serif;
+  font-family: "Vazirmatn", sans-serif;
   font-optical-sizing: auto;
- 
+
   font-style: normal;
+}
+
+svg{
+  width: 16px;
+  height: 16px;
 }
