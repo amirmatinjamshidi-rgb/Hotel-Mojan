@@ -6,37 +6,50 @@ import { Hamburger, Star, Users } from "lucide-react";
 
 const NormalCard = () => {
   return (
-    <div className="w-[424px] h-[500px] border rounded-lg border-[#D8E3E780] flex flex-col">
-      <div className="w-[424px] h-[321px]">
-        <Image src={Dummy} width={424} height={321} alt="dummy" />
+    <div className="w-[424px] h-[500px] border rounded-lg border-primaryBorder flex flex-col ">
+      <div className="min-w-[424px] h-[321px]">
+        <Image
+          src={Dummy}
+          width={422}
+          height={321}
+          alt="dummy"
+          className="rounded-t-lg"
+        />
       </div>
-      <div className="text-black ">
-        <div>
-          <span>اتاق دونفره استاندارد</span>
+      <div className="p-6">
+        <div className="">
+          <span className="text-[22px] text-textPrimary">
+            اتاق دونفره استاندارد
+          </span>
         </div>
-        <div className="flex flex-row justify-between">
-          <div className="flex flex-row ">
-            <Users />
-            <span> دو تخت یک نفره</span>
+        <div className="flex flex-row justify-between pt-4 w-[376px] h-7">
+          <div className="flex flex-row gap-1">
+            <Users className="stroke-textSecondary" />
+            <span className="text-textSecondary"> دو تخت یک نفره</span>
           </div>
-          <div className="h-4 w-0.5 bg-black"></div>
-          <div className="flex flex-row ">
-            <Hamburger />
-            <span>صبحانه</span>
+          <div className="h-4 w-0.5 bg-textSecondary"></div>
+          <div className="flex flex-row gap-1">
+            <Hamburger className="stroke-textSecondary" />
+            <span className="text-textSecondary">صبحانه</span>
           </div>
-          <div className="h-4 w-0.5 bg-black"></div>
-          <div className="flex flex-row ">
-            <Star className="fill-amber-500 stroke-amber-500" />
-            <span>4.8</span>
+          <div className="h-4 w-0.5 bg-textSecondary"></div>
+          <div className="flex flex-row gap-1">
+            <Star className="fill-secondary stroke-secondary" />
+            <span className="text-textSecondary">4.8</span>
           </div>
         </div>
-        <div className="flex flex-row justify-between">
-          <div>
-            <span>۲٬۸۰۰٬۰۰۰ تومان </span>
-            <span>برای هرشب</span>
+        <div className="flex flex-row justify-between p-6 w-[376px] h-12">
+          <div className="mt-2 flex flex-row justify-around">
+            <p>
+              ۳٬۵۰۰٬۰۰۰ تومان <span> برای هر شب</span>
+            </p>
           </div>
           <div>
-            <Button color="orange2" size="medium" radius="md" border="orange" />
+            <Button
+              className="bg-secondary hover:bg-secondaryHover active:bg-secondaryActive text-textPrimary! w-[84px]! h-12!"
+              radius="md">
+              رزرو اتاق
+            </Button>
           </div>
         </div>
       </div>
