@@ -25,10 +25,10 @@ export default function RootLayout({
   return (
     <html lang="en" dir="rtl">
       <head>
-        <style>
+        {/* <style>
           @import
           url(&apos;https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap&apos;);
-        </style>{" "}
+        </style>{" "} */}
         <link rel="preload" href="https://localhost:3000" />
       </head>
       <body
