@@ -11,7 +11,7 @@ function Navbar() {
   const NavLink = ({ href, label }: { href: string; label: string }) => (
     <Link
       href={href}
-      className="transition-all duration-300 ease-out hover:scale-105 focus:scale-105 text-gray-700 mt-4"
+      className="transition-all duration-300 ease-out hover:scale-105 focus:scale-105 text-gray-700 mt-4 active:bg-primaryActive"
     >
       {label}
     </Link>

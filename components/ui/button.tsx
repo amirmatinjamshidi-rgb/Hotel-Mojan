@@ -12,7 +12,7 @@ const textColor = {
   blue: "text-cyan-700",
   orange: "text-orange-300",
   gray: "text-gray-400",
-  none: "text-white",
+  none: "text-black",
 };
 const RoundedVariants = {
   none: "rounded-xl",
@@ -28,9 +28,9 @@ const borderColors = {
 } as const;
 
 const sizeVariants = {
-  small: "w-[127px] h-[40px]",
-  medium: "w-[127px] h-[48px]",
-  big: "w-[127px] h-[52px]",
+  small: " h-[40px]",
+  medium: " h-[48px]",
+  big: " h-[52px]",
 } as const;
 
 type ButtonColor = keyof typeof buttonstyles;
@@ -59,7 +59,7 @@ export default function Button({
   return (
     <button
       className={cn(
-        "font-semibold transition-all inline-flex items-center justify-center border",
+        "font-semibold transition-all inline-flex items-center justify-center border cursor-pointer",
         buttonstyles[color],
         sizeVariants[size],
         RoundedVariants[radius],
