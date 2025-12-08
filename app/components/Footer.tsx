@@ -43,7 +43,6 @@ function Footer() {
 
   const onSubmit = (data: FormData) => {
     console.log("Email submitted:", data.email);
-    // Handle newsletter subscription here
   };
 
   const handleClear = () => {
