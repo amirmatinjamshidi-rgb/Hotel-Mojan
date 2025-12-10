@@ -13,6 +13,7 @@ import Image from "next/image";
 import { Send } from "lucide-react";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import TextField from "@mui/material/TextField";
+import ScrollButton from "./ScrollButton";
 
 const schema = z.object({
   email: z
@@ -115,8 +116,7 @@ function Footer() {
                 </div>
                 <form
                   onSubmit={handleSubmit(onSubmit)}
-                  className="flex justify-between bg-gray-200 h-[47px] rounded-xl overflow-hidden"
-                >
+                  className="flex justify-between bg-gray-200 h-[47px] rounded-xl overflow-hidden">
                   <TextField
                     required
                     placeholder="ایمیل خود را بنویسید..."
@@ -132,8 +132,7 @@ function Footer() {
                           <button
                             type="button"
                             onClick={handleClear}
-                            className="h-6 w-6 rounded-full bg-red-500 flex items-center justify-center hover:bg-red-600 transition-colors mr-2"
-                          >
+                            className="h-6 w-6 rounded-full bg-red-500 flex items-center justify-center hover:bg-red-600 transition-colors mr-2">
                             <X className="h-3 w-3 text-white" />
                           </button>
                         ) : null,
@@ -155,8 +154,7 @@ function Footer() {
                     size="medium"
                     radius="md"
                     className="text-textPrimary w-24 h-full border-l disabled:opacity-50"
-                    disabled={!isValid || !email}
-                  >
+                    disabled={!isValid || !email}>
                     تماس با ما
                   </Button>
                 </form>
@@ -178,6 +176,7 @@ function Footer() {
             چابهار، بلوار ساحل — روبه‌روی اسکله ماهی‌گیری
           </div>
         </div>
+       
       </footer>
     </div>
   );

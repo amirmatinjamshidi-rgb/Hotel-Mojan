@@ -6,6 +6,7 @@ import BenefitCard from "@/components/ui/benefitCard";
 import Accordions from "@/components/ui/accordation";
 import CommentCard from "@/components/ui/commentCard";
 import CancelReserve from "@/components/ui/cancelReserve";
+import ScrollButton from "./components/ScrollButton";
 function page() {
   return (
     <div>
@@ -18,6 +19,7 @@ function page() {
         <CancelReserve />
       </div>
       <Footer />
+      <ScrollButton />
     </div>
   );
 }
