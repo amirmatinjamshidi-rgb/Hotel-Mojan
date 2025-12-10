@@ -17,6 +17,7 @@
   --color-primary: #1a6f8e;
   --color-primaryHover: #155d74;
   --color-primaryActive: #14596f;
+  --color-primaryBG: #f9fcfd;
 
   /* secondary */
   --color-secondary: #e9b872;
@@ -32,8 +33,8 @@
   /*neutral*/
   --color-textPrimary: #1e1e1e;
   --color-textOnText: #ffffff;
-  --color-textSecondary: #6C757D;
-  --color-textOnTextSecondary: #2C2C2C;
+  --color-textSecondary: #6c757d;
+  --color-textOnTextSecondary: #2c2c2c;
 }
 
 body {
@@ -41,11 +42,5 @@ body {
   color: var(--foreground);
   font-family: "Vazirmatn", sans-serif;
   font-optical-sizing: auto;
-
   font-style: normal;
-}
-
-svg{
-  width: 16px;
-  height: 16px;
 }
