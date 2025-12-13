@@ -10,13 +10,13 @@ function CommentCard() {
   return (
     <div
       className="
-      w-full max-w-[424px] h-56 rounded-md shadow 
-      hover:shadow-gray-500 transition-all duration-300 
-      border border-gray-500 flex flex-col p-6 text-white bg-white
+      w-full max-w-[424px] h-56 rounded-md hover:shadow-md 
+      hover:shadow-primaryBorder transition-all duration-300 
+       border-primaryBorder flex  border  flex-col p-6 text-white bg-white
     "
     >
       <div className="flex-1 flex items-center justify-center">
-        <p className="line-clamp-3 text-black font-medium text-center leading-relaxed">
+        <p className="line-clamp-3 text-black font-medium text-start leading-relaxed">
           “بهترین اقامت عمرم بود! منظره دریا از بالکن اتاق فوق‌العاده بود و
           کارکنان واقعاً رفتار دوستانه‌ای داشتن. قطعاً دوباره برمی‌گردم. زیاد
           پیشنهاد میکنم.”

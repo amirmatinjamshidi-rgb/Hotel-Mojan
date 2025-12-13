@@ -3,7 +3,7 @@ import { CircleX } from "lucide-react";
 import Button from "@/components/ui/button";
 function CancelReserve() {
   return (
-    <div className="w-[386px] h-[218px] align-middle justify-center rounded-md flex-col flex items-center shadow hover:shadow-gray-500 duration-300 transition-all ease-in-out">
+    <div className="max-w-[386px] h-[218px] align-middle justify-center rounded-md flex-col flex items-center hover:shadow-md border-primaryBorder border  hover:shadow-primaryBorder y duration-300 transition-all ease-in-out">
       <CircleX color="#ed0c0c" strokeWidth={1} />
       <p>آیا از مسدود سازی</p>
       <div className="flex gap-4">

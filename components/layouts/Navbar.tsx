@@ -1,8 +1,9 @@
 import Image from "next/image";
 import Button from "@/components/ui/button";
 import Link from "next/link";
+import { User } from "lucide-react";
 const navItems = [
-  { href: "/Home", label: "خانه" },
+  { href: "/", label: "خانه" },
   { href: "/Rooms", label: "اتاق ها" },
   { href: "/Restaurant", label: "رستوران ما" },
   { href: "/About", label: "درباره ما" },
@@ -18,8 +19,8 @@ function Navbar() {
   );
   return (
     <div>
-      <nav className="sticky top-0 z-50">
-        <div className="min-w-screen h-16 flex justify-between shadow shadow-gray-400 pt-2 pr-[60px] pb-2 pl-[60px] text-gray-500  ">
+      <nav className="sticky top-0 z-50 ">
+        <div className="w-full max-w-[1530px] mx-auto h-16 flex justify-between shadow shadow-gray-400 px-6 text-gray-500 overflow-hidden">
           <div className="flex">
             <Image alt="logo" src="/Logo.png" width={100} height={128} />
           </div>
@@ -33,10 +34,10 @@ function Navbar() {
               color="white"
               border="blue"
               text="blue"
-              size="medium"
-              radius="md"
-              className="hidden md:flex items-center gap-4"
+              size="small"
+              className="hidden md:flex rounded-md items-center gap-4 w-[147px] mt-2"
             >
+              <User size={120} className="stroke-primary" strokeWidth={3} />{" "}
               ورود I ثبت نام
             </Button>
           </div>

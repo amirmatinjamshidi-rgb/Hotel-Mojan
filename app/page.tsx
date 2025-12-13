@@ -1,23 +1,29 @@
-import WhyCard from "@/components/ui/WhyCard";
-import Footer from "./components/Footer";
-import Navbar from "./components/Navbar";
-
-import BenefitCard from "@/components/ui/benefitCard";
-import Accordions from "@/components/ui/accordation";
-import CommentCard from "@/components/ui/commentCard";
-import CancelReserve from "@/components/ui/cancelReserve";
+import FAQ from "@/components/Landing/FAQ";
+import WhySection from "@/components/Landing/whySection";
+import Reservation from "@/components/Landing/reservation";
+import OffCardSwiper from "@/components/Landing/RommOffer";
+import Facilities from "@/components/Landing/Facilities";
+import VideoGallery from "@/components/ui/Gallery";
+import HeroBanner from "@/components/Landing/HeroBanner";
 function page() {
   return (
-    <div>
-      <Navbar />{" "}
-      <div className="grid grid-cols-3 m-20">
-        <Accordions />
-        <WhyCard />
-        <BenefitCard />
-        <CommentCard />
-        <CancelReserve />
+    <div className="gap-22">
+      <div className="p-16">
+        <HeroBanner /> <WhySection />
       </div>
-      <Footer />
+      <div className="mb-12">
+        <VideoGallery />
+      </div>
+      <FAQ />
+      <div className="p-28">
+        {" "}
+        <Reservation />
+      </div>
+      <Facilities />
+      <div className="p-16">
+        {" "}
+        <OffCardSwiper />
+      </div>
     </div>
   );
 }

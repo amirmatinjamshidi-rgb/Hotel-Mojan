@@ -35,6 +35,14 @@
   --color-textSecondary: #6C757D;
   --color-textOnTextSecondary: #2C2C2C;
 }
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.98); }
+  to { opacity: 1; transform: scale(1); }
+}
+.animate-fadeIn {
+  animation: fadeIn 0.35s ease-out forwards;
+}
+
 
 body {
   background: var(--foreground);

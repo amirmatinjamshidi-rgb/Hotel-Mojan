@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-
+import Footer from "@/components/layouts/Footer";
+import Navbar from "../components/layouts/Navbar";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -25,16 +26,14 @@ export default function RootLayout({
   return (
     <html lang="en" dir="rtl">
       <head>
-        {/* <style>
-          @import
-          url(&apos;https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap&apos;);
-        </style>{" "} */}
         <link rel="preload" href="https://localhost:3000" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );

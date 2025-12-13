@@ -16,9 +16,9 @@ interface AccordionListProps {
   items: AccordionItem[];
 }
 
-export default function AccordionList({ items }: AccordionListProps) {
+export default function MiniAccordionList({ items }: AccordionListProps) {
   return (
-    <div className="w-[1320px] space-y-4">
+    <div className="w-[760px]  space-y-4">
       {items.map((item, i) => (
         <div
           key={i}
@@ -30,11 +30,11 @@ export default function AccordionList({ items }: AccordionListProps) {
             className="shadow-none! border-none!"
           >
             <AccordionSummary
-              expandIcon={<ExpandMoreIcon />}
+              expandIcon={<ExpandMoreIcon className="stroke-primary" />}
               aria-controls={`panel-${i}`}
               id={`panel-${i}`}
             >
-              <Typography component="span" className="flex items-center gap-5">
+              <Typography component="span" className="flex items-center gap-2">
                 <Circle
                   color="#e9b872"
                   strokeWidth={3}

@@ -1,5 +1,5 @@
 "use client";
-
+import { Controller } from "react-hook-form";
 import { Mail, MapPinIcon, X } from "lucide-react";
 import { PhoneIcon } from "lucide-react";
 import { useState } from "react";
@@ -20,16 +20,14 @@ const schema = z.object({
     .min(1, { message: "ایمیل الزامی است." })
     .email({ message: "لطفاً یک ایمیل معتبر وارد کنید." }),
 });
-
+z.null({});
 type FormData = z.infer<typeof schema>;
 
 function Footer() {
   const [focused, setFocused] = useState(false);
   const {
-    register,
     handleSubmit,
     control,
-    setValue,
     formState: { errors, isValid },
   } = useForm<FormData>({
     resolver: zodResolver(schema),
@@ -45,14 +43,10 @@ function Footer() {
     console.log("Email submitted:", data.email);
   };
 
-  const handleClear = () => {
-    setValue("email", "");
-  };
-
   return (
     <div dir="rtl">
-      <footer className="sticky bottom-0">
-        <div className="w-full h-[200px] flex justify-between">
+      <footer className="">
+        <div className="w-full py-10 flex justify-between">
           <div className="w-[424px] text-gray-700 mr-8">
             <Image alt="logo" src="/Logo.png" width={100} height={128} />
             <p>
@@ -117,38 +111,43 @@ function Footer() {
                   onSubmit={handleSubmit(onSubmit)}
                   className="flex justify-between bg-gray-200 h-[47px] rounded-xl overflow-hidden"
                 >
-                  <TextField
-                    required
-                    placeholder="ایمیل خود را بنویسید..."
-                    size="medium"
-                    error={!!errors.email}
-                    helperText={errors.email?.message}
-                    {...register("email")}
-                    onFocus={() => setFocused(true)}
-                    onBlur={() => setFocused(false)}
-                    InputProps={{
-                      endAdornment:
-                        email && email.length > 0 && focused ? (
-                          <button
-                            type="button"
-                            onClick={handleClear}
-                            className="h-6 w-6 rounded-full bg-red-500 flex items-center justify-center hover:bg-red-600 transition-colors mr-2"
-                          >
-                            <X className="h-3 w-3 text-white" />
-                          </button>
-                        ) : null,
-                    }}
-                    sx={{
-                      "& .MuiInputBase-root": {
-                        height: "100%",
-                        borderRadius: "12px",
-                      },
-                      "& .MuiOutlinedInput-notchedOutline": {
-                        border: "none",
-                      },
-                      width: "502px",
-                    }}
+                  <Controller
+                    name="email"
+                    control={control}
+                    render={({ field }) => (
+                      <TextField
+                        {...field}
+                        placeholder="ایمیل خود را بنویسید..."
+                        error={!!errors.email}
+                        helperText={errors.email?.message}
+                        onFocus={() => setFocused(true)}
+                        onBlur={() => setFocused(false)}
+                        InputProps={{
+                          endAdornment:
+                            field.value && focused ? (
+                              <button
+                                type="button"
+                                onClick={() => field.onChange("")}
+                                className="h-6 w-6 rounded-full bg-red-500 flex items-center justify-center mr-2"
+                              >
+                                <X className="h-3 w-3 text-white" />
+                              </button>
+                            ) : null,
+                        }}
+                        sx={{
+                          "& .MuiInputBase-root": {
+                            height: "100%",
+                            borderRadius: "12px",
+                          },
+                          "& .MuiOutlinedInput-notchedOutline": {
+                            border: "none",
+                          },
+                          width: "502px",
+                        }}
+                      />
+                    )}
                   />
+
                   <Button
                     type="submit"
                     color="orange1"
@@ -164,7 +163,7 @@ function Footer() {
             </div>
           </div>
         </div>
-        <div className="bg-cyan-800 w-full h-20 flex justify-between items-center px-8">
+        <div className="bg-cyan-800 w-full py-5 flex justify-between items-center px-8">
           <div className="flex items-center gap-4">
             <PhoneIcon className="size-5" /> ۰۵۴-۳۲۱۲۴۵۶۷
           </div>
