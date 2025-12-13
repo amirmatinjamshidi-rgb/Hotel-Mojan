@@ -13,6 +13,7 @@ import Image from "next/image";
 import { Send } from "lucide-react";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import TextField from "@mui/material/TextField";
+import ScrollButton from "./ScrollButton";
 
 const schema = z.object({
   email: z
