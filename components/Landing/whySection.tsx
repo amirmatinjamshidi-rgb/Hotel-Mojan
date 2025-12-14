@@ -33,7 +33,10 @@ function WhySection() {
         <div className="flex flex-col gap-7">
           {" "}
           <h1 className="flex items-center gap-2">
-            <Circle className="stroke-secondary bg-secondary rounded-full" />
+            <Circle
+              className="stroke-secondary bg-secondary rounded-full"
+              size={15}
+            />
             چرا هتل ساحلی موجان، انتخاب اول مسافران است؟
           </h1>
           <p className="">

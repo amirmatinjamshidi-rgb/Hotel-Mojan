@@ -37,8 +37,8 @@ function Navbar() {
               size="small"
               className="hidden md:flex rounded-md items-center gap-4 w-[147px] mt-2"
             >
-              <User size={120} className="stroke-primary" strokeWidth={3} />{" "}
-              ورود I ثبت نام
+              <User size={25} className="stroke-primary" strokeWidth={3} /> ورود
+              I ثبت نام
             </Button>
           </div>
         </div>

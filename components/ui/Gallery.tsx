@@ -33,7 +33,10 @@ export default function VideoGallery() {
     <div className="w-[1320px] flex flex-col justify-between gap-4 mr-20">
       <div className="h-10 flex items-center gap-2 mb-6">
         <h1 className="flex items-center gap-2 text-lg">
-          <Circle className="stroke-secondary bg-secondary rounded-full" />
+          <Circle
+            className="stroke-secondary bg-secondary rounded-full"
+            size={15}
+          />
           چرا هتل ساحلی موجان، انتخاب اول مسافران است؟
         </h1>
       </div>

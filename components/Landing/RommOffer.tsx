@@ -83,7 +83,10 @@ function OffCardSwiper() {
     <div className="w-[1320px] flex flex-col">
       <div className="h-10 flex justify-between items-center">
         <h1 className="flex items-center gap-2">
-          <Circle className="stroke-secondary bg-secondary rounded-full" />
+          <Circle
+            className="stroke-secondary bg-secondary rounded-full"
+            size={15}
+          />
           پیشنهادهای ویژه هتل
         </h1>
 
