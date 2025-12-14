@@ -1,10 +1,10 @@
-import AboutOptions from "@/components/About/AboutOptions";
+import QuickContact from "@/components/About/QuickContact";
 import React from "react";
 
 const page = () => {
   return (
     <div className="bg-[#F9FCFD] p-16">
-      <AboutOptions />
+      <QuickContact />{" "}
     </div>
   );
 };

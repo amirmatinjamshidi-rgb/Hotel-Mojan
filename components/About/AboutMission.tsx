@@ -1,4 +1,6 @@
 import React from "react";
+import AboutMissionPic from "@/public/AboutMission.png";
+import Image from "next/image";
 
 const missions = [
   {
@@ -39,10 +41,16 @@ const AboutMission = () => {
         <div className="w-[648px] h-[505px] flex flex-col gap-8">
           {missions.map((card) => {
             return (
-              <div key={card.id} className="bg-white rounded-lg border border-primaryBorder shadow hover:shadow-md">
+              <div
+                key={card.id}
+                className="bg-white rounded-lg border border-primaryBorder shadow hover:shadow-md">
                 <div className="p-6  flex flex-row gap-4 w-[648px] h-26">
-                    <span className="text-[#D6A25FCC] text-[45px] ">{card.Adad}</span>
-                    <span className="text-[16px] whitespace-nowrap text-textPrimary mt-4">{card.description}</span>
+                  <span className="text-[#D6A25FCC] text-[45px] ">
+                    {card.Adad}
+                  </span>
+                  <span className="text-[16px] whitespace-nowrap text-textPrimary mt-4">
+                    {card.description}
+                  </span>
                 </div>
               </div>
             );
@@ -51,8 +59,7 @@ const AboutMission = () => {
       </div>
       <div>
         <div>
-            <div></div>
-            <div></div>
+          <Image src={AboutMissionPic} alt="our mission" />
         </div>
       </div>
     </div>
