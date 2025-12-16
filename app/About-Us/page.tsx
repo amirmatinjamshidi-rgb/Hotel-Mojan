@@ -1,10 +1,9 @@
-import QuickContact from "@/components/About/QuickContact";
-import React from "react";
+import AboutComplete from "@/components/About/AboutComplete";
 
 const page = () => {
   return (
-    <div className="bg-[#F9FCFD] p-16">
-      <QuickContact />{" "}
+    <div>
+      <AboutComplete />
     </div>
   );
 };
