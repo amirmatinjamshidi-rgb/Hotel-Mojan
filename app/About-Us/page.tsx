@@ -1,12 +1,12 @@
-import AboutSendEmail from "@/components/About/AboutSendEmail";
+import AboutRahHa from "@/components/About/AboutRahHa";
 
 
 import React from "react";
 
 const page = () => {
   return (
-    <div className="bg-[#F9FCFD] p-16">
-      <AboutSendEmail />
+    <div >
+      <AboutRahHa />
     </div>
   );
 };
