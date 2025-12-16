@@ -6,7 +6,7 @@ const navItems = [
   { href: "/", label: "خانه" },
   { href: "/Rooms", label: "اتاق ها" },
   { href: "/Restaurant", label: "رستوران ما" },
-  { href: "/About", label: "درباره ما" },
+  { href: "/About-Us", label: "درباره ما" },
 ];
 function Navbar() {
   const NavLink = ({ href, label }: { href: string; label: string }) => (

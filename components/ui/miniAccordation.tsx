@@ -38,6 +38,7 @@ export default function MiniAccordionList({ items }: AccordionListProps) {
                 <Circle
                   color="#e9b872"
                   strokeWidth={3}
+                  size={15}
                   className="bg-secondary rounded-full"
                 />
                 {item.question}
