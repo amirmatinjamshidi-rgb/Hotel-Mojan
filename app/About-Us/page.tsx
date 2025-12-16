@@ -1,12 +1,9 @@
-import AboutRahHa from "@/components/About/AboutRahHa";
-
-
-import React from "react";
+import AboutComplete from "@/components/About/AboutComplete";
 
 const page = () => {
   return (
-    <div >
-      <AboutRahHa />
+    <div>
+      <AboutComplete />
     </div>
   );
 };

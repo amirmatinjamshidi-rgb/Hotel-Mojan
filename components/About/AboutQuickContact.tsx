@@ -35,7 +35,7 @@ const ContactInfo = [
   },
 ];
 
-const QuickContact = () => {
+const AboutQuickContact = () => {
   return (
     <div className="h-[290px] w-[1320px] flex flex-col gap-8">
       <div className="flex flex-row gap-2">
@@ -69,4 +69,4 @@ const QuickContact = () => {
   );
 };
 
-export default QuickContact;
+export default AboutQuickContact;
