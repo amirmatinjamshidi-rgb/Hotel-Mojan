@@ -1,10 +1,9 @@
 import { Globe, Mail, Phone } from "lucide-react";
-import React from "react";
 
 const ContactInfo = [
   {
     id: 1,
-    icon: <Mail className="stroke-secondary" />,
+    icon: <Mail className="stroke-secondary w-9 h-9" />,
     title: "ایمیل",
     description:
       "برای هرگونه سؤال، پیشنهاد یا درخواست پشتیبانی، تیم ما از طریق ایمیل پاسخگوی شماست.",
@@ -12,7 +11,7 @@ const ContactInfo = [
   },
   {
     id: 2,
-    icon: <Phone className="stroke-secondary" />,
+    icon: <Phone className="stroke-secondary w-9 h-9" />,
     title: "تماس تلفنی",
     description:
       "برای رزرو، پیگیری یا دریافت اطلاعات اتاق‌ها، با پذیرش هتل در تماس باشید.",
@@ -20,7 +19,15 @@ const ContactInfo = [
   },
   {
     id: 3,
-    icon: <Globe className="stroke-secondary" />,
+    icon: <Globe className="stroke-secondary w-9 h-9" />,
+    title: "شبکه‌های اجتماعی",
+    description:
+      "ما را در شبکه‌های اجتماعی دنبال کنید و از آخرین اخبار، جشنواره‌ها و تخفیف‌ها باخبر شوید.",
+    info: "@mojanhotel",
+  },
+  {
+    id: 4,
+    icon: <Globe className="stroke-secondary w-9 h-9" />,
     title: "شبکه‌های اجتماعی",
     description:
       "ما را در شبکه‌های اجتماعی دنبال کنید و از آخرین اخبار، جشنواره‌ها و تخفیف‌ها باخبر شوید.",
@@ -37,17 +44,22 @@ const QuickContact = () => {
           تماس سریع هتل ساحلی موجان
         </span>
       </div>
-      <div className="h-[222px] flex flex-row justify-evenly">
+      <div className="h-[222px] flex flex-row justify-evenly gap-8">
         {ContactInfo.map((contact) => {
           return (
             <div
               key={contact.id}
-              className="w-[424px] h-[222px] bg-white rounded-lg flex flex-row items-center justify-center border border-primaryBorder shadow hover:shadow-md">
-              <div className="flex flex-col justify-center items-center p-16 w-[376px] h-[174px]">
+              className="w-[424px] h-[222px] bg-white rounded-lg flex flex-row items-center justify-center border border-primaryBorder shadow hover:shadow-md ">
+              <div className="flex flex-col justify-center items-center p-16 w-[376px] h-[174px] gap-2">
                 <div>{contact.icon}</div>
-                <div> {contact.title}</div>
-                <div>{contact.description}</div>
-                <div> {contact.info}</div>
+                <div className="text-textPrimary text-[22px]">
+                  {" "}
+                  {contact.title}
+                </div>
+                <div className="text-textPrimary text-[14px]">
+                  {contact.description}
+                </div>
+                <div className="text-primary text-[14px]"> {contact.info}</div>
               </div>
             </div>
           );
