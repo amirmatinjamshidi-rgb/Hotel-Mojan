@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Dummy from "@/public/Dummy.jpg";
 import { Divider } from "@mui/material";
+
 const RoomCard = () => {
   return (
     <div className="w-[912px] h-[202px] border border-primaryBorder hover:shadow-md mt-50 mr-50 py-4 px-6 rounded-lg">
@@ -33,9 +34,7 @@ const RoomCard = () => {
         <div>
           <Divider orientation="vertical" className="text-primaryBorder" />
         </div>
-        <div>
-
-        </div>
+        <div></div>
       </div>
     </div>
   );

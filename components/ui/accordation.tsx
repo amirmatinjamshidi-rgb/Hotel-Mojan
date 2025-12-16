@@ -37,6 +37,7 @@ export default function AccordionList({ items }: AccordionListProps) {
               <Typography component="span" className="flex items-center gap-5">
                 <Circle
                   color="#e9b872"
+                  size={15}
                   strokeWidth={3}
                   className="bg-secondary rounded-full"
                 />

@@ -33,6 +33,9 @@ function Footer() {
   } = useForm<FormData>({
     resolver: zodResolver(schema),
     mode: "onChange",
+    defaultValues: {
+      email: "",
+    },
   });
 
   const email = useWatch({
@@ -83,10 +86,11 @@ function Footer() {
                     <Send className="size-4 mr-2" /> تلگرام
                   </Link>
                   <Link href="#" className="gap-2 flex items-center py-1">
-                    <Instagram className="size-4 mr-2" /> اینستاگرام
+                    <Instagram size={17} className=" mr-2" /> اینستاگرام
                   </Link>
                   <Link href="#" className="gap-2 flex items-center py-1">
-                    <WhatsAppIcon className="size-4 mr-2" /> واتساپ
+                    <WhatsAppIcon fontSize="small" className="size-4 mr-2" />{" "}
+                    واتساپ
                   </Link>
                   <Link href="#" className="gap-2 flex items-center py-1">
                     <Mail className="size-4 mr-2" /> ایمیل
@@ -128,7 +132,7 @@ function Footer() {
                             field.value && focused ? (
                               <button
                                 type="button"
-                                onClick={() => field.onChange("")}
+                                onMouseDown={() => field.onChange("")}
                                 className="h-6 w-6 rounded-full bg-red-500 flex items-center justify-center mr-2"
                               >
                                 <X className="h-3 w-3 text-white" />
