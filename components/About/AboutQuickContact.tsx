@@ -37,19 +37,19 @@ const ContactInfo = [
 
 const AboutQuickContact = () => {
   return (
-    <div className="h-[290px] w-[1320px] flex flex-col gap-8">
-      <div className="flex flex-row gap-2">
+    <div className="h-[290px]  flex flex-col gap-8">
+      <div className="flex flex-row gap-2 pr-40">
         <div className="rounded-[100px] bg-secondary w-4 h-4 mt-1.5"></div>
         <span className="text-[22px] text-textPrimary font-bold">
           تماس سریع هتل ساحلی موجان
         </span>
       </div>
-      <div className="h-[222px] flex flex-row justify-evenly gap-8">
+      <div className="h-[222px] flex flex-row justify-center gap-8">
         {ContactInfo.map((contact) => {
           return (
             <div
               key={contact.id}
-              className="w-[424px] h-[222px] bg-white rounded-lg flex flex-row items-center justify-center border border-primaryBorder shadow hover:shadow-md ">
+              className=" h-[222px] bg-white rounded-lg flex flex-row items-center justify-center border border-primaryBorder shadow hover:shadow-md ">
               <div className="flex flex-col justify-center items-center p-16 w-[376px] h-[174px] gap-2">
                 <div>{contact.icon}</div>
                 <div className="text-textPrimary text-[22px]">

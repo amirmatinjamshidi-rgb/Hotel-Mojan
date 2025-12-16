@@ -5,7 +5,7 @@ import AboutBanner from "@/public/AboutBanner.png";
 
 const AboutIntro = () => {
   return (
-    <div className="flex flex-row justify-evenly">
+    <div className="flex flex-row justify-center gap-20">
       <div className="flex flex-col gap-[38px] ">
         <div className="flex flex-row gap-2">
           <div className="rounded-[100px] bg-secondary w-4 h-4 mt-1.5"></div>

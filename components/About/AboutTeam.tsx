@@ -1,7 +1,6 @@
 "use client";
 
-
-import {  ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 
@@ -59,30 +58,30 @@ const teamMembers = [
 ];
 const AboutTeam = () => {
   return (
-    <div className="w-[1320px] flex flex-col">
-      <div className="h-10 flex justify-between items-center">
+    <div className=" flex flex-col">
+      <div className="h-10 flex items-center pr-51">
         <div className="flex flex-row gap-2">
           <div className="rounded-[100px] bg-secondary w-4 h-4 mt-1.5"></div>
-          <span className="text-[18px] text-textPrimary ">
-           تیم هتل ساحلی موجان
+          <span className="text-[22px] text-textPrimary ">
+            تیم هتل ساحلی موجان
           </span>
         </div>
       </div>
 
-      <div className=" relative mt-6">
+      <div className=" relative mt-6 flex justify-center flex-col">
         <Swiper
           modules={[Navigation, Pagination]}
           spaceBetween={20}
-          slidesPerView={4}
+          slidesPerView={5}
           loop={true}
           navigation={{
             nextEl: ".swiper-next",
             prevEl: ".swiper-prev",
           }}
-          className="w-full h-full">
+          className="w-[1500px] h-full">
           {teamMembers.map((item) => (
             <SwiperSlide key={item.id}>
-              <div className="h-90 w-78 bg-primaryAccent overflow-hidden flex justify-end flex-col">
+              <div className="h-90 w-70 bg-primaryAccent overflow-hidden flex justify-end flex-col">
                 <Image
                   src={item.image}
                   alt={item.name}

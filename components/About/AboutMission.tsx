@@ -30,7 +30,7 @@ const missions = [
 
 const AboutMission = () => {
   return (
-    <div className="h-[573px] w-[1320px] flex flex-row">
+    <div className="h-[573px] flex flex-row justify-evenly">
       <div>
         <div className="flex flex-row gap-2">
           <div className="rounded-[100px] bg-secondary w-4 h-4 mt-1.5"></div>
@@ -58,8 +58,8 @@ const AboutMission = () => {
         </div>
       </div>
       <div>
-        <div>
-          <Image src={AboutMissionPic} alt="our mission" />
+        <div className="h-[505px] ">
+          <Image src={AboutMissionPic} alt="our mission" height={505} width={670}/>
         </div>
       </div>
     </div>

@@ -9,22 +9,19 @@ const options = [
   { id: 4, image: Dummy, Description: "اسپای آرامش‌بخش" },
   { id: 5, image: Dummy, Description: "سالن همایش " },
   { id: 6, image: Dummy, Description: "باشگاه ورزشی " },
-  { id: 7, image: Dummy, Description: "اسپای آرامش‌بخش" },
-  { id: 8, image: Dummy, Description: "سالن همایش " },
-  { id: 9, image: Dummy, Description: "باشگاه ورزشی " },
 ];
 
 const AboutOptions = () => {
   return (
-    <div className="h-112">
-      <div className="flex flex-col gap-8">
-        <div className="flex flex-row gap-2">
-          <div className="rounded-[100px] bg-secondary w-4 h-4 mt-1.5"></div>
-          <span className="text-[22px] text-textPrimary font-bold">
-            درباره هتل ساحلی موجان
-          </span>
-        </div>
-        <div className="w-full h-[380px] flex flex-row gap-8 ">
+    <div className="h-112 flex flex-col gap-3">
+      <div className="flex flex-row gap-2 pr-51">
+        <div className="rounded-[100px] bg-secondary w-4 h-4 mt-1.5 "></div>
+        <span className="text-[20px] text-textPrimary font-bold">
+          درباره هتل ساحلی موجان
+        </span>
+      </div>
+      <div className="flex flex-col gap-8 items-center">
+        <div className=" h-[380px] flex flex-row gap-8 ">
           {options.map((card) => {
             return (
               <div

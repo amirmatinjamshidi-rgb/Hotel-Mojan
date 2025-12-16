@@ -4,7 +4,7 @@ import Leaflet from "./Leaflet";
 
 const AboutRahHa = () => {
   return (
-    <div className=" flex bg-primaryAccent">
+    <div className=" flex bg-primaryAccent justify-center p-8">
       <div className="flex flex-row gap-24 justify-center items-center">
         
         <div className="flex flex-col gap-5">

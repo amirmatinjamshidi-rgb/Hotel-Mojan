@@ -5,22 +5,25 @@ import { UserRound } from "lucide-react";
 
 const AboutSendEmail = () => {
   return (
-    <div className="h-[392px] w-[536px] flex flex-col gap-6 " dir="rtl">
+    <div className="h-[392px]  flex flex-col gap-6 " dir="rtl">
       <TextField
         id="outlined-basic"
         label="نام و نام خانوادگی"
         variant="outlined"
+        className="w-[536px]"
       />
       <TextField
         id="outlined-basic"
         label="شماره تماس"
         variant="outlined"
         dir="rtl"
+        className="w-[536px]"
       />
       <TextField id="outlined-basic" label="ایمیل " variant="outlined" />
       <TextField
         id="outlined-multiline-static"
         label="پیام خود را اینجا بنویسید..."
+        className="w-[536px]"
         multiline
         rows={2}
       />
