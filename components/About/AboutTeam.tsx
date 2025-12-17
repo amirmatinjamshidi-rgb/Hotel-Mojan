@@ -61,11 +61,12 @@ const AboutTeam = () => {
     <div className=" flex flex-col">
       <div className="h-10 flex items-center pr-51">
         <div className="flex flex-row gap-2">
-          <div className="rounded-[100px] bg-secondary w-4 h-4 mt-1.5"></div>
+          <div className="rounded-[100px] bg-secondary w-4 h-4 "></div>
           <span className="text-[22px] text-textPrimary ">
             تیم هتل ساحلی موجان
           </span>
         </div>
+
       </div>
 
       <div className=" relative mt-6 flex justify-center flex-col">

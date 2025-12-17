@@ -17,31 +17,29 @@ function Navbar() {
     </Link>
   );
   return (
-    <div>
-      <nav className="sticky top-0 z-50 ">
-        <div className="w-full max-w-[1530px] mx-auto h-16 flex justify-between shadow shadow-gray-400 px-6 text-gray-500 overflow-hidden">
-          <div className="flex">
-            <Image alt="logo" src="/Logo.png" width={100} height={128} />
-          </div>
-          <div className="flex justify-center gap-10 text-gray-600">
-            {navItems.map(({ href, label }) => (
-              <NavLink key={href} href={href} label={label} />
-            ))}
-          </div>
-          <div>
-            <Button
-              color="white"
-              border="blue"
-              text="blue"
-              size="small"
-              className="hidden md:flex rounded-md items-center gap-4 w-[147px] mt-2">
-              <User size={25} className="stroke-primary" strokeWidth={3} /> ورود
-              I ثبت نام
-            </Button>
-          </div>
+    <nav className="sticky top-0 z-999 ">
+      <div className="w-full mx-auto h-16 flex justify-between shadow shadow-gray-400 px-6 text-gray-500 overflow-hidden">
+        <div className="flex">
+          <Image alt="logo" src="/Logo.png" width={100} height={128} />
         </div>
-      </nav>
-    </div>
+        <div className="flex justify-center gap-10 text-gray-600">
+          {navItems.map(({ href, label }) => (
+            <NavLink key={href} href={href} label={label} />
+          ))}
+        </div>
+        <div>
+          <Button
+            color="white"
+            border="blue"
+            text="blue"
+            size="small"
+            className="hidden md:flex rounded-md items-center gap-4 w-[147px] mt-2">
+            <User size={25} className="stroke-primary" strokeWidth={3} /> ورود I
+            ثبت نام
+          </Button>
+        </div>
+      </div>
+    </nav>
   );
 }
 
