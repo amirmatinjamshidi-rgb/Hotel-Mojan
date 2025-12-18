@@ -27,10 +27,12 @@ export default function RootLayout({
   return (
     <html lang="fa" dir="rtl">
       <head>
+        <meta name="theme-color" content="#1bb566" />
         <link rel="preload" href="https://localhost:3000" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
         <MuiProvider>
           <Navbar />
           {children}

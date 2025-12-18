@@ -12,7 +12,8 @@ function Navbar() {
   const NavLink = ({ href, label }: { href: string; label: string }) => (
     <Link
       href={href}
-      className="transition-all duration-300 ease-out hover:scale-105 focus:scale-105 text-gray-700 mt-4 active:bg-primaryActive">
+      className="transition-all duration-300 ease-out hover:scale-105 focus:scale-105 text-gray-700 mt-4 active:bg-primaryActive"
+    >
       {label}
     </Link>
   );
@@ -34,7 +35,8 @@ function Navbar() {
               border="blue"
               text="blue"
               size="small"
-              className="hidden md:flex rounded-md items-center gap-4 w-[147px] mt-2">
+              className="hidden md:flex rounded-md items-center gap-4 w-[147px] mt-2"
+            >
               <User size={25} className="stroke-primary" strokeWidth={3} /> ورود
               I ثبت نام
             </Button>

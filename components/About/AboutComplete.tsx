@@ -16,7 +16,7 @@ const AboutComplete = () => {
       <AboutOptions />
       <AboutRahHa />
       <AboutQuickContact />
-      <FAQ/>
+      <FAQ />
     </div>
   );
 };

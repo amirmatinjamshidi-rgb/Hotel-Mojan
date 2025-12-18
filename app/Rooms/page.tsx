@@ -9,7 +9,8 @@ import Link from "@mui/material/Link";
 import { Circle, Star } from "lucide-react";
 import FaqRooms from "@/components/RoomCard/FaqRooms";
 import NavigateBeforeOutlinedIcon from "@mui/icons-material/NavigateBeforeOutlined";
-import PriceRange from "./components/price";
+import Filterbox from "./Filterbox";
+
 function page() {
   return (
     <div className="">
@@ -66,10 +67,10 @@ function page() {
               size={15}
               className="bg-secondary rounded-full stroke-secondary"
             />
-            امکانات اتاق دو تخته نخل اکونومی
+            سوالات متداول
           </h1>
           <FaqRooms />
-          {/* <PriceRange /> */}
+          <Filterbox />
         </div>
       </div>
     </div>

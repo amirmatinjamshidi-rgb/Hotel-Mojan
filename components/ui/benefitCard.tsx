@@ -15,13 +15,22 @@ function BenefitCard({ item }: BenefitCardProps) {
     item.icon && item.icon.trim() !== "" ? item.icon : "/placeholder.png";
 
   return (
-    <div className="hover:shadow-md  hover:shadow-primaryBorder transition-all ease-out duration-300 border-primaryBorder bg-textOnText border rounded-xl w-[200px] h-[200px] flex items-center justify-center p-4">
-      <div className="flex flex-col items-center justify-center">
-        <Image src={iconSrc} alt={item.title} width={41} height={41} />
-        <p className="font-medium font-weight: 500 text-lg text-textPrimary mt-3">
-          {item.title}
-        </p>
-      </div>
+    <div
+      className="
+      border border-primaryBorder
+      bg-textOnText
+      rounded-xl
+      flex flex-col items-center justify-center
+      p-2S
+      aspect-square
+      hover:shadow-md hover:shadow-primaryBorder
+      transition-all duration-300
+    "
+    >
+      <Image src={iconSrc} alt={item.title} width={40} height={40} />
+      <p className="mt-3 text-sm sm:text-base font-medium text-textPrimary text-center">
+        {item.title}
+      </p>
     </div>
   );
 }

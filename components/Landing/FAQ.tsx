@@ -19,7 +19,7 @@ const MiniAccordion = [
 ];
 function FAQ() {
   return (
-    <div className="min-w-screen h-[480px]  bg-[#E6F4F7] flex justify-between gap-6">
+    <div className="w-full h-[480px]  bg-[#E6F4F7] flex justify-between gap-6">
       <div className="w-[736px]  h-[130px] flex flex-col align-middle mt-40 mr-18 justify-between items-start gap-6">
         <h3 className="flex text-2xl">
           سؤالات متداول درباره اقامت در

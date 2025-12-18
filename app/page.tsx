@@ -10,23 +10,23 @@ function page() {
     <div className="gap-22 ">
       <div className="p-16">
         <HeroBanner />
-      </div>
+      </div>{" "}
       <div className="p-18">
         {" "}
         <Reservation />
-      </div>
-      <Facilities />
+      </div>{" "}
+      <Facilities />{" "}
       <div className="p-16">
         {" "}
         <OffCardSwiper />
       </div>{" "}
       <div className="mb-12">
         <VideoGallery />
-      </div>
+      </div>{" "}
       <div className="p-12">
         {" "}
         <WhySection />
-      </div>
+      </div>{" "}
       <FAQ />
     </div>
   );

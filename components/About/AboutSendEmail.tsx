@@ -32,7 +32,8 @@ const AboutSendEmail = () => {
         radius="md"
         border="orange"
         type="submit"
-        className="w-full flex flex-row justify-center gap-2 items-center">
+        className="w-full flex flex-row justify-center gap-2 items-center"
+      >
         <UserRound /> <Typography>درخواست پشتیبانی</Typography>
       </Button>
     </div>

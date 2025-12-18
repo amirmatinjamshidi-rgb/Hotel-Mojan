@@ -2,7 +2,7 @@ import Image from "next/image";
 
 function HeroBanner() {
   return (
-    <section className="w-[1320px] mb-12 h-[688px] rounded-2xl bg-[#E6F4F7] flex">
+    <section className=" mb-12 h-[688px] rounded-2xl bg-[#E6F4F7] flex">
       <div className="w-1/2 flex flex-col justify-center px-16">
         <h1 className="text-6xl leading-tight">
           اقامت در آرامش دریا

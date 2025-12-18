@@ -68,48 +68,37 @@ const fromPersian = (value: string) =>
 export default function PriceRange() {
   const [range, setRange] = React.useState<number[]>([MIN, MAX]);
 
-  const handleSliderChange = (_: Event, newValue: number[]) => {
-    setRange(newValue);
-  };
-
-  const handleMinInput = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = fromPersian(e.target.value);
-    if (!isNaN(value) && value <= range[1]) {
-      setRange([value, range[1]]);
-    }
-  };
-
-  const handleMaxInput = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = fromPersian(e.target.value);
-    if (!isNaN(value) && value >= range[0]) {
-      setRange([range[0], value]);
-    }
-  };
-
   return (
-    <Box sx={{ width: 350, direction: "ltr" }} gap={24}>
-      <h4 dir="rtl">قیمت:</h4>{" "}
-      <Box sx={{ display: "flex", gap: 2, mt: 2 }}>
+    <Box sx={{ width: "100%" }}>
+      <h4>قیمت:</h4>
+
+      <Box sx={{ display: "flex", gap: 2, mt: 2, flexWrap: "wrap" }}>
         <PriceInput
           label="حداقل"
           value={toPersian(range[0])}
-          onChange={handleMinInput}
+          onChange={(e) => {
+            const v = fromPersian(e.target.value);
+            if (!isNaN(v) && v <= range[1]) setRange([v, range[1]]);
+          }}
         />
 
         <PriceInput
           label="حداکثر"
           value={toPersian(range[1])}
-          onChange={handleMaxInput}
+          onChange={(e) => {
+            const v = fromPersian(e.target.value);
+            if (!isNaN(v) && v >= range[0]) setRange([range[0], v]);
+          }}
         />
       </Box>
+
       <Slider
         value={range}
-        onChange={handleSliderChange}
         min={MIN}
         max={MAX}
         step={STEP}
-        valueLabelDisplay="off"
-        valueLabelFormat={(v) => toPersian(v)}
+        onChange={(_, v) => setRange(v as number[])}
+        sx={{ mt: 2 }}
       />
     </Box>
   );
