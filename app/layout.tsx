@@ -31,7 +31,7 @@ export default function RootLayout({
         <link rel="preload" href="https://localhost:3000" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased `}
       >
         <MuiProvider>
           <Navbar />

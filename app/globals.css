@@ -18,6 +18,7 @@
   --color-primaryHover: #155d74;
   --color-primaryActive: #14596f;
   --color-primaryBG: #f9fcfd;
+  --color-primaryThead: #a6c5cf66;
 
   /* secondary */
   --color-secondary: #e9b872;
@@ -29,6 +30,10 @@
   --color-error: #e74c3c;
   --color-info: #3a8dad;
   --color-warning: #efb93e;
+
+  /*zebra*/
+  --color-zebra1: #fafdfd;
+  --color-zebra2: #f5fbfc;
 
   /*neutral*/
   --color-textPrimary: #1e1e1e;
