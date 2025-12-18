@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/layouts/Footer";
-import Navbar from "../components/layouts/Navbar";
+import Navbar from "@/components/layouts/Navbar";
 import MuiProvider from "@/provider/MuiProvider";
+import CustomStepper from "../userinfo/components/Stepper";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -35,6 +36,7 @@ export default function RootLayout({
       >
         <MuiProvider>
           <Navbar />
+          <CustomStepper />
           {children}
           <Footer />
         </MuiProvider>

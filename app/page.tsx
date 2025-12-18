@@ -7,7 +7,7 @@ import VideoGallery from "@/components/ui/Gallery";
 import HeroBanner from "@/components/Landing/HeroBanner";
 function page() {
   return (
-    <div className="gap-22 bg-amber-400">
+    <div className="gap-22 ">
       <div className="p-6">
         <HeroBanner />
       </div>{" "}
