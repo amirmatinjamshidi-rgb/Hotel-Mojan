@@ -1,7 +1,7 @@
 import React from "react";
-import PriceRange from "./components/price";
-import StarClass from "./components/StarClass";
-import RoomItems from "./components/RoomItems";
+import PriceRange from "./price";
+import StarClass from "./StarClass";
+import RoomItems from "./RoomItems";
 import { Divider } from "@mui/material";
 import RoomOptions from "./RoomOptions";
 

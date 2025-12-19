@@ -54,7 +54,9 @@
 .animate-fadeIn {
   animation: fadeIn 0.35s ease-out forwards;
 }
-
+.allBorder {
+  border-color: #d1d5dc;
+}
 body {
   background: #f9fcfd;
   color: var(--foreground);

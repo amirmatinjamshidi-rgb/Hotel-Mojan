@@ -1,9 +1,9 @@
 import React from "react";
-import Filterbox from "../Rooms/Filterbox";
+import Filterbox from "../booking/rooms/components/Filterbox";
 import RoomCard from "../shop/components/RoomCard";
-import FilterBy from "../Rooms/components/FilterBy";
+import FilterBy from "../booking/rooms/components/FilterBy";
 import { Container } from "@mui/material";
-import RoomBanner from "../Rooms/components/Banner";
+import RoomBanner from "../booking/rooms/components/Banner";
 function page() {
   return (
     <Container className="flex flex-col align-middle justify-center ">

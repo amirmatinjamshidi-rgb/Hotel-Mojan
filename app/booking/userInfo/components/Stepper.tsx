@@ -13,6 +13,32 @@ import {
   Ticket,
   ClipboardCheck,
 } from "lucide-react";
+import StepConnector, {
+  stepConnectorClasses,
+} from "@mui/material/StepConnector";
+import { styled } from "@mui/material/styles";
+
+const ColorlibConnector = styled(StepConnector)(({ theme }) => ({
+  [`&.${stepConnectorClasses.alternativeLabel}`]: {
+    top: 10,
+  },
+  [`&.${stepConnectorClasses.active}`]: {
+    [`& .${stepConnectorClasses.line}`]: {
+      backgroundColor: theme.palette.primary.main,
+    },
+  },
+  [`&.${stepConnectorClasses.completed}`]: {
+    [`& .${stepConnectorClasses.line}`]: {
+      backgroundColor: theme.palette.primary.main,
+    },
+  },
+  [`& .${stepConnectorClasses.line}`]: {
+    height: 3,
+    border: 0,
+    backgroundColor: theme.palette.grey[300],
+    borderRadius: 1,
+  },
+}));
 
 const icons = [CheckCircle, Users, ClipboardCheck, CreditCard, Ticket];
 
@@ -36,26 +62,35 @@ const steps = [
   "دریافت واچر",
 ];
 
-const stepRoutes = ["/rooms", "/room", "/confirm", "/checkout", "/voucher"];
+const stepRoutes = [
+  "/booking/rooms",
+  "/booking/userInfo",
+  "/booking/confirm",
+  "/booking/checkout",
+  "/booking/voucher",
+];
 
 export default function CustomStepper() {
   const pathname = usePathname();
   const router = useRouter();
-
   const getActiveStep = () => {
-    if (pathname === "/rooms") return 0;
-    if (pathname.startsWith("/room/")) return 1;
-    if (pathname === "/confirm") return 2;
-    if (pathname === "/checkout") return 3;
-    if (pathname === "/voucher") return 4;
+    if (pathname.endsWith("/rooms")) return 0;
+    if (pathname.includes("/userInfo")) return 1;
+    if (pathname.endsWith("/confirm")) return 2;
+    if (pathname.endsWith("/checkout")) return 3;
+    if (pathname.endsWith("/voucher")) return 4;
     return 0;
   };
 
   const activeStep = getActiveStep();
 
   return (
-    <Box sx={{ width: "100%" }}>
-      <Stepper alternativeLabel activeStep={activeStep}>
+    <Box sx={{ width: "75%" }}>
+      <Stepper
+        alternativeLabel
+        activeStep={activeStep}
+        connector={<ColorlibConnector />}
+      >
         {steps.map((label, index) => {
           const isClickable = index < activeStep;
 
