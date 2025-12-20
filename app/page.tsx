@@ -1,3 +1,8 @@
+"use client";
+
+import Container from "@mui/material/Container";
+import Stack from "@mui/material/Stack";
+
 import FAQ from "@/components/Landing/FAQ";
 import WhySection from "@/components/Landing/whySection";
 import Reservation from "@/components/Landing/reservation";
@@ -5,31 +10,30 @@ import OffCardSwiper from "@/components/Landing/RoomOffer";
 import Facilities from "@/components/Landing/Facilities";
 import VideoGallery from "@/components/ui/Gallery";
 import HeroBanner from "@/components/Landing/HeroBanner";
-function page() {
+
+export default function Page() {
   return (
-    <div className="gap-22 ">
-      <div className="p-6">
-        <HeroBanner />
-      </div>{" "}
-      <div className="p-18">
-        {" "}
-        <Reservation />
-      </div>{" "}
-      <Facilities />{" "}
-      <div className="p-16">
-        {" "}
-        <OffCardSwiper />
-      </div>{" "}
-      <div className="mb-12">
-        <VideoGallery />
-      </div>{" "}
-      <div className="p-12">
-        {" "}
-        <WhySection />
-      </div>{" "}
-      <FAQ />
-    </div>
+    <main className="w-full overflow-x-hidden">
+      <Container maxWidth="xl" sx={{ px: { xs: 2, md: 4, lg: 0 } }}>
+        <Stack
+          spacing={{ xs: 8, md: 12, lg: 16 }}
+          sx={{ py: { xs: 4, md: 8, lg: 12 } }}
+        >
+          <HeroBanner />
+
+          <Reservation />
+
+          <Facilities />
+
+          <OffCardSwiper />
+
+          <VideoGallery />
+
+          <WhySection />
+
+          <FAQ />
+        </Stack>
+      </Container>
+    </main>
   );
 }
-
-export default page;

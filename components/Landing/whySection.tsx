@@ -1,3 +1,4 @@
+"use client";
 import { Circle } from "lucide-react";
 import WhyCard from "../ui/WhyCard";
 import Image from "next/image";
@@ -26,55 +27,58 @@ const WhyCardsItems = [
     description: "از رستوران ساحلی تا رویدادهای شبانه",
   },
 ];
+
 function WhySection() {
   return (
-    <section className="w-[1320px] h-[729px] flex justify-between ">
-      <div className="w-[648px] h-[729px] gap-10">
-        <div className="flex flex-col gap-7">
-          {" "}
-          <h1 className="flex items-center gap-2">
+    <section className="w-full max-w-[1320px] mx-auto flex flex-col lg:flex-row justify-between gap-10 px-4 lg:px-0">
+      <div className="w-full lg:w-1/2 flex flex-col gap-8">
+        <div className="flex flex-col gap-6">
+          <h1 className="flex items-center gap-2 text-xl sm:text-2xl font-bold">
             <Circle
               className="stroke-secondary bg-secondary rounded-full"
-              size={15}
+              size={12}
             />
             چرا هتل ساحلی موجان، انتخاب اول مسافران است؟
           </h1>
-          <p className="">
+          <p className="text-textSecondary leading-relaxed text-sm sm:text-base">
             در هتل موجان همه‌چیز با دقت و عشق طراحی شده تا اقامت شما
             به‌یادماندنی باشد. از موقعیت ساحلی و طراحی مدرن تا خدمات اختصاصی و
             آرامش واقعی کنار دریا.
           </p>
         </div>
-        <div className="flex gap-6 justify-between flex-col">
+
+        <div className="w-full">
           <WhyCard items={WhyCardsItems} />
         </div>
       </div>
-      <div className="w-[648px] h-[729px] gap-5">
-        <div className="flex">
-          {" "}
+
+      <div className="w-full lg:w-1/2 flex flex-col gap-4 sm:gap-6">
+        <div className="relative w-full h-[250px] sm:h-[309px]">
           <Image
             src="/image(2).png"
-            alt=""
-            width={648}
-            height={309}
-            className="rounded-md"
+            alt="Main hotel view"
+            fill
+            className="rounded-2xl object-cover"
           />
         </div>
-        <div className="flex gap-6">
-          <Image
-            src="/image(3).png"
-            alt=""
-            width={312}
-            height={305}
-            className="rounded-md"
-          />
-          <Image
-            src="/image(4).png"
-            alt=""
-            width={312}
-            height={305}
-            className="rounded-md"
-          />
+
+        <div className="flex gap-4 sm:gap-6">
+          <div className="relative w-1/2 h-[150px] sm:h-[305px]">
+            <Image
+              src="/image(3).png"
+              alt="Hotel interior"
+              fill
+              className="rounded-2xl object-cover"
+            />
+          </div>
+          <div className="relative w-1/2 h-[150px] sm:h-[305px]">
+            <Image
+              src="/image(4).png"
+              alt="Hotel facility"
+              fill
+              className="rounded-2xl object-cover"
+            />
+          </div>
         </div>
       </div>
     </section>

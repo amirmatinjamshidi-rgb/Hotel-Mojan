@@ -1,7 +1,7 @@
 "use client";
 import { useState, useRef } from "react";
-import { Play, Pause } from "lucide-react";
-import { Circle } from "lucide-react";
+import { Play, Pause, Circle } from "lucide-react";
+
 export default function VideoGallery() {
   const videos = ["/v1.mp4", "/v2.mp4", "/v3.mp4", "/v4.mp4", "/v5.mp4"];
 
@@ -14,7 +14,6 @@ export default function VideoGallery() {
   const handleSwap = (video: string) => {
     setMainVideo(video);
     setIsPlaying(true);
-
     setTimeout(() => {
       videoRef.current?.play();
     }, 100);
@@ -22,82 +21,87 @@ export default function VideoGallery() {
 
   const togglePlay = () => {
     if (!videoRef.current) return;
-
     if (isPlaying) videoRef.current.pause();
     else videoRef.current.play();
-
     setIsPlaying(!isPlaying);
   };
 
   return (
-    <div className="w-[1320px] flex flex-col justify-between gap-4 mr-20">
-      <div className="h-10 flex items-center gap-2 mb-6">
-        <h1 className="flex items-center gap-2 text-lg">
+    <div className="w-full max-w-[1320px] mx-auto flex flex-col gap-4 px-4 lg:px-0">
+      <div className="flex items-center gap-2 mb-6">
+        <h1 className="flex items-center gap-2 text-sm sm:text-lg font-bold">
           <Circle
             className="stroke-secondary bg-secondary rounded-full"
-            size={15}
+            size={12}
           />
           چرا هتل ساحلی موجان، انتخاب اول مسافران است؟
         </h1>
       </div>
 
-      <div className="w-full flex justify-between gap-4">
-        <div className="flex flex-col justify-between h-[576px]">
+      <div className="w-full flex flex-col-reverse lg:flex-row justify-between gap-6">
+        <div className="flex flex-row lg:flex-col justify-between gap-4 h-auto lg:h-[576px] overflow-x-auto lg:overflow-visible pb-2 lg:pb-0">
           {previews.slice(0, 4).map((video) => (
             <div
               key={video}
               onClick={() => handleSwap(video)}
               className="
-                w-[200px]
-                h-[120px]
+                shrink-0
+                w-40 sm:w-[200px]
+                h-[100px] sm:h-[120px]
                 rounded-lg
                 overflow-hidden
                 cursor-pointer
-                shadow
+                shadow-md
                 hover:scale-[1.03]
                 transition
                 duration-200
               "
             >
-              <video src={video} className="w-full h-full object-cover" />
+              <video
+                src={video}
+                className="w-full h-full object-cover pointer-events-none"
+              />
             </div>
           ))}
         </div>
 
         <div
           className="
-            relative
-            w-[1100px]
-            h-[576px]
-            rounded-2xl
-            overflow-hidden
-            bg-black
-          "
+    relative
+    grow
+    lg:w-[1080px]
+    h-[300px] sm:h-[450px] lg:h-[576px]
+    rounded-2xl
+    overflow-hidden
+    bg-black
+  "
         >
           <video
             key={mainVideo}
             ref={videoRef}
             src={mainVideo}
             autoPlay
-            className="
-              w-full
-              h-full
-              object-cover
-              opacity-0
-              animate-fadeIn
-            "
+            className="w-full h-full object-cover opacity-0 animate-fadeIn"
+            style={{ animationFillMode: "forwards" }}
           />
 
-          <button
-            onClick={togglePlay}
-            className=" absolute bottom-[250px] left-[620px] bg-textOnText w-[110px] h-[110px] rounded-full flex items-center justify-center cursor-pointer transition"
-          >
-            {isPlaying ? (
-              <Pause className="stroke-primary" size={70} />
-            ) : (
-              <Play className="stroke-primary" size={70} />
-            )}
-          </button>
+          {/* Double Layer Centered Play/Pause Button */}
+          <div className="absolute inset-0 flex items-center justify-center">
+            {/* Outer Blur Layer */}
+            <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-full bg-white/20 backdrop-blur-2xl flex items-center justify-center">
+              {/* Inner White Button */}
+              <button
+                onClick={togglePlay}
+                className="bg-white w-14 h-14 sm:w-20 sm:h-20 rounded-full flex items-center justify-center cursor-pointer transition-transform active:scale-90 shadow-lg"
+              >
+                {isPlaying ? (
+                  <Pause className="text-primary fill-primary" size={32} />
+                ) : (
+                  <Play className="text-primary fill-primary ml-1" size={32} />
+                )}
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>

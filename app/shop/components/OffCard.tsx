@@ -17,24 +17,25 @@ interface OffCardProps {
 
 const OffCard = ({ item }: OffCardProps) => {
   return (
-    <div className="w-[311px] h-[400px] border rounded-lg border-primaryBorder flex flex-col mr-5 mt-6 relative">
+    <div className="w-full max-w-[311px] h-[400px] border rounded-lg border-primaryBorder flex flex-col relative mx-auto">
       {item.discount && (
         <div className="w-[51px] h-6 bg-primaryAccent rounded-2xl z-10 absolute top-4 right-4 flex justify-center items-center">
-          <span className="mt-1.5">{item.discount}</span>
+          <span className="mt-1.5 text-xs">{item.discount}</span>
         </div>
       )}
 
-      <Image
-        src={item.image}
-        width={311}
-        height={294}
-        alt={item.title}
-        className="rounded-t-lg z-0 object-cover"
-      />
+      <div className="relative w-full h-[220px]">
+        <Image
+          src={item.image}
+          fill
+          alt={item.title}
+          className="rounded-t-lg object-cover"
+        />
+      </div>
 
-      <div className="flex flex-col p-4 mt-4">
+      <div className="flex flex-col p-4 grow justify-between">
         <div className="flex flex-row justify-between items-center">
-          <span className="text-[22px] text-textPrimary">{item.title}</span>
+          <span className="text-xl text-textPrimary">{item.title}</span>
           <Button
             className="bg-secondary hover:bg-secondaryHover active:bg-secondaryActive text-textPrimary! w-[84px]! h-10!"
             radius="md"

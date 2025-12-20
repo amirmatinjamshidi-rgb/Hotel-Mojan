@@ -1,18 +1,17 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 import { Controller } from "react-hook-form";
-import { Mail, MapPinIcon, X } from "lucide-react";
-import { PhoneIcon } from "lucide-react";
+import { Mail, MapPinIcon, PhoneIcon, Instagram, Send } from "lucide-react";
 import { useState } from "react";
 import { useForm, useWatch } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import Button from "@/components/ui/button";
-import { Instagram } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-import { Send } from "lucide-react";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import TextField from "@mui/material/TextField";
+import Alert from "../ui/ErrorMassages";
 import ScrollButton from "./ScrollButton";
 
 const schema = z.object({
@@ -21,11 +20,15 @@ const schema = z.object({
     .min(1, { message: "ایمیل الزامی است." })
     .email({ message: "لطفاً یک ایمیل معتبر وارد کنید." }),
 });
-z.null({});
+
 type FormData = z.infer<typeof schema>;
+type AlertStatus = "success" | "fail";
 
 function Footer() {
+  const [showAlert, setShowAlert] = useState(false);
+  const [alertStatus] = useState<AlertStatus>("fail");
   const [focused, setFocused] = useState(false);
+
   const {
     handleSubmit,
     control,
@@ -33,153 +36,171 @@ function Footer() {
   } = useForm<FormData>({
     resolver: zodResolver(schema),
     mode: "onChange",
-    defaultValues: {
-      email: "",
-    },
+    defaultValues: { email: "" },
   });
 
-  const email = useWatch({
-    control,
-    name: "email",
-  });
+  const email = useWatch({ control, name: "email" });
 
-  const onSubmit = (data: FormData) => {
-    console.log("Email submitted:", data.email);
+  const onSubmit = () => {
+    setShowAlert(true);
+    setTimeout(() => setShowAlert(false), 3000);
   };
 
   return (
-    <div dir="rtl">
-      <footer className="">
-        <div className="w-full py-10 flex justify-between">
-          <div className="w-[424px] text-gray-700 mr-8">
-            <Image alt="logo" src="/Logo.png" width={100} height={128} />
-            <p>
-              در موجان، اقامتی دلپذیر را با چشم‌انداز بی‌نظیر دریا، نسیم آرام
-            </p>
-            <p>ساحل و صدای دلنشین موج‌ها تجربه کنید.</p>
-            <p>اینجا جایی‌ست که آرامش و مهمان‌نوازی در کنار هم جمع شده‌اند.</p>
-          </div>
-          <div className="flex justify-between gap-12">
-            <div className="w-[89px] h-[148px] gap-2 text-black mt-5">
-              <h1 className="font-bold mb-4">دسترسی سریع</h1>
-              <div className="grid grid-cols-1">
-                <Link href="/Home" className="block py-1">
+    <div dir="rtl" className="w-full">
+      {showAlert && (
+        <div className="fixed top-6 right-6 z-50">
+          <Alert
+            color={alertStatus}
+            iconType={alertStatus}
+            textType={alertStatus}
+          />
+        </div>
+      )}
+
+      <footer className="relative w-full bg-white border-t border-gray-100 mt-20">
+        <ScrollButton />
+
+        <div className="max-w-[1320px] mx-auto px-4 lg:px-0 py-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+            <div className="flex flex-col gap-4">
+              <Image
+                alt="logo"
+                src="/Logo.png"
+                width={100}
+                height={128}
+                className="object-contain"
+              />
+              <div className="text-gray-600 text-sm leading-relaxed">
+                <p>
+                  در موجان، اقامتی دلپذیر را با چشم‌انداز بی‌نظیر دریا، نسیم
+                  آرام ساحل و صدای دلنشین موج‌ها تجربه کنید.
+                </p>
+                <p className="mt-2">
+                  اینجا جایی‌ست که آرامش و مهمان‌نوازی در کنار هم جمع شده‌اند.
+                </p>
+              </div>
+            </div>
+
+            <div>
+              <h1 className="font-bold text-black mb-6">دسترسی سریع</h1>
+              <nav className="flex flex-col gap-3 text-gray-700 text-sm">
+                <Link
+                  href="/Home"
+                  className="hover:text-primary transition-colors"
+                >
                   خانه
                 </Link>
-                <Link href="/Rooms" className="block py-1">
+                <Link
+                  href="/Rooms"
+                  className="hover:text-primary transition-colors"
+                >
                   اتاق ها
                 </Link>
-                <Link href="/Resturant" className="block py-1">
+                <Link
+                  href="/Resturant"
+                  className="hover:text-primary transition-colors"
+                >
                   رستوران هتل
                 </Link>
-                <Link href="/About" className="block py-1">
+                <Link
+                  href="/About"
+                  className="hover:text-primary transition-colors"
+                >
                   درباره ما
                 </Link>
-              </div>
+              </nav>
             </div>
 
             <div>
-              <div className="w-[89px] h-[148px] gap-2 text-black mt-5">
-                <h1 className="font-bold mb-4">شبکه‌های‌اجتماعی</h1>
-                <div className="grid grid-cols-1">
-                  <Link href="#" className="gap-2 flex items-center py-1">
-                    <Send className="size-4 mr-2" /> تلگرام
-                  </Link>
-                  <Link href="#" className="gap-2 flex items-center py-1">
-                    <Instagram size={17} className=" mr-2" /> اینستاگرام
-                  </Link>
-                  <Link href="#" className="gap-2 flex items-center py-1">
-                    <WhatsAppIcon fontSize="small" className="size-4 mr-2" />{" "}
-                    واتساپ
-                  </Link>
-                  <Link href="#" className="gap-2 flex items-center py-1">
-                    <Mail className="size-4 mr-2" /> ایمیل
-                  </Link>
-                </div>
-              </div>
-            </div>
-            <div>
-              <div className="w-[552px] h-[148px] gap-2 text-black mt-5">
-                <h1 className="font-bold mb-4">عضویت در خبرنامه موجان</h1>
-                <div className="grid grid-cols-1">
-                  <p className="text-textOnTextSecondary">
-                    با وارد کردن ایمیل خود، از جدیدترین پیشنهادها و تخفیف‌های
-                    ویژه باخبر شود.
-                  </p>
-                  {errors.email && (
-                    <p className="text-red-500 text-sm mt-1">
-                      {errors.email.message}
-                    </p>
-                  )}
-                </div>
-                <form
-                  onSubmit={handleSubmit(onSubmit)}
-                  className="flex justify-between bg-gray-200 h-[47px] rounded-xl overflow-hidden"
+              <h1 className="font-bold text-black mb-6">شبکه‌های‌اجتماعی</h1>
+              <nav className="flex flex-col gap-3 text-gray-700 text-sm">
+                <Link
+                  href="#"
+                  className="flex items-center gap-3 hover:text-primary transition-colors"
                 >
-                  <Controller
-                    name="email"
-                    control={control}
-                    render={({ field }) => (
-                      <TextField
-                        {...field}
-                        placeholder="ایمیل خود را بنویسید..."
-                        error={!!errors.email}
-                        helperText={errors.email?.message}
-                        onFocus={() => setFocused(true)}
-                        onBlur={() => setFocused(false)}
-                        InputProps={{
-                          endAdornment:
-                            field.value && focused ? (
-                              <button
-                                type="button"
-                                onMouseDown={() => field.onChange("")}
-                                className="h-6 w-6 rounded-full bg-red-500 flex items-center justify-center mr-2"
-                              >
-                                <X className="h-3 w-3 text-white" />
-                              </button>
-                            ) : null,
-                        }}
-                        sx={{
-                          "& .MuiInputBase-root": {
-                            height: "100%",
-                            borderRadius: "12px",
-                          },
-                          "& .MuiOutlinedInput-notchedOutline": {
-                            border: "none",
-                          },
-                          width: "502px",
-                        }}
-                      />
-                    )}
-                  />
+                  <Send className="size-4" /> تلگرام
+                </Link>
+                <Link
+                  href="#"
+                  className="flex items-center gap-3 hover:text-primary transition-colors"
+                >
+                  <Instagram className="size-4" /> اینستاگرام
+                </Link>
+                <Link
+                  href="#"
+                  className="flex items-center gap-3 hover:text-primary transition-colors"
+                >
+                  <WhatsAppIcon sx={{ fontSize: 18 }} /> واتساپ
+                </Link>
+                <Link
+                  href="#"
+                  className="flex items-center gap-3 hover:text-primary transition-colors"
+                >
+                  <Mail className="size-4" /> ایمیل
+                </Link>
+              </nav>
+            </div>
 
-                  <Button
-                    type="submit"
-                    color="orange1"
-                    size="medium"
-                    radius="md"
-                    className="text-textPrimary w-24 h-full border-l disabled:opacity-50"
-                    disabled={!isValid || !email}
-                  >
-                    تماس با ما
-                  </Button>
-                </form>
-              </div>
+            <div className="flex flex-col gap-4">
+              <h1 className="font-bold text-black">عضویت در خبرنامه موجان</h1>
+              <p className="text-gray-500 text-sm leading-relaxed">
+                با وارد کردن ایمیل خود، از جدیدترین پیشنهادها و تخفیف‌های ویژه
+                باخبر شوید.
+              </p>
+
+              <form
+                onSubmit={handleSubmit(onSubmit)}
+                className="flex items-center bg-gray-100 rounded-xl overflow-hidden h-12 border border-transparent focus-within:border-primary transition-all"
+              >
+                <Controller
+                  name="email"
+                  control={control}
+                  render={({ field }) => (
+                    <TextField
+                      {...field}
+                      placeholder="ایمیل خود را بنویسید..."
+                      onFocus={() => setFocused(true)}
+                      onBlur={() => setFocused(false)}
+                      sx={{
+                        flex: 1,
+                        "& .MuiInputBase-root": {
+                          height: "100%",
+                          fontSize: "14px",
+                        },
+                        "& .MuiOutlinedInput-notchedOutline": {
+                          border: "none",
+                        },
+                      }}
+                    />
+                  )}
+                />
+                <Button
+                  type="submit"
+                  color="orange1"
+                  className="h-full px-4 text-xs whitespace-nowrap disabled:opacity-50"
+                  disabled={!isValid || !email}
+                >
+                  تماس با ما
+                </Button>
+              </form>
             </div>
           </div>
         </div>
-        <div className="bg-cyan-800 w-full py-5 flex justify-between items-center px-8">
-          <div className="flex items-center gap-4">
-            <PhoneIcon className="size-5" /> ۰۵۴-۳۲۱۲۴۵۶۷
-          </div>
-          <div>
-            <p className="text-white">
+
+        <div className="bg-cyan-900 text-white py-6 px-4">
+          <div className="max-w-[1320px] mx-auto flex flex-col lg:flex-row justify-between items-center gap-6 text-xs sm:text-sm text-center">
+            <div className="flex items-center gap-2">
+              <PhoneIcon className="size-4 text-secondary" />
+              <span dir="ltr">۰۵۴-۳۲۱۲۴۵۶۷</span>
+            </div>
+            <p className="opacity-80">
               © 2025 هتل ساحلی موجان | طراحی و توسعه توسط Mojan Studio
             </p>
-          </div>
-          <div className="flex items-center gap-4">
-            <MapPinIcon className="size-5" />
-            چابهار، بلوار ساحل — روبه‌روی اسکله ماهی‌گیری
+            <div className="flex items-center gap-2">
+              <MapPinIcon className="size-4 text-secondary" />
+              <span>چابهار، بلوار ساحل — روبه‌روی اسکله ماهی‌گیری</span>
+            </div>
           </div>
         </div>
       </footer>

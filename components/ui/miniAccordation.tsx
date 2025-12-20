@@ -18,35 +18,41 @@ interface AccordionListProps {
 
 export default function MiniAccordionList({ items }: AccordionListProps) {
   return (
-    <div className="w-[760px]  space-y-4">
+    <div className="w-full space-y-4">
       {items.map((item, i) => (
         <div
           key={i}
-          className="rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-gray-200"
+          className="rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-white/50 bg-white/30 backdrop-blur-sm overflow-hidden"
         >
           <Accordion
             elevation={0}
-            variant="outlined"
-            className="shadow-none! border-none!"
+            disableGutters
+            className="bg-transparent! shadow-none! border-none!"
           >
             <AccordionSummary
-              expandIcon={<ExpandMoreIcon className="stroke-primary" />}
+              expandIcon={<ExpandMoreIcon className="text-primary" />}
               aria-controls={`panel-${i}`}
               id={`panel-${i}`}
+              className="min-h-16"
             >
-              <Typography component="span" className="flex items-center gap-2">
+              <Typography
+                component="span"
+                className="flex items-center gap-3 font-bold text-sm sm:text-base"
+              >
                 <Circle
                   color="#e9b872"
                   strokeWidth={3}
-                  size={15}
-                  className="bg-secondary rounded-full"
+                  size={12}
+                  className="bg-secondary rounded-full shrink-0"
                 />
                 {item.question}
               </Typography>
             </AccordionSummary>
 
-            <AccordionDetails>
-              <Typography>{item.answer}</Typography>
+            <AccordionDetails className="bg-white/50">
+              <Typography className="text-sm sm:text-base leading-relaxed text-gray-700">
+                {item.answer}
+              </Typography>
             </AccordionDetails>
           </Accordion>
         </div>
