@@ -1,7 +1,6 @@
 import { Button } from "@mui/material";
 import { Edit } from "lucide-react";
 
-
 type Passenger = {
   id: number;
   name: string;
