@@ -1,7 +1,6 @@
 import { Button } from "@mui/material";
 import { Edit } from "lucide-react";
 
-
 type Passenger = {
   id: number;
   name: string;
@@ -18,7 +17,11 @@ type RoomReservation = {
   email: string;
   passengers: Passenger[];
 };
-
+interface roomTableInfo {
+  room: RoomReservation;
+  passenger: Passenger;
+  index: Passenger;
+}
 const roomTableInfo: RoomReservation[] = [
   {
     id: 1,
@@ -86,7 +89,8 @@ const ReservationInfoTable = () => {
                 <Button
                   variant="outlined"
                   startIcon={<Edit />}
-                  className="rounded-xl">
+                  className="rounded-xl"
+                >
                   ویرایش مسافران
                 </Button>
               </div>
@@ -149,7 +153,8 @@ const ReservationInfoTable = () => {
                         return (
                           <tr
                             key={passenger.id}
-                            className={isEven ? "bg-zebra1" : "bg-zebra2"}>
+                            className={isEven ? "bg-zebra1" : "bg-zebra2"}
+                          >
                             <td className="px-10 py-3.5 border-b border-primaryBorder text-center ">
                               {passenger.ageType}
                             </td>
