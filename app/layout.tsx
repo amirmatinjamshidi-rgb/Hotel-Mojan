@@ -6,16 +6,6 @@ import Footer from "@/Features/layouts/Footer";
 import MuiProvider from "@/Features/provider/MuiProvider";
 import ClientLayout from "./clientLayout";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 export const metadata: Metadata = {
   title: "هتل ساحلی موجان",
   description: "تجربه آرامش در کنار دریای عمان",

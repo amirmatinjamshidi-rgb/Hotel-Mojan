@@ -31,6 +31,7 @@ export default function Page() {
           <WhySection />
 
           <FAQ />
+          
         </Stack>
       </Container>
     </main>

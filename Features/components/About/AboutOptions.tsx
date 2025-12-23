@@ -1,3 +1,4 @@
+"use client";
 import Dummy from "@/public/Options.png";
 
 import Image from "next/image";
@@ -26,7 +27,8 @@ const AboutOptions = () => {
             return (
               <div
                 key={card.id}
-                className="w-50 h-[380px] border bg-white border-primaryBorder rounded-lg shadow hover:shadow-md flex flex-col">
+                className="w-50 h-[380px] border bg-white border-primaryBorder rounded-lg shadow hover:shadow-md flex flex-col"
+              >
                 <div>
                   <Image src={card.image} alt="pic" className="rounded-t-lg" />
                 </div>

@@ -90,7 +90,7 @@ function OffCardSwiper() {
           پیشنهادهای ویژه هتل
         </h1>
         <Link
-          href="/Roompage"
+          href="/booking"
           className="flex items-center gap-1 text-primary text-sm">
           <ChevronLeft className="stroke-primary" />
           مشاهده بیشتر

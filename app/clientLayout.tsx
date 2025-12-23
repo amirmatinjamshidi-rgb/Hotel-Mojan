@@ -7,10 +7,14 @@ export default function ClientLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const [mounted, setMounted] = useState(false);
   const [showLoader, setShowLoader] = useState(true);
   const [isExiting, setIsExiting] = useState(false);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setMounted(true);
+
     const displayTimer = setTimeout(() => {
       setIsExiting(true);
       setTimeout(() => {
@@ -23,10 +27,11 @@ export default function ClientLayout({
 
   return (
     <>
-      {showLoader && <LoadingScreen isExiting={isExiting} />}
+      {mounted && showLoader && <LoadingScreen isExiting={isExiting} />}
+
       <div
         className={
-          showLoader
+          !mounted || showLoader
             ? "opacity-0"
             : "opacity-100 transition-opacity duration-500"
         }

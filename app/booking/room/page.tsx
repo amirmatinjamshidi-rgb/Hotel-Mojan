@@ -9,7 +9,9 @@ import Link from "@mui/material/Link";
 import { Circle, Star } from "lucide-react";
 import FaqRooms from "@/Features/components/RoomCard/FaqRooms";
 import NavigateBeforeOutlinedIcon from "@mui/icons-material/NavigateBeforeOutlined";
-
+import { formatFaNumber } from "@/utils/formatNumber";
+import { formatPrice } from "@/utils/price";
+import NavigateRoomCard from "@/components/RoomCard/Navigate";
 function page() {
   return (
     <div className="">
@@ -42,22 +44,32 @@ function page() {
         </h1>
 
         <div className="flex gap-8">
-          <span>2 تخت دونفره</span>
-          <span>17 نظر</span>
+          <span>{formatFaNumber(2)} تخت دونفره</span>
+          <span>{formatFaNumber(17)} نظر</span>
           <span className="flex">
             <Star className=" stroke-secondary fill-secondary" />
             4.8 امتیاز کاربران
           </span>
-          <span>2.500.000تومان برای هر شب</span>
+          <span>{formatPrice(250000000)} برای هر شب</span>
         </div>
       </div>
       <div className="flex justify-between flex-col gap-16 align-middle p-16">
-        {" "}
         <GallerySection />
-        <RoomAbout />
-        <FrequantQuestions />
-        <ReservationRulesComponent />
-        <SimilarRooms />
+        <NavigateRoomCard />
+        <div id="امکانات اتاق">
+          {" "}
+          <FrequantQuestions />
+        </div>
+        <div id="درباره اتاق">
+          <RoomAbout />
+        </div>
+        <div id="قوانین و مقررات">
+          <ReservationRulesComponent />
+        </div>
+        <div id="اتاق‌‌های مشابه">
+          {" "}
+          <SimilarRooms />
+        </div>
         <div className=" flex flex-col gap-6">
           <h1 className="flex items-center gap-2 mr-8 ">
             <Circle
@@ -66,7 +78,9 @@ function page() {
             />
             سوالات متداول
           </h1>
-          <FaqRooms />
+          <div id="پرسش‌‌های متداول">
+            <FaqRooms />
+          </div>
         </div>
       </div>
     </div>

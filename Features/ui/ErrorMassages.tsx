@@ -4,7 +4,7 @@ import DoNotDisturbAltIcon from "@mui/icons-material/DoNotDisturbAlt";
 
 const AlertColor = {
   success: "bg-cyan-800 border-cyan-800",
-  fail: "bg-red-200 border-red-200",
+  fail: "bg-red-400 border-red-200",
 } as const;
 
 const AlertIcon = {
