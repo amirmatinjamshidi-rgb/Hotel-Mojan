@@ -1,11 +1,28 @@
 import React from "react";
-import SideBar from "./components/SideBar";
-function page() {
+import CustomSearchInput from "./components/SearchInput";
+import CustomFilterByUser from "./components/CutsomFilterByUser";
+
+const item = ["جستجو بر اساس شماره تراکنش"];
+const filterItems = [
+  { id: 1, name: "پرداخت موفق" },
+  { id: 2, name: "پرداخت ناموفق" },
+];
+
+function Page() {
   return (
-    <div>
-      <SideBar />
+
+    <div className="w-full px-6 lg:pr-72 py-10 mx-auto">
+      <div className="flex flex-row justify-between items-end gap-4 w-full">
+        <div className="flex-1 max-w-[499px]">
+          <CustomSearchInput items={item} />
+        </div>
+
+        <div className="shrink-0">
+          <CustomFilterByUser items={filterItems} />
+        </div>
+      </div> 
     </div>
   );
 }
 
-export default page;
+export default Page;

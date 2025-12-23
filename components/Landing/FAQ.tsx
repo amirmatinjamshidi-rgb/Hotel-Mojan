@@ -1,4 +1,4 @@
-import React from "react";
+"use client";
 import MiniAccordionList from "../ui/miniAccordation";
 
 const MiniAccordion = [
@@ -21,7 +21,6 @@ const MiniAccordion = [
 function FAQ() {
   return (
     <div className="w-full min-h-[480px] h-auto py-12 lg:py-0 bg-[#E6F4F7] rounded-3xl flex flex-col lg:flex-row justify-between items-center gap-8 px-6 lg:px-16 overflow-hidden">
-      {/* Text Section */}
       <div className="w-full lg:w-1/2 flex flex-col justify-center items-start gap-6 text-right">
         <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold leading-tight">
           سؤالات متداول درباره اقامت در

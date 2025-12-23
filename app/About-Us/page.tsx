@@ -1,11 +1,11 @@
-import AboutComplete from "@/components/About/AboutComplete";
+"use client";
+import dynamic from "next/dynamic";
 
-const page = () => {
-  return (
-    <div>
-      <AboutComplete />
-    </div>
-  );
-};
+const AboutComplete = dynamic(
+  () => import("@/components/About/AboutComplete"),
+  { ssr: false }
+);
 
-export default page;
+export default function Page() {
+  return <AboutComplete />;
+}

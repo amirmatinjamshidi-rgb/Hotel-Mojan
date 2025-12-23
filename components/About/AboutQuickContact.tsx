@@ -1,3 +1,4 @@
+"use client";
 import { Globe, Mail, Phone } from "lucide-react";
 
 const ContactInfo = [
@@ -49,7 +50,8 @@ const AboutQuickContact = () => {
           return (
             <div
               key={contact.id}
-              className=" h-[222px] bg-white rounded-lg flex flex-row items-center justify-center border border-primaryBorder shadow hover:shadow-md ">
+              className=" h-[222px] bg-white rounded-lg flex flex-row items-center justify-center border border-primaryBorder shadow hover:shadow-md "
+            >
               <div className="flex flex-col justify-center items-center p-16 w-[376px] h-[174px] gap-2">
                 <div>{contact.icon}</div>
                 <div className="text-textPrimary text-[22px]">
