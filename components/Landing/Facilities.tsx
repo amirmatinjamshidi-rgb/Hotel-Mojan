@@ -1,5 +1,7 @@
 import React from "react";
 import BenefitCard from "../ui/benefitCard";
+import Button from "../ui/button";
+import Link from "next/link";
 
 const BenefitCardItems = [
   { icon: "/wifi.png", title: "اینترنت رایگان" },
@@ -28,6 +30,18 @@ function Facilities() {
             استخر روباز و اینترنت پرسرعت رایگان. هر آنچه برای اقامتی دلپذیر نیاز
             دارید، در دسترس شماست.
           </p>
+          <Link href="/About-Us">
+            {" "}
+            <Button
+              color="orange1"
+              radius="md"
+              size="big"
+              border="orange"
+              className=" w-3/8 flex lg:self-baseline md:self-center sm:self-center"
+            >
+              مشاهده دیگر امکانات هتل
+            </Button>
+          </Link>
         </div>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">

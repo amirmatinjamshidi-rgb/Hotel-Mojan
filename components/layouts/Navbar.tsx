@@ -26,7 +26,7 @@ function Navbar() {
   if (!mounted) return null;
 
   return (
-    <nav className="w-full top-0 relative z-50 bg-white">
+    <nav className="w-full top-0 sticky z-50 bg-white/40">
       <div className="w-full mx-auto h-16 flex justify-between items-center shadow-sm shadow-gray-200 px-6 text-gray-500">
         <div className="flex items-center">
           <Image
@@ -38,12 +38,13 @@ function Navbar() {
           />
         </div>
 
-        <div className="hidden lg:flex justify-center gap-10 text-gray-600">
+        <div className="hidden lg:flex justify-center gap-10 text-gray-600 ">
           {navItems.map(({ href, label }) => (
             <Link
               key={href}
               href={href}
-              className="transition-all duration-300 ease-out hover:text-primary hover:scale-105 text-sm font-medium">
+              className="transition-all duration-300 ease-out  whitespace-nowrap align-middle rounded-lg p-2 hover:text-primary hover:scale-105 text-sm font-medium focus:text-primary focus:bg-primaryAccent"
+            >
               {label}
             </Link>
           ))}
@@ -56,7 +57,8 @@ function Navbar() {
             border="blue"
             text="blue"
             size="small"
-            className="hidden md:flex rounded-md items-center gap-2 px-4 h-10 border border-primary text-primary">
+            className="hidden md:flex rounded-md items-center gap-2 px-4 h-10 border border-primary text-primary"
+          >
             <User size={20} />
             <span className="text-xs">ورود | ثبت نام</span>
           </Button>
@@ -67,7 +69,8 @@ function Navbar() {
 
           <button
             className="lg:hidden text-gray-700 p-2"
-            onClick={() => setIsOpen(!isOpen)}>
+            onClick={() => setIsOpen(!isOpen)}
+          >
             {isOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
@@ -80,7 +83,8 @@ function Navbar() {
               key={href}
               href={href}
               onClick={() => setIsOpen(false)}
-              className="text-gray-700 font-medium py-2 border-b border-gray-50 last:border-none">
+              className="text-gray-700 font-medium py-2 border-b border-gray-50 last:border-none"
+            >
               {label}
             </Link>
           ))}

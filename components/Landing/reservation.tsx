@@ -106,7 +106,7 @@ function Reservation() {
           پیشنهادهای ویژه هتل ساحلی موجان
         </h1>
         <Link
-          href="/Roompage"
+          href="/booking"
           className="flex items-center gap-1 text-primary text-sm font-medium"
         >
           <ChevronLeft size={18} className="stroke-primary" />

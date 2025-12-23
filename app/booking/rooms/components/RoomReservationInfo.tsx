@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { Divider } from "@mui/material";
 import { formatPrice } from "@/utils/price";
 import Button from "@/components/ui/button";
@@ -53,15 +54,12 @@ function RoomReservationInfo() {
         <p className="text-primaryActive text-2xl">{formatPrice(21000000)} </p>
       </span>
 
-      <Button
-        color="orange2"
-        size="medium"
-        border="orange"
-        radius="md"
-        className="bg-secondary hover:bg-secondaryHover active:bg-secondaryActive"
+      <Link
+        href=""
+        className="bg-secondary hover:bg-secondaryHover active:bg-secondaryActive rounded-xl w-full  h-12 flex  items-center justify-center text-2xl"
       >
         تایید و ادامه
-      </Button>
+      </Link>
     </div>
   );
 }

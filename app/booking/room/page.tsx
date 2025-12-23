@@ -11,7 +11,7 @@ import FaqRooms from "@/components/RoomCard/FaqRooms";
 import NavigateBeforeOutlinedIcon from "@mui/icons-material/NavigateBeforeOutlined";
 import { formatFaNumber } from "@/utils/formatNumber";
 import { formatPrice } from "@/utils/price";
-
+import NavigateRoomCard from "@/components/RoomCard/Navigate";
 function page() {
   return (
     <div className="">
@@ -56,12 +56,22 @@ function page() {
         </div>
       </div>
       <div className="flex justify-between flex-col gap-16 align-middle p-16">
-        {" "}
         <GallerySection />
-        <RoomAbout />
-        <FrequantQuestions />
-        <ReservationRulesComponent />
-        <SimilarRooms />
+        <NavigateRoomCard />
+        <div id="امکانات اتاق">
+          {" "}
+          <FrequantQuestions />
+        </div>
+        <div id="درباره اتاق">
+          <RoomAbout />
+        </div>
+        <div id="قوانین و مقررات">
+          <ReservationRulesComponent />
+        </div>
+        <div id="اتاق‌‌های مشابه">
+          {" "}
+          <SimilarRooms />
+        </div>
         <div className=" flex flex-col gap-6">
           <h1 className="flex items-center gap-2 mr-8 ">
             <Circle
@@ -70,7 +80,9 @@ function page() {
             />
             سوالات متداول
           </h1>
-          <FaqRooms />
+          <div id="پرسش‌‌های متداول">
+            <FaqRooms />
+          </div>
         </div>
       </div>
     </div>

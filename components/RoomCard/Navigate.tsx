@@ -79,7 +79,7 @@ export default function NavigateRoomCard() {
   return (
     <header
       className="
-        fixed top-0 z-50
+      
         w-[984px] h-8
         border-b border-white/20
         opacity-100
@@ -88,14 +88,12 @@ export default function NavigateRoomCard() {
       "
     >
       <div className="flex h-full items-center justify-between">
-        {/* Desktop */}
         <nav className="hidden md:flex h-full items-center gap-8">
           {navItems.map((item) => (
             <NavButton key={item.id} name={item.name} id={item.id} />
           ))}
         </nav>
 
-        {/* Mobile menu button */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
           className="md:hidden text-white px-2"

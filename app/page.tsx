@@ -10,6 +10,7 @@ import OffCardSwiper from "@/components/Landing/RoomOffer";
 import Facilities from "@/components/Landing/Facilities";
 import VideoGallery from "@/components/ui/Gallery";
 import HeroBanner from "@/components/Landing/HeroBanner";
+import AboutRahHa from "@/components/About/AboutRahHa";
 
 export default function Page() {
   return (
@@ -32,6 +33,7 @@ export default function Page() {
           <WhySection />
 
           <FAQ />
+          <AboutRahHa />
         </Stack>
       </Container>
     </main>
