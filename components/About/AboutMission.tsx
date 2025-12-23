@@ -1,4 +1,4 @@
-import React from "react";
+"use client";
 import AboutMissionPic from "@/public/AboutMission.png";
 import Image from "next/image";
 
@@ -43,7 +43,8 @@ const AboutMission = () => {
             return (
               <div
                 key={card.id}
-                className="bg-white rounded-lg border border-primaryBorder shadow hover:shadow-md">
+                className="bg-white rounded-lg border border-primaryBorder shadow hover:shadow-md"
+              >
                 <div className="p-6  flex flex-row gap-4 w-[648px] h-26">
                   <span className="text-[#D6A25FCC] text-[45px] ">
                     {card.Adad}
@@ -59,7 +60,12 @@ const AboutMission = () => {
       </div>
       <div>
         <div className="h-[505px] ">
-          <Image src={AboutMissionPic} alt="our mission" height={505} width={670}/>
+          <Image
+            src={AboutMissionPic}
+            alt="our mission"
+            height={505}
+            width={670}
+          />
         </div>
       </div>
     </div>

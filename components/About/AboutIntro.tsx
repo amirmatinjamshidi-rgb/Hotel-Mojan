@@ -1,5 +1,5 @@
+"use client";
 import Image from "next/image";
-
 import IntroCard from "./IntroCard";
 import AboutBanner from "@/public/AboutBanner.png";
 

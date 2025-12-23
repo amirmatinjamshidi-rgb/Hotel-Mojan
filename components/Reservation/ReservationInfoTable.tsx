@@ -17,7 +17,11 @@ type RoomReservation = {
   email: string;
   passengers: Passenger[];
 };
-
+interface roomTableInfo {
+  room: RoomReservation;
+  passenger: Passenger;
+  index: Passenger;
+}
 const roomTableInfo: RoomReservation[] = [
   {
     id: 1,
@@ -150,7 +154,8 @@ const ReservationInfoTable = ({ showButton = true, className ="" }) => {
                         return (
                           <tr
                             key={passenger.id}
-                            className={isEven ? "bg-zebra1" : "bg-zebra2"}>
+                            className={isEven ? "bg-zebra1" : "bg-zebra2"}
+                          >
                             <td className="px-10 py-3.5 border-b border-primaryBorder text-center ">
                               {passenger.ageType}
                             </td>

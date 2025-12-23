@@ -1,4 +1,4 @@
-import React from "react";
+"use client";
 import AboutIntro from "./AboutIntro";
 import AboutMission from "./AboutMission";
 import AboutTeam from "./AboutTeam";
