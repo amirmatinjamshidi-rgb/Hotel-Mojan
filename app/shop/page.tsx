@@ -1,7 +1,7 @@
 import React from "react";
 
-import RoomCard from "./components/RoomCard";
-import NavigateRoomCard from "@/components/RoomCard/Navigate";
+import RoomCard from "../../Features/components/shop/RoomCard";
+import NavigateRoomCard from "@/Features/components/RoomCard/Navigate";
 
 const page = () => {
   return (

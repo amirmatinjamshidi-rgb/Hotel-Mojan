@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
-import Navbar from "@/components/layouts/Navbar";
-import Footer from "@/components/layouts/Footer";
-import MuiProvider from "@/provider/MuiProvider";
+
+import "./globals.css";
+import Navbar from "@/Features/layouts/Navbar";
+import Footer from "@/Features/layouts/Footer";
+import MuiProvider from "@/Features/provider/MuiProvider";
 import ClientLayout from "./clientLayout";
 
 export const metadata: Metadata = {

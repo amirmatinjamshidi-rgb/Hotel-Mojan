@@ -1,4 +1,4 @@
-import ReservationInfoTable from "@/components/Reservation/ReservationInfoTable";
+import ReservationInfoTable from "@/Features/components/Reservation/ReservationInfoTable";
 import ListPagination from "../UserPanel/components/ListPagination";
 
 const page = () => {

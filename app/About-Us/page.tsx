@@ -2,7 +2,7 @@
 import dynamic from "next/dynamic";
 
 const AboutComplete = dynamic(
-  () => import("@/components/About/AboutComplete"),
+  () => import("@/Features/components/About/AboutComplete"),
   { ssr: false }
 );
 
