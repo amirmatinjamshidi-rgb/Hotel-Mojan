@@ -1,4 +1,4 @@
-import React from "react";
+"use client";
 import BenefitCard from "../ui/benefitCard";
 import Button from "../ui/button";
 import Link from "next/link";

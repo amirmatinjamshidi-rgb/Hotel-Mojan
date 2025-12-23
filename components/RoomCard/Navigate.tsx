@@ -1,11 +1,7 @@
-/** @format */
-
 "use client";
 
 import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
 import { useEffect, useState } from "react";
-
-export const runtime = "edge";
 
 const navItems = [
   { name: "امکانات اتاق", id: "امکانات اتاق" },
@@ -19,7 +15,9 @@ export default function NavigateRoomCard() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [currentSection, setCurrentSection] = useState("");
 
+  // Guarded scroll function
   const scrollToSection = (id: string) => {
+    if (typeof window === "undefined") return;
     const el = document.getElementById(id);
     if (el) {
       el.scrollIntoView({ behavior: "smooth" });
@@ -28,6 +26,8 @@ export default function NavigateRoomCard() {
   };
 
   useEffect(() => {
+    if (typeof window === "undefined") return; // SSR guard
+
     const handleScroll = () => {
       for (const item of navItems) {
         const el = document.getElementById(item.id);
@@ -42,51 +42,30 @@ export default function NavigateRoomCard() {
     };
 
     window.addEventListener("scroll", handleScroll);
-    handleScroll();
+    handleScroll(); // initial check
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const NavButton = ({ name, id }: { name: string; id: string }) => {
     const isActive = currentSection === id;
-
     return (
       <button
         onClick={() => scrollToSection(id)}
-        className="
-          relative h-8 px-2
-          text-md font-serif
-          text-black
-          transition-colors duration-300
-        "
+        className="relative h-8 px-2 text-md font-serif text-black transition-colors duration-300"
       >
         {name}
-
         <span
-          className={`
-            absolute left-0 -bottom-px
-            h-0.5 w-full bg-primary
-            origin-center
-            transition-transform
-            duration-400 ease-out
-            ${isActive ? "scale-x-100 opacity-100" : "scale-x-0 opacity-0"}
-          `}
+          className={`absolute left-0 -bottom-px h-0.5 w-full bg-primary origin-center transition-transform duration-400 ease-out ${
+            isActive ? "scale-x-100 opacity-100" : "scale-x-0 opacity-0"
+          }`}
         />
       </button>
     );
   };
 
   return (
-    <header
-      className="
-      
-        w-[984px] h-8
-        border-b border-white/20
-        opacity-100
-        bg-transparent
-        inset-x-0 mx-auto
-      "
-    >
+    <header className="w-[984px] h-8 border-b border-white/20 bg-transparent mx-auto">
       <div className="flex h-full items-center justify-between">
         <nav className="hidden md:flex h-full items-center gap-8">
           {navItems.map((item) => (
@@ -114,13 +93,10 @@ export default function NavigateRoomCard() {
                   className="relative text-right text-base text-gray-300"
                 >
                   {item.name}
-
                   <span
-                    className={`
-                      block mt-2 h-0.5 w-full bg-primary
-                      transition-transform duration-1200 ease-out
-                      ${isActive ? "scale-x-100" : "scale-x-0"}
-                    `}
+                    className={`block mt-2 h-0.5 w-full bg-primary transition-transform duration-1200 ease-out ${
+                      isActive ? "scale-x-100" : "scale-x-0"
+                    }`}
                   />
                 </button>
               );
