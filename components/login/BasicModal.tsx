@@ -55,7 +55,7 @@ export default function BasicModal({ open, onClose }: BasicModalProps) {
                 </Button>
                 <span className="text-textPrimary whitespace-nowrap text-[12px]">
                   با ورود یا ثبت نام
-                  <span className="text-primary">
+                  <span className="text-primary" onClick={onClose}>
                     <Link href="/rules"> شرایط و قوانین </Link>
                   </span>
                   استفاده از سایت را می پذیرم.
