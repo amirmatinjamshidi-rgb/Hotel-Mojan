@@ -4,6 +4,7 @@ import Image from "next/image";
 import Button from "@/components/ui/button";
 import Link from "next/link";
 import { User, Menu, X } from "lucide-react";
+import BasicModal from "../login/BasicModal";
 
 const navItems = [
   { href: "/", label: "خانه" },
@@ -15,6 +16,7 @@ const navItems = [
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect
@@ -41,8 +43,7 @@ function Navbar() {
             <Link
               key={href}
               href={href}
-              className="transition-all duration-300 ease-out hover:text-primary hover:scale-105 text-sm font-medium"
-            >
+              className="transition-all duration-300 ease-out hover:text-primary hover:scale-105 text-sm font-medium">
               {label}
             </Link>
           ))}
@@ -50,20 +51,23 @@ function Navbar() {
 
         <div className="flex items-center gap-4">
           <Button
+            onClick={() => setIsModalOpen(true)}
             color="white"
             border="blue"
             text="blue"
             size="small"
-            className="hidden md:flex rounded-md items-center gap-2 px-4 h-10 border border-primary text-primary"
-          >
+            className="hidden md:flex rounded-md items-center gap-2 px-4 h-10 border border-primary text-primary">
             <User size={20} />
             <span className="text-xs">ورود | ثبت نام</span>
           </Button>
+          <BasicModal
+            open={isModalOpen}
+            onClose={() => setIsModalOpen(false)}
+          />
 
           <button
             className="lg:hidden text-gray-700 p-2"
-            onClick={() => setIsOpen(!isOpen)}
-          >
+            onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
@@ -76,8 +80,7 @@ function Navbar() {
               key={href}
               href={href}
               onClick={() => setIsOpen(false)}
-              className="text-gray-700 font-medium py-2 border-b border-gray-50 last:border-none"
-            >
+              className="text-gray-700 font-medium py-2 border-b border-gray-50 last:border-none">
               {label}
             </Link>
           ))}
