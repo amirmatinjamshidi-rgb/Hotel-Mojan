@@ -1,6 +1,6 @@
 "use client";
 
-import CustomStepper from "./userInfo/components/Stepper";
+import CustomStepper from "../../Features/components/userInfo/Stepper";
 
 export default function BookingLayout({
   children,

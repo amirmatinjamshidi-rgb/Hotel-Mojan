@@ -1,13 +1,13 @@
-import FrequantQuestions from "@/components/RoomCard/FrequantQuestions";
-import RoomAbout from "@/components/RoomCard/RoomAbout";
-import SimilarRooms from "@/components/RoomCard/SimilarRooms";
-import ReservationRulesComponent from "@/components/rules/ReservationRulesComponent";
-import GallerySection from "@/components/RoomCard/GallerySection";
+import FrequantQuestions from "@/Features/components/RoomCard/FrequantQuestions";
+import RoomAbout from "@/Features/components/RoomCard/RoomAbout";
+import SimilarRooms from "@/Features/components/RoomCard/SimilarRooms";
+import ReservationRulesComponent from "@/Features/components/rules/ReservationRulesComponent";
+import GallerySection from "@/Features/components/RoomCard/GallerySection";
 import Typography from "@mui/material/Typography";
 import Breadcrumbs from "@mui/material/Breadcrumbs";
 import Link from "@mui/material/Link";
 import { Circle, Star } from "lucide-react";
-import FaqRooms from "@/components/RoomCard/FaqRooms";
+import FaqRooms from "@/Features/components/RoomCard/FaqRooms";
 import NavigateBeforeOutlinedIcon from "@mui/icons-material/NavigateBeforeOutlined";
 
 function page() {
@@ -17,13 +17,11 @@ function page() {
         <Breadcrumbs
           separator={<NavigateBeforeOutlinedIcon fontSize="small" />}
           aria-label="breadcrumb"
-          className="w-[265px]"
-        >
+          className="w-[265px]">
           <Link
             className="text-textOnText hover:text-primary"
             underline="hover"
-            href="/Home"
-          >
+            href="/Home">
             خانه
           </Link>
           <Link className="hover:text-primary" underline="hover" href="/rules">

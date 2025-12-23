@@ -1,4 +1,4 @@
-import AboutComplete from "@/components/About/AboutComplete";
+import AboutComplete from "@/Features/components/About/AboutComplete";
 
 const page = () => {
   return (

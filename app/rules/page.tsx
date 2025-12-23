@@ -1,5 +1,5 @@
 import React from "react";
-import RulesPart from "@/components/rules/rulesPart";
+import RulesPart from "@/Features/components/rules/rulesPart";
 
 function page() {
   return (
