@@ -1,5 +1,5 @@
-import React from "react";
 "use client";
+import React from "react";
 import BenefitCard from "@/Features/ui/benefitCard";
 import Button from "@/Features/ui/button";
 import Link from "next/link";
@@ -38,8 +38,7 @@ function Facilities() {
               radius="md"
               size="big"
               border="orange"
-              className=" w-3/8 flex lg:self-baseline md:self-center sm:self-center"
-            >
+              className=" w-3/8 flex lg:self-baseline md:self-center sm:self-center">
               مشاهده دیگر امکانات هتل
             </Button>
           </Link>

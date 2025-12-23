@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+
 import "./globals.css";
 import Navbar from "@/Features/layouts/Navbar";
 import Footer from "@/Features/layouts/Footer";
@@ -21,8 +21,7 @@ export default function RootLayout({
       <head>
         <meta name="theme-color" content="#1bb566" />
       </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body>
         <MuiProvider>
           <ClientLayout>
             <Navbar />
