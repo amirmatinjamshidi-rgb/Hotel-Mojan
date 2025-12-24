@@ -74,3 +74,6 @@ body {
 .leaflet-control-zoom {
   display: none;
 }
+.font-vazirmatn {
+  font-family: var(--font-vazirmatn), sans-serif;
+}
