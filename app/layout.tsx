@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Vazirmatn } from "next/font/google";
-
 import "./globals.css";
 import Navbar from "@/Features/layouts/Navbar";
 import Footer from "@/Features/layouts/Footer";
@@ -26,12 +25,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fa" dir="rtl" className={vazirmatn.variable}>
-      {" "}
       <head>
         <meta name="theme-color" content="#1bb566" />
       </head>
       <body className="font-vazirmatn">
-        {" "}
         <MuiProvider>
           <ClientLayout>
             <Navbar />

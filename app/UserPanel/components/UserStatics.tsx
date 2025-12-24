@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { formatFaNumber } from "@/utils/formatNumber";
+import { formatFaNumber } from "@/Features/utils/formatNumber";
 type StaticDetail = {
   id: number;
   name: string;
