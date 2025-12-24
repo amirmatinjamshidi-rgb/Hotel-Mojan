@@ -1,6 +1,6 @@
 import React from "react";
-import CustomSearchInput from "../components/SearchInput";
-import CustomFilterByUser from "../components/CutsomFilterByUser";
+import CustomSearchInput from "@/Features/components/UserPanel/SearchInput";
+import CustomFilterByUser from "@/Features/components/UserPanel/CutsomFilterByUser";
 const item = ["جستجو بر اساس شماره تراکنش"];
 const filterItems = [
   { id: 1, name: "پرداخت موفق" },

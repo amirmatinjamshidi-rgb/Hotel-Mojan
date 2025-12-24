@@ -1,5 +1,5 @@
 "use client";
-import SideBar from "./components/SideBar";
+import SideBar from "../../Features/components/UserPanel/SideBar";
 export default function RootLayout({
   children,
 }: {
