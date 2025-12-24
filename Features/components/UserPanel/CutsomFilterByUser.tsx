@@ -8,6 +8,7 @@ import { CircleX } from "lucide-react";
 export interface FilterItem {
   id: string | number;
   name: string;
+  
 }
 
 interface CustomFilterByUserProps {
@@ -48,9 +49,9 @@ export default function CustomFilterByUser({
                     ? "bg-primaryAccent! text-primaryActive! border-primaryActive hover:bg-primaryAccent!"
                     : "bg-white text-primary border-[#D8E3E7] hover:bg-gray-50 hover:border-blue-300"
                 }
-              `}
-            >
+              `}>
               <span>{cat.name}</span>
+              
               {isActive && (
                 <CircleX
                   size={16}
