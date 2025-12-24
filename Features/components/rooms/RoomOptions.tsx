@@ -22,7 +22,12 @@ const OptionsButton = [
 ];
 
 export default function RoomOptions() {
+  const [selectedId, setSelectedId] = useState<number | null>(null);
   const [expanded, setExpanded] = useState(false);
+
+  const handleClick = (id: number) => {
+    setSelectedId((prev) => (prev === id ? null : id));
+  };
 
   const visibleItems = expanded
     ? OptionsButton
@@ -31,22 +36,29 @@ export default function RoomOptions() {
   return (
     <div className="w-full">
       <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
-        {visibleItems.map((cat) => (
-          <div
-            key={cat.id}
-            className="
-              flex flex-col items-center justify-center
-              gap-2
-              py-2 px-3
-              rounded-lg
-              border
-              text-sm
-            "
-          >
-            <Image src={cat.icon} alt={cat.name} width={20} height={20} />
-            <span>{cat.name}</span>
-          </div>
-        ))}
+        {visibleItems.map((cat) => {
+          const isActive = selectedId === cat.id;
+
+          return (
+            <div
+              key={cat.id}
+              onClick={() => handleClick(cat.id)}
+              className={`
+                flex flex-col items-center justify-center
+                gap-2 py-2 px-3 rounded-lg border text-sm cursor-pointer
+                transition-colors
+                ${
+                  isActive
+                    ? "bg-primaryAccent! text-primaryActive! border-primaryActive hover:bg-primaryAccent!"
+                    : "bg-white text-primary border-gray-200 hover:bg-gray-50"
+                }
+              `}
+            >
+              <Image src={cat.icon} alt={cat.name} width={20} height={20} />
+              <span>{cat.name}</span>
+            </div>
+          );
+        })}
       </div>
 
       <button

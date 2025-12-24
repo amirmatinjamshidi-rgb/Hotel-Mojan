@@ -9,9 +9,9 @@ import Link from "@mui/material/Link";
 import { Circle, Star } from "lucide-react";
 import FaqRooms from "@/Features/components/RoomCard/FaqRooms";
 import NavigateBeforeOutlinedIcon from "@mui/icons-material/NavigateBeforeOutlined";
-import { formatFaNumber } from "@/utils/formatNumber";
-import { formatPrice } from "@/utils/price";
-import NavigateRoomCard from "@/components/RoomCard/Navigate";
+import { formatFaNumber } from "@/Features/utils/formatNumber";
+import { formatPrice } from "@/Features/utils/price";
+import NavigateRoomCard from "@/Features/components/RoomCard/Navigate";
 function page() {
   return (
     <div className="">
@@ -19,11 +19,13 @@ function page() {
         <Breadcrumbs
           separator={<NavigateBeforeOutlinedIcon fontSize="small" />}
           aria-label="breadcrumb"
-          className="w-[265px]">
+          className="w-[265px]"
+        >
           <Link
             className="text-textOnText hover:text-primary"
             underline="hover"
-            href="/Home">
+            href="/Home"
+          >
             خانه
           </Link>
           <Link className="hover:text-primary" underline="hover" href="/rules">

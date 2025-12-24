@@ -11,7 +11,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-import Button from "@/components/ui/button";
+import Button from "@/Features/ui/button";
 
 type sidebarProps = {
   id: number;
@@ -24,13 +24,13 @@ const sidebarProps = [
   {
     id: 1,
     name: "داشبورد",
-    route: "/UserPanel/Dashboard",
+    route: "/UserPanel",
     icon: <LayoutGrid />,
   },
   {
     id: 2,
     name: "رزروها",
-    route: "/UserPanel/Reservation",
+    route: "/UserPanel/Reservations",
     icon: <CalendarDays />,
   },
   { id: 3, name: "رستوران", route: "/UserPanel/Resturant", icon: <Mail /> },
@@ -43,14 +43,14 @@ const sidebarProps = [
   {
     id: 5,
     name: "امتیازات و نظرات",
-    route: "/UserPanel/Scores",
+    route: "/UserPanel/MassagesAndPoints",
     icon: <MessageSquare />,
   },
   { id: 6, name: "پیام‌ها", route: "/UserPanel/Massages", icon: <Mail /> },
   {
     id: 7,
     name: "حساب کاربری",
-    route: "/UserPanel/AccountInfo",
+    route: "/UserPanel/UserAccount",
     icon: <UserRound />,
   },
 ];

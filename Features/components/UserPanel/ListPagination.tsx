@@ -5,7 +5,7 @@ import PaginationItem from "@mui/material/PaginationItem";
 import Stack from "@mui/material/Stack";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-import { formatFaNumber } from "@/utils/formatNumber";
+import { formatFaNumber } from "@/Features/utils/formatNumber";
 
 export default function ListPagination() {
   return (

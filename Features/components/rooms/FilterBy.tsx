@@ -19,11 +19,11 @@ function FilterBy() {
   };
 
   return (
-    <div className="w-full">
-      <h4 className="font-sans mb-3 text-sm font-bold text-primary">
-        مرتب سازی:
-      </h4>
-      <div className="flex flex-wrap gap-2">
+    <div className="w-full flex justify-center">
+      <div className="flex flex-wrap gap-2 justify-center">
+        <h4 className="font-sans mb-3 text-sm font-bold text-black mt-3">
+          مرتب سازی:
+        </h4>
         {filterItems.map((cat) => {
           const isActive = selectedId === cat.id;
 
@@ -34,7 +34,7 @@ function FilterBy() {
               onClick={() => handleClick(cat.id)}
               className={`
     flex items-center gap-2 px-4 py-2 text-sm transition-colors
-    border-2 border-solid
+   border-solid border allBorder
     ${
       isActive
         ? "bg-primaryAccent! text-primaryActive! border-primaryActive hover:bg-primaryAccent!"

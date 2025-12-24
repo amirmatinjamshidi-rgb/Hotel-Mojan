@@ -10,11 +10,15 @@ function Filterbox() {
     <div
       dir="rtl"
       className="
-        flex flex-col gap-4
-        w-full
-        lg:w-[32%]
+      
+        flex flex-col justify-start gap-4
+h-fit
+        lg:w-[30%]
         max-w-full
         border
+        rounded-lg
+        allBorder
+        
         px-4 py-3
       "
     >
