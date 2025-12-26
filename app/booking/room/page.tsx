@@ -12,6 +12,38 @@ import NavigateBeforeOutlinedIcon from "@mui/icons-material/NavigateBeforeOutlin
 import { formatFaNumber } from "@/Features/utils/formatNumber";
 import { formatPrice } from "@/Features/utils/price";
 import NavigateRoomCard from "@/Features/components/RoomCard/Navigate";
+const items = [
+  {
+    id: 1,
+    head: "کنسلی و تغییر رزرو",
+    rules: [
+      "لغو رزرو تا ۴۸ ساعت قبل از تاریخ ورود، بدون جریمه انجام می‌شود.",
+      "در صورت لغو کمتر از ۴۸ ساعت مانده به ورود، مبلغ یک شب اقامت کسر خواهد شد.",
+    ],
+  },
+  {
+    id: 2,
+    head: "ظرفیت اتاق",
+    rules: [
+      "هر اتاق برای تعداد مشخصی از مهمانان طراحی شده است. اقامت نفرات اضافه فقط با هماهنگی قبلی و پرداخت هزینه‌ی مربوط امکان‌پذیر است.",
+    ],
+  },
+  {
+    id: 3,
+    head: "خسارت به اموال هتل",
+    rules: [
+      "در صورت وارد شدن خسارت به اموال یا تجهیزات اتاق، هزینه‌ی تعمیر یا جایگزینی بر عهده‌ی مهمان خواهد بود.",
+    ],
+  },
+  {
+    id: 4,
+    head: "امنیت و مسئولیت‌ها",
+    rules: [
+      "لطفاً هنگام خروج از اتاق، درب را قفل کرده و کارت کلید را همراه خود داشته باشید.",
+      "استفاده از وسایل برقی پرمصرف مانند اتو یا اجاق در اتاق مجاز نیست.",
+    ],
+  },
+];
 function page() {
   return (
     <div className="">
@@ -55,7 +87,7 @@ function page() {
           <span>{formatPrice(250000000)} برای هر شب</span>
         </div>
       </div>
-      <div className="flex justify-between flex-col gap-16 align-middle p-16">
+      <div className="flex  flex-col gap-16 align-middle p-16">
         <GallerySection />
         <NavigateRoomCard />
         <div id="امکانات اتاق">
@@ -66,10 +98,9 @@ function page() {
           <RoomAbout />
         </div>
         <div id="قوانین و مقررات">
-          <ReservationRulesComponent />
+          <ReservationRulesComponent items={items} />;
         </div>
         <div id="اتاق‌‌های مشابه">
-          {" "}
           <SimilarRooms />
         </div>
         <div className=" flex flex-col gap-6">

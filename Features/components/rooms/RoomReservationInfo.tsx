@@ -2,7 +2,6 @@ import React from "react";
 import Link from "next/link";
 import { Divider } from "@mui/material";
 import { formatPrice } from "@/Features/utils/price";
-import Button from "@/Features/ui/button";
 function RoomReservationInfo() {
   return (
     <div
@@ -10,14 +9,14 @@ function RoomReservationInfo() {
       className="
         flex flex-col gap-4
         w-full
-        lg:w-[32%]
-        max-w-full
+        max-w-[303px]
         border
         px-4 py-3
         rounded-2xl
         allBorder
         sticky
-      ">
+      "
+    >
       <h3 className="font-bold">جزییات خرید</h3>
 
       <div>
@@ -55,7 +54,8 @@ function RoomReservationInfo() {
 
       <Link
         href=""
-        className="bg-secondary hover:bg-secondaryHover active:bg-secondaryActive rounded-xl w-full  h-12 flex  items-center justify-center text-2xl">
+        className="bg-secondary hover:bg-secondaryHover active:bg-secondaryActive rounded-xl w-full  h-12 flex  items-center justify-center text-2xl"
+      >
         تایید و ادامه
       </Link>
     </div>

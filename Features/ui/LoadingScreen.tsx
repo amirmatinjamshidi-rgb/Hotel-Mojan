@@ -20,7 +20,7 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ isExiting }) => {
 
   return (
     <div
-      className={`fixed inset-0 z-9999 flex items-center justify-center bg-white transition-opacity duration-700 ease-in-out ${
+      className={`fixed inset-0 z-9999 flex items-center justify-center bg-white transition-opacity duration-500 ease-in-out ${
         isExiting ? "opacity-0 pointer-events-none" : "opacity-100"
       }`}
     >

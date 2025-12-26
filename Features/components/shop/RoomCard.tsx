@@ -10,6 +10,7 @@ const RoomCard = () => {
     <div
       className="
         w-full
+        max-w-[984px]
         border border-primaryBorder
         hover:shadow-md
         rounded-lg
