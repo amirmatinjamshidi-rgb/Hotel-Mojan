@@ -1,17 +1,34 @@
-import FrequantQuestions from "@/Features/components/RoomCard/FrequantQuestions";
-import RoomAbout from "@/Features/components/RoomCard/RoomAbout";
-import SimilarRooms from "@/Features/components/RoomCard/SimilarRooms";
-import ReservationRulesComponent from "@/Features/components/rules/ReservationRulesComponent";
-import GallerySection from "@/Features/components/RoomCard/GallerySection";
+import dynamic from "next/dynamic";
 import Typography from "@mui/material/Typography";
 import Breadcrumbs from "@mui/material/Breadcrumbs";
 import Link from "@mui/material/Link";
 import { Circle, Star } from "lucide-react";
-import FaqRooms from "@/Features/components/RoomCard/FaqRooms";
 import NavigateBeforeOutlinedIcon from "@mui/icons-material/NavigateBeforeOutlined";
 import { formatFaNumber } from "@/Features/utils/formatNumber";
 import { formatPrice } from "@/Features/utils/price";
-import NavigateRoomCard from "@/Features/components/RoomCard/Navigate";
+
+const FrequantQuestions = dynamic(
+  () => import("@/Features/components/RoomCard/FrequantQuestions")
+);
+const RoomAbout = dynamic(
+  () => import("@/Features/components/RoomCard/RoomAbout")
+);
+const SimilarRooms = dynamic(
+  () => import("@/Features/components/RoomCard/SimilarRooms")
+);
+const ReservationRulesComponent = dynamic(
+  () => import("@/Features/components/rules/ReservationRulesComponent")
+);
+const GallerySection = dynamic(
+  () => import("@/Features/components/RoomCard/GallerySection")
+);
+const NavigateRoomCard = dynamic(
+  () => import("@/Features/components/RoomCard/Navigate")
+);
+const FaqRooms = dynamic(
+  () => import("@/Features/components/RoomCard/FaqRooms")
+);
+
 const items = [
   {
     id: 1,
@@ -47,7 +64,7 @@ const items = [
 function page() {
   return (
     <div className="">
-      <div className="p-16 w-[265px]" role="presentation">
+      <div className="p-16 max-w-[265px] mx-auto" role="presentation">
         <Breadcrumbs
           separator={<NavigateBeforeOutlinedIcon fontSize="small" />}
           aria-label="breadcrumb"

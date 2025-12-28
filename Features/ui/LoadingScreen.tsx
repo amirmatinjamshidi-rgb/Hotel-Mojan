@@ -1,6 +1,16 @@
+/* eslint-disable react-hooks/set-state-in-effect */
 "use client";
+
 import React, { useEffect, useState } from "react";
-import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+import dynamic from "next/dynamic";
+
+const DotLottieReact = dynamic(
+  () =>
+    import("@lottiefiles/dotlottie-react").then((mod) => mod.DotLottieReact),
+  {
+    ssr: false,
+  }
+);
 
 interface LoadingScreenProps {
   isExiting: boolean;
@@ -10,13 +20,10 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ isExiting }) => {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
   }, []);
 
-  if (!mounted) {
-    return null;
-  }
+  if (!mounted) return null;
 
   return (
     <div

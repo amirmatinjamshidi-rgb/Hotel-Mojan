@@ -1,13 +1,33 @@
 import React from "react";
-import MosaferInfoVoucher from "../components/MosaferInfoVoucher";
-import ReservationInfoVoucher from "../components/ReservationInfoVoucher";
-import VoucherMaliInfo from "../components/VoucherMaliInfo";
-import ReservationInfoTable from "@/components/Reservation/ReservationInfoTable";
-
-import VoucherRules from "../components/VoucherRules";
-import VoucherHeader from "../components/VoucherHeader";
-import VoucherFooter from "../components/VoucherFooter";
-
+import dynamic from "next/dynamic";
+const MosaferInfoVoucher = dynamic(
+  () => import("@/Features/components/Voucher/MosaferInfoVoucher"),
+  {}
+);
+const ReservationInfoVoucher = dynamic(
+  () => import("@/Features/components/Voucher/ReservationInfoVoucher"),
+  {}
+);
+const VoucherMaliInfo = dynamic(
+  () => import("@/Features/components/Voucher/VoucherMaliInfo"),
+  {}
+);
+const ReservationInfoTable = dynamic(
+  () => import("@/Features/components/Reservation/ReservationInfoTable"),
+  {}
+);
+const VoucherFooter = dynamic(
+  () => import("@/Features/components/Voucher/VoucherFooter"),
+  {}
+);
+const VoucherHeader = dynamic(
+  () => import("@/Features/components/Voucher/VoucherHeader"),
+  {}
+);
+const VoucherRules = dynamic(
+  () => import("@/Features/components/Voucher/VoucherRules"),
+  {}
+);
 function page() {
   return (
     <div className="px-10 pt-10 flex flex-col gap-8">

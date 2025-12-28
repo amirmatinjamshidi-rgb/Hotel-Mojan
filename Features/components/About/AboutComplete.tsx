@@ -1,11 +1,16 @@
 "use client";
-import AboutIntro from "./AboutIntro";
-import AboutMission from "./AboutMission";
-import AboutTeam from "./AboutTeam";
-import AboutOptions from "./AboutOptions";
-import AboutRahHa from "./AboutRahHa";
-import AboutQuickContact from "./AboutQuickContact";
-import FAQ from "../Landing/FAQ";
+
+import dynamic from "next/dynamic";
+
+const AboutIntro = dynamic(() => import("./AboutIntro"), { ssr: false });
+const AboutMission = dynamic(() => import("./AboutMission"), { ssr: false });
+const AboutTeam = dynamic(() => import("./AboutTeam"), { ssr: false });
+const AboutOptions = dynamic(() => import("./AboutOptions"), { ssr: false });
+const AboutRahHa = dynamic(() => import("./AboutRahHa"), { ssr: false });
+const AboutQuickContact = dynamic(() => import("./AboutQuickContact"), {
+  ssr: false,
+});
+const FAQ = dynamic(() => import("../Landing/FAQ"), { ssr: false });
 
 const AboutComplete = () => {
   return (

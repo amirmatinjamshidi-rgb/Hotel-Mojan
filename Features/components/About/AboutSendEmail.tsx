@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "@/Features/ui/button";
-import { TextField, Typography } from "@mui/material";
+import { TextField } from "@mui/material";
+import { Typography } from "@mui/material";
 import { UserRound } from "lucide-react";
 
 const AboutSendEmail = () => {

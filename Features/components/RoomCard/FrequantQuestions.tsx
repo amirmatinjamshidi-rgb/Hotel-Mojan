@@ -1,7 +1,10 @@
 "use client";
 import { Circle } from "lucide-react";
-import FacilitiesDatailComponent from "./FacilitiesDatailComponent";
-
+import dynamic from "next/dynamic";
+const FacilitiesDatailComponent = dynamic(
+  () => import("./FacilitiesDatailComponent"),
+  { ssr: false }
+);
 const serviceItems = [
   { icon: "/DetailComponent.png", title: "وای فای" },
   { icon: "/DetailComponent.png", title: "فضای کار" },

@@ -2,7 +2,7 @@
 
 import Divider from "@mui/material/Divider";
 import Image from "next/image";
-import RatingStars from "../smallThings/RatingStars";
+import RatingStars from "../components/smallThings/RatingStars";
 
 function CommentCard() {
   const rating = 4;

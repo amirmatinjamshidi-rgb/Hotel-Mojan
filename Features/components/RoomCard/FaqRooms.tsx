@@ -1,5 +1,9 @@
 import React from "react";
-import MiniAccordionList from "@/Features/ui/miniAccordation";
+import dynamic from "next/dynamic";
+const MiniAccordionList = dynamic(
+  () => import("@/Features/ui/miniAccordation"),
+  { ssr: false }
+);
 const MiniAccordion = [
   {
     question: "چگونه می‌توانم اتاق رزرو کنم؟",

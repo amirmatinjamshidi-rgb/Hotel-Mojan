@@ -1,7 +1,9 @@
 "use client";
 import { Circle } from "lucide-react";
-import OffCard from "@/Features/components/shop/OffCard";
-
+import dynamic from "next/dynamic";
+const OffCard = dynamic(() => import("@/Features/components/shop/OffCard"), {
+  ssr: false,
+});
 const offCardItems = [
   {
     image: "/Dummy.jpg",

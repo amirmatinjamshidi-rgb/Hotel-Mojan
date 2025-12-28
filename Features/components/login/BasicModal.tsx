@@ -5,7 +5,8 @@ import Modal from "@mui/material/Modal";
 import { CircleX } from "lucide-react";
 import Image from "next/image";
 import Logo from "@/public/circularLogo.png";
-import { Divider, TextField } from "@mui/material";
+import { Divider } from "@mui/material";
+import { TextField } from "@mui/material";
 import Link from "next/link";
 import Button from "@/Features/ui/button";
 
@@ -48,9 +49,7 @@ export default function BasicModal({ open, onClose }: BasicModalProps) {
                 />
               </div>
               <div className="w-full flex flex-col items-center gap-7">
-                <Button
-                  
-                  className="py-3.5 px-20 w-full bg-secondary active:bg-secondaryActive hover:bg-secondaryHover rounded-lg">
+                <Button className="py-3.5 px-20 w-full bg-secondary active:bg-secondaryActive hover:bg-secondaryHover rounded-lg">
                   ورود
                 </Button>
                 <span className="text-textPrimary whitespace-nowrap text-[12px]">
@@ -66,7 +65,8 @@ export default function BasicModal({ open, onClose }: BasicModalProps) {
                 <Button
                   text="orange"
                   border="orange"
-                  className="py-3.5 px-20 w-full bg-white hover:bg-gray-100 border-secondary rounded-lg">
+                  className="py-3.5 px-20 w-full bg-white hover:bg-gray-100 border-secondary rounded-lg"
+                >
                   ورود با حساب گوگل
                 </Button>
               </div>

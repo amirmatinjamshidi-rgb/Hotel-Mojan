@@ -1,12 +1,12 @@
 "use client";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Play, Pause, Circle } from "lucide-react";
 
 export default function VideoGallery() {
   const videos = ["/v1.mp4", "/v2.mp4", "/v3.mp4", "/v4.mp4", "/v5.mp4"];
-
   const [mainVideo, setMainVideo] = useState(videos[0]);
   const [isPlaying, setIsPlaying] = useState(true);
+  const [isLoaded, setIsLoaded] = useState(false);
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
   const previews = videos.filter((v) => v !== mainVideo);
@@ -14,9 +14,7 @@ export default function VideoGallery() {
   const handleSwap = (video: string) => {
     setMainVideo(video);
     setIsPlaying(true);
-    setTimeout(() => {
-      videoRef.current?.play();
-    }, 100);
+    setIsLoaded(false);
   };
 
   const togglePlay = () => {
@@ -25,6 +23,19 @@ export default function VideoGallery() {
     else videoRef.current.play();
     setIsPlaying(!isPlaying);
   };
+
+  useEffect(() => {
+    if (!videoRef.current) return;
+    const videoEl = videoRef.current;
+
+    const handleCanPlay = () => {
+      setIsLoaded(true);
+      videoEl.play().catch(() => {});
+    };
+
+    videoEl.addEventListener("canplaythrough", handleCanPlay);
+    return () => videoEl.removeEventListener("canplaythrough", handleCanPlay);
+  }, [mainVideo]);
 
   return (
     <div className="w-full max-w-[1320px] mx-auto flex flex-col gap-4 px-4 lg:px-0">
@@ -44,52 +55,33 @@ export default function VideoGallery() {
             <div
               key={video}
               onClick={() => handleSwap(video)}
-              className="
-                shrink-0
-                w-40 sm:w-[200px]
-                h-[100px] sm:h-[120px]
-                rounded-lg
-                overflow-hidden
-                cursor-pointer
-                shadow-md
-                hover:scale-[1.03]
-                transition
-                duration-200
-              "
+              className="shrink-0 w-40 sm:w-[200px] h-[100px] sm:h-[120px] rounded-lg overflow-hidden cursor-pointer shadow-md hover:scale-[1.03] transition duration-200"
             >
               <video
                 src={video}
+                muted
+                preload="metadata"
                 className="w-full h-full object-cover pointer-events-none"
               />
             </div>
           ))}
         </div>
 
-        <div
-          className="
-    relative
-    grow
-    lg:w-[1080px]
-    h-[300px] sm:h-[450px] lg:h-[576px]
-    rounded-2xl
-    overflow-hidden
-    bg-black
-  "
-        >
+        <div className="relative grow lg:w-[1080px] h-[300px] sm:h-[450px] lg:h-[576px] rounded-2xl overflow-hidden bg-black">
           <video
             key={mainVideo}
             ref={videoRef}
             src={mainVideo}
             autoPlay
-            className="w-full h-full object-cover opacity-0 animate-fadeIn"
-            style={{ animationFillMode: "forwards" }}
+            muted
+            preload="metadata"
+            className={`w-full h-full object-cover transition-opacity duration-500 ${
+              isLoaded ? "opacity-100" : "opacity-0"
+            }`}
           />
 
-          {/* Double Layer Centered Play/Pause Button */}
           <div className="absolute inset-0 flex items-center justify-center">
-            {/* Outer Blur Layer */}
             <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-full bg-white/20 backdrop-blur-2xl flex items-center justify-center">
-              {/* Inner White Button */}
               <button
                 onClick={togglePlay}
                 className="bg-white w-14 h-14 sm:w-20 sm:h-20 rounded-full flex items-center justify-center cursor-pointer transition-transform active:scale-90 shadow-lg"

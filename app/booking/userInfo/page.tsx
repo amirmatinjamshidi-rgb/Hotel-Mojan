@@ -1,11 +1,27 @@
+import dynamic from "next/dynamic";
 import Link from "next/link";
-import Interance from "@/Features/components/userInfo/interance";
+
+const Interance = dynamic(
+  () => import("@/Features/components/userInfo/interance")
+);
+const AdultFirst = dynamic(
+  () => import("../../../Features/components/userInfo/AdultFirst")
+);
+const AdultSec = dynamic(
+  () => import("../../../Features/components/userInfo/AdultSec")
+);
+const Child = dynamic(
+  () => import("../../../Features/components/userInfo/Child")
+);
+const RoomReservationInfo = dynamic(
+  () => import("@/Features/components/rooms/RoomReservationInfo")
+);
+const RoomCard = dynamic(
+  () => import("@/Features/components/shop/RoomCard"),
+  {}
+);
+
 import { Circle } from "lucide-react";
-import AdultFirst from "../../../Features/components/userInfo/AdultFirst";
-import AdultSec from "../../../Features/components/userInfo/AdultSec";
-import Child from "../../../Features/components/userInfo/Child";
-import RoomReservationInfo from "../../../Features/components/rooms/RoomReservationInfo";
-import RoomCard from "@/Features/components/shop/RoomCard";
 function page() {
   return (
     <main className="w-full max-w-[1320px] mx-auto px-4" dir="rtl">
