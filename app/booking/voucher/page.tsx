@@ -1,12 +1,27 @@
+import dynamic from "next/dynamic";
 import React from "react";
-import MosaferInfoVoucher from "../../../Features/components/Voucher/MosaferInfoVoucher";
-import ReservationInfoVoucher from "../../../Features/components/Voucher/ReservationInfoVoucher";
-import VoucherMaliInfo from "../../../Features/components/Voucher/VoucherMaliInfo";
-import ReservationInfoTable from "@/Features/components/Reservation/ReservationInfoTable";
 
-import VoucherRules from "../../../Features/components/Voucher/VoucherRules";
-import VoucherHeader from "../../../Features/components/Voucher/VoucherHeader";
-import VoucherFooter from "../../../Features/components/Voucher/VoucherFooter";
+const MosaferInfoVoucher = dynamic(
+  () => import("../../../Features/components/Voucher/MosaferInfoVoucher")
+);
+const ReservationInfoVoucher = dynamic(
+  () => import("../../../Features/components/Voucher/ReservationInfoVoucher")
+);
+const VoucherMaliInfo = dynamic(
+  () => import("../../../Features/components/Voucher/VoucherMaliInfo")
+);
+const ReservationInfoTable = dynamic(
+  () => import("@/Features/components/Reservation/ReservationInfoTable")
+);
+const VoucherRules = dynamic(
+  () => import("../../../Features/components/Voucher/VoucherRules")
+);
+const VoucherHeader = dynamic(
+  () => import("../../../Features/components/Voucher/VoucherHeader")
+);
+const VoucherFooter = dynamic(
+  () => import("../../../Features/components/Voucher/VoucherFooter")
+);
 
 function page() {
   return (

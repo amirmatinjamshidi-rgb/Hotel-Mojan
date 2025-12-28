@@ -1,8 +1,9 @@
 "use client";
 import { Circle } from "lucide-react";
-
-import OffCard from "@/Features/components/shop/OffCard";
-
+import dynamic from "next/dynamic";
+const OffCard = dynamic(() => import("@/Features/components/shop/OffCard"), {
+  ssr: false,
+});
 const offCardItems = [
   {
     image: "/Dummy.jpg",
@@ -32,23 +33,19 @@ const offCardItems = [
 
 function SimilarRooms() {
   return (
-    <div className="w-[1320px] flex flex-col">
-      <div className="h-10 flex justify-between items-center">
-        <h1 className="flex items-center gap-2">
-          <Circle
-            className="stroke-secondary bg-secondary rounded-full"
-            size={15}
-          />
-          اتاق‌های مشابه هتل موجان
-        </h1>
-      </div>
+    <div className="w-full max-w-[1320px] mx-auto">
+      <h1 className="flex items-center gap-2 mb-6">
+        <Circle
+          className="stroke-secondary bg-secondary rounded-full"
+          size={15}
+        />
+        اتاق‌های مشابه هتل موجان
+      </h1>
 
-      <div className="h-[570px] flex justify-between mt-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {offCardItems.map((item, index) => (
           <OffCard key={index} item={item} />
         ))}
-
-        <div className="paginationItems -mt-4 flex justify-center gap-4 mb-12"></div>
       </div>
     </div>
   );

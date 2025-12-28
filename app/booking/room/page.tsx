@@ -1,21 +1,70 @@
-import FrequantQuestions from "@/Features/components/RoomCard/FrequantQuestions";
-import RoomAbout from "@/Features/components/RoomCard/RoomAbout";
-import SimilarRooms from "@/Features/components/RoomCard/SimilarRooms";
-import ReservationRulesComponent from "@/Features/components/rules/ReservationRulesComponent";
-import GallerySection from "@/Features/components/RoomCard/GallerySection";
+import dynamic from "next/dynamic";
 import Typography from "@mui/material/Typography";
 import Breadcrumbs from "@mui/material/Breadcrumbs";
 import Link from "@mui/material/Link";
 import { Circle, Star } from "lucide-react";
-import FaqRooms from "@/Features/components/RoomCard/FaqRooms";
 import NavigateBeforeOutlinedIcon from "@mui/icons-material/NavigateBeforeOutlined";
 import { formatFaNumber } from "@/Features/utils/formatNumber";
 import { formatPrice } from "@/Features/utils/price";
-import NavigateRoomCard from "@/Features/components/RoomCard/Navigate";
+
+const FrequantQuestions = dynamic(
+  () => import("@/Features/components/RoomCard/FrequantQuestions")
+);
+const RoomAbout = dynamic(
+  () => import("@/Features/components/RoomCard/RoomAbout")
+);
+const SimilarRooms = dynamic(
+  () => import("@/Features/components/RoomCard/SimilarRooms")
+);
+const ReservationRulesComponent = dynamic(
+  () => import("@/Features/components/rules/ReservationRulesComponent")
+);
+const GallerySection = dynamic(
+  () => import("@/Features/components/RoomCard/GallerySection")
+);
+const NavigateRoomCard = dynamic(
+  () => import("@/Features/components/RoomCard/Navigate")
+);
+const FaqRooms = dynamic(
+  () => import("@/Features/components/RoomCard/FaqRooms")
+);
+
+const items = [
+  {
+    id: 1,
+    head: "کنسلی و تغییر رزرو",
+    rules: [
+      "لغو رزرو تا ۴۸ ساعت قبل از تاریخ ورود، بدون جریمه انجام می‌شود.",
+      "در صورت لغو کمتر از ۴۸ ساعت مانده به ورود، مبلغ یک شب اقامت کسر خواهد شد.",
+    ],
+  },
+  {
+    id: 2,
+    head: "ظرفیت اتاق",
+    rules: [
+      "هر اتاق برای تعداد مشخصی از مهمانان طراحی شده است. اقامت نفرات اضافه فقط با هماهنگی قبلی و پرداخت هزینه‌ی مربوط امکان‌پذیر است.",
+    ],
+  },
+  {
+    id: 3,
+    head: "خسارت به اموال هتل",
+    rules: [
+      "در صورت وارد شدن خسارت به اموال یا تجهیزات اتاق، هزینه‌ی تعمیر یا جایگزینی بر عهده‌ی مهمان خواهد بود.",
+    ],
+  },
+  {
+    id: 4,
+    head: "امنیت و مسئولیت‌ها",
+    rules: [
+      "لطفاً هنگام خروج از اتاق، درب را قفل کرده و کارت کلید را همراه خود داشته باشید.",
+      "استفاده از وسایل برقی پرمصرف مانند اتو یا اجاق در اتاق مجاز نیست.",
+    ],
+  },
+];
 function page() {
   return (
     <div className="">
-      <div className="p-16 w-[265px]" role="presentation">
+      <div className="p-16 max-w-[265px] mx-auto" role="presentation">
         <Breadcrumbs
           separator={<NavigateBeforeOutlinedIcon fontSize="small" />}
           aria-label="breadcrumb"
@@ -55,7 +104,7 @@ function page() {
           <span>{formatPrice(250000000)} برای هر شب</span>
         </div>
       </div>
-      <div className="flex justify-between flex-col gap-16 align-middle p-16">
+      <div className="flex  flex-col gap-16 align-middle p-16">
         <GallerySection />
         <NavigateRoomCard />
         <div id="امکانات اتاق">
@@ -66,10 +115,9 @@ function page() {
           <RoomAbout />
         </div>
         <div id="قوانین و مقررات">
-          <ReservationRulesComponent />
+          <ReservationRulesComponent items={items} />;
         </div>
         <div id="اتاق‌‌های مشابه">
-          {" "}
           <SimilarRooms />
         </div>
         <div className=" flex flex-col gap-6">

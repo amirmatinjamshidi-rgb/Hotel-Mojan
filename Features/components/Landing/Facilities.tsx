@@ -1,8 +1,11 @@
 "use client";
 import React from "react";
-import BenefitCard from "@/Features/ui/benefitCard";
+const BenefitCard = dynamic(() => import("@/Features/ui/benefitCard"), {
+  ssr: false,
+});
 import Button from "@/Features/ui/button";
 import Link from "next/link";
+import dynamic from "next/dynamic";
 
 const BenefitCardItems = [
   { icon: "/wifi.png", title: "اینترنت رایگان" },
@@ -38,7 +41,8 @@ function Facilities() {
               radius="md"
               size="big"
               border="orange"
-              className=" w-3/8 flex lg:self-baseline md:self-center sm:self-center">
+              className=" w-3/8 flex lg:self-baseline md:self-center sm:self-center"
+            >
               مشاهده دیگر امکانات هتل
             </Button>
           </Link>

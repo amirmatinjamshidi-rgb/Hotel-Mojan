@@ -27,15 +27,13 @@ function PriceInput({ label, value, onChange }: any) {
           fontSize: 14,
         },
       }}
-      InputProps={{
-        endAdornment: (
-          <InputAdornment position="end" sx={{ fontSize: 12 }}>
-            {label}
-          </InputAdornment>
-        ),
-        inputProps: {
-          textAlign: "left",
-          direction: "ltr",
+      slotProps={{
+        input: {
+          endAdornment: (
+            <InputAdornment position="end" sx={{ fontSize: 12 }}>
+              {label}
+            </InputAdornment>
+          ),
         },
       }}
     />

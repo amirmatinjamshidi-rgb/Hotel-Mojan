@@ -1,7 +1,8 @@
 "use client";
+import dynamic from "next/dynamic";
 import Image from "next/image";
-import IntroCard from "./IntroCard";
 import AboutBanner from "@/public/AboutBanner.png";
+const IntroCard = dynamic(() => import("./IntroCard"), { ssr: false });
 
 const AboutIntro = () => {
   return (
