@@ -1,6 +1,10 @@
 "use client";
 import { useState, useEffect } from "react";
-import LoadingScreen from "@/Features/ui/LoadingScreen";
+import dynamic from "next/dynamic";
+
+const LoadingScreen = dynamic(() => import("@/Features/ui/LoadingScreen"), {
+  ssr: false,
+});
 
 export default function ClientLayout({
   children,

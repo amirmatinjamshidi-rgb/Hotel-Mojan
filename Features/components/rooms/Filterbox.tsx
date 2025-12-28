@@ -1,9 +1,11 @@
+"use client";
+import dynamic from "next/dynamic";
 import React from "react";
-import PriceRange from "./price";
-import StarClass from "./StarClass";
-import RoomItems from "./RoomItems";
 import { Divider } from "@mui/material";
-import RoomOptions from "./RoomOptions";
+const PriceRange = dynamic(() => import("./price"), { ssr: false });
+const StarClass = dynamic(() => import("./StarClass"), { ssr: false });
+const RoomItems = dynamic(() => import("./RoomItems"), { ssr: false });
+const RoomOptions = dynamic(() => import("./RoomOptions"), { ssr: false });
 
 function Filterbox() {
   return (

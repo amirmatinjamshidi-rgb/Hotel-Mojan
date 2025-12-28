@@ -1,5 +1,9 @@
 import React from "react";
-import RulesPart from "@/Features/components/rules/rulesPart";
+import dynamic from "next/dynamic";
+
+const RulesPart = dynamic(
+  () => import("@/Features/components/rules/rulesPart")
+);
 
 function page() {
   return (

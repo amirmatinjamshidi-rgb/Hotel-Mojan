@@ -22,7 +22,7 @@ export default function MiniAccordionList({ items }: AccordionListProps) {
       {items.map((item, i) => (
         <div
           key={i}
-          className="rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-white/50 bg-white/30 backdrop-blur-sm overflow-hidden"
+          className="rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-textOnText bg-textOnText backdrop-blur-sm overflow-hidden"
         >
           <Accordion
             elevation={0}
@@ -30,7 +30,7 @@ export default function MiniAccordionList({ items }: AccordionListProps) {
             className="bg-transparent! shadow-none! border-none!"
           >
             <AccordionSummary
-              expandIcon={<ExpandMoreIcon className="text-primary" />}
+              expandIcon={<ExpandMoreIcon className="text-shadow-textOnText" />}
               aria-controls={`panel-${i}`}
               id={`panel-${i}`}
               className="min-h-16"
@@ -49,7 +49,7 @@ export default function MiniAccordionList({ items }: AccordionListProps) {
               </Typography>
             </AccordionSummary>
 
-            <AccordionDetails className="bg-white/50">
+            <AccordionDetails className="bg-textOnText">
               <Typography className="text-sm sm:text-base leading-relaxed text-gray-700">
                 {item.answer}
               </Typography>

@@ -1,9 +1,9 @@
 "use client";
-
+import { FormControl } from "@mui/material";
 import React, { useState, useEffect } from "react";
-import { OutlinedInput, InputAdornment, FormControl } from "@mui/material";
+import { OutlinedInput } from "@mui/material";
 import { Search } from "lucide-react";
-
+import { InputAdornment } from "@mui/material";
 interface CustomSearchInputProps {
   items: string[];
 }

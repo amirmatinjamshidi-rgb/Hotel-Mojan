@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { ExpandMore, ExpandLess } from "@mui/icons-material";
-
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 const INITIAL_LIMIT = 6;
 
 const OptionsButton = [
@@ -67,12 +67,12 @@ export default function RoomOptions() {
       >
         {expanded ? (
           <>
-            <ExpandLess fontSize="small" />
+            <ExpandLessIcon fontSize="small" />
             مشاهده کمتر
           </>
         ) : (
           <>
-            <ExpandMore fontSize="small" />
+            <ExpandMoreIcon fontSize="small" />
             نمایش بیشتر
           </>
         )}

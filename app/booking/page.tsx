@@ -1,8 +1,21 @@
 import React from "react";
-import Filterbox from "@/Features/components/rooms/Filterbox";
-import RoomCard from "@/Features/components/shop/RoomCard";
-import FilterBy from "@/Features/components/rooms/FilterBy";
-import RoomBanner from "@/Features/components/rooms/Banner";
+import dynamic from "next/dynamic";
+
+const Filterbox = dynamic(
+  () => import("@/Features/components/rooms/Filterbox")
+);
+const RoomCard = dynamic(
+  () => import("@/Features/components/shop/RoomCard"),
+  {}
+);
+const FilterBy = dynamic(
+  () => import("@/Features/components/rooms/FilterBy"),
+  {}
+);
+const RoomBanner = dynamic(
+  () => import("@/Features/components/rooms/Banner"),
+  {}
+);
 
 function Page() {
   return (

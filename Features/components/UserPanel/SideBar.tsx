@@ -56,7 +56,7 @@ const sidebarProps = [
 ];
 function SideBar() {
   return (
-    <aside className="sticky top-0 right-0 w-64 p-4 allBorder border rounded-2xl shadow-2xl  transition-all ease-in-out duration-150 hover:shadow-gray-400">
+    <aside className="sticky top-0 right-0 w-2/12 p-4 allBorder border rounded-2xl shadow-2xl  transition-all ease-in-out duration-150 hover:shadow-gray-400">
       <div className="flex flex-col gap-12 ">
         <Image src="/NewLogo.png" alt="Logo" height={70} width={90} />
 

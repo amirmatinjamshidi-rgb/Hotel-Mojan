@@ -1,72 +1,48 @@
 "use client";
 
 import { Divider } from "@mui/material";
-import { Clock } from "lucide-react";
+import { Clock, Circle } from "lucide-react";
 import Button from "@/Features/ui/button";
-import { Circle } from "lucide-react";
+
+type RuleSection = {
+  id: number;
+  head: string;
+  rules: string[];
+};
+
 type TimeItem = {
   id: number;
   name: string;
   time: string;
 };
 
-type RuleItem = {
-  id: number;
-  head: string;
-  rule: string;
-  rule2?: string;
+type Props = {
+  items: RuleSection[];
 };
 
-const Time: TimeItem[] = [
+const TIME_ITEMS: TimeItem[] = [
   { id: 1, name: "ساعت ورود", time: "14:00" },
   { id: 2, name: "ساعت خروج", time: "15:00" },
 ];
 
-const RulesDetails: RuleItem[] = [
-  {
-    id: 1,
-    head: "کنسلی و تغییر رزرو",
-    rule: "لغو رزرو تا ۴۸ ساعت قبل از تاریخ ورود، بدون جریمه انجام می‌شود.",
-    rule2:
-      "در صورت لغو کمتر از ۴۸ ساعت مانده به ورود، مبلغ یک شب اقامت کسر خواهد شد.",
-  },
-  {
-    id: 2,
-    head: "ظرفیت اتاق",
-    rule: "هر اتاق برای تعداد مشخصی از مهمانان طراحی شده است. اقامت نفرات اضافه فقط با هماهنگی قبلی و پرداخت هزینه‌ی مربوط امکان‌پذیر است.",
-  },
-  {
-    id: 3,
-    head: "خسارت به اموال هتل",
-    rule: "در صورت وارد شدن خسارت به اموال یا تجهیزات اتاق، هزینه‌ی تعمیر یا جایگزینی بر عهده‌ی مهمان خواهد بود.",
-  },
-  {
-    id: 4,
-    head: "امنیت و مسئولیت‌ها",
-    rule: "لطفاً هنگام خروج از اتاق، درب را قفل کرده و کارت کلید را همراه خود داشته باشید.",
-    rule2: "استفاده از وسایل برقی پرمصرف مانند اتو یا اجاق در اتاق مجاز نیست.",
-  },
-];
-
-export default function ReservationRulesComponent() {
+export default function ReservationRulesComponent({ items }: Props) {
   return (
     <div>
-      {" "}
-      <h1 className="flex items-center gap-2">
+      <h1 className="flex items-center gap-2 mb-6">
         <Circle
           className="stroke-secondary bg-secondary rounded-full"
           size={15}
         />
-        درباره اتاق دو تخته نخل اکونومی
+        قوانین و اطلاعات اتاق
       </h1>
-      <div className="w-[984px] flex gap-8">
-        <div> </div>
-        <div className="flex flex-col gap-6 min-w-[140px]">
-          {Time.map((cat) => (
-            <div key={cat.id} className="flex flex-col gap-2">
-              <h3 className="flex items-center gap-2 font-medium">
+
+      <div className="max-w-[984px] w-full mx-auto flex flex-col md:flex-row gap-6 md:gap-8">
+        <div className="flex flex-row md:flex-col gap-4 md:gap-6 md:min-w-[140px]">
+          {TIME_ITEMS.map((item) => (
+            <div key={item.id} className="flex flex-col gap-2">
+              <h3 className="flex items-center gap-2 font-medium text-sm">
                 <Clock size={15} />
-                {cat.name}
+                {item.name}
               </h3>
 
               <Button
@@ -76,22 +52,25 @@ export default function ReservationRulesComponent() {
                 border="none"
                 className="w-24"
               >
-                {cat.time}
+                {item.time}
               </Button>
             </div>
           ))}
         </div>
 
-        <Divider orientation="vertical" flexItem />
+        <Divider orientation="vertical" flexItem className="hidden md:block" />
+
+        <Divider className="md:hidden" />
 
         <div className="flex flex-col gap-6">
-          {RulesDetails.map((cat) => (
-            <div key={cat.id}>
-              <h2 className="font-semibold mb-2">{cat.head}</h2>
+          {items.map((section) => (
+            <div key={section.id}>
+              <h2 className="font-semibold mb-2">{section.head}</h2>
 
               <ul className="list-disc list-inside space-y-1 text-sm leading-6">
-                <li>{cat.rule}</li>
-                {cat.rule2 && <li>{cat.rule2}</li>}
+                {section.rules.map((rule, index) => (
+                  <li key={index}>{rule}</li>
+                ))}
               </ul>
             </div>
           ))}

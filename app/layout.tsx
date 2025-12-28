@@ -30,11 +30,11 @@ export default function RootLayout({
       </head>
       <body className="font-vazirmatn">
         <MuiProvider>
+          <Navbar />
           <ClientLayout>
-            <Navbar />
             <main>{children}</main>
-            <Footer />
           </ClientLayout>
+          <Footer />
         </MuiProvider>
       </body>
     </html>

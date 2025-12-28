@@ -15,7 +15,6 @@ export default function NavigateRoomCard() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [currentSection, setCurrentSection] = useState("");
 
-  // Guarded scroll function
   const scrollToSection = (id: string) => {
     if (typeof window === "undefined") return;
     const el = document.getElementById(id);
@@ -26,7 +25,7 @@ export default function NavigateRoomCard() {
   };
 
   useEffect(() => {
-    if (typeof window === "undefined") return; // SSR guard
+    if (typeof window === "undefined") return;
 
     const handleScroll = () => {
       for (const item of navItems) {
@@ -42,7 +41,7 @@ export default function NavigateRoomCard() {
     };
 
     window.addEventListener("scroll", handleScroll);
-    handleScroll(); // initial check
+    handleScroll();
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);

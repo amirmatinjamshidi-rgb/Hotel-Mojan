@@ -1,6 +1,6 @@
 import React from "react";
 import { CircleX } from "lucide-react";
-import Button from "@/components/ui/button";
+import Button from "./button";
 function CancelReserve() {
   return (
     <div className="max-w-[386px] h-[218px] align-middle justify-center rounded-md flex-col flex items-center hover:shadow-md border-primaryBorder border  hover:shadow-primaryBorder y duration-300 transition-all ease-in-out">

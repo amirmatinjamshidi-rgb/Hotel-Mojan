@@ -1,5 +1,9 @@
 import React from "react";
-import MiniAccordionList from "@/Features/ui/miniAccordation";
+import dynamic from "next/dynamic";
+const MiniAccordionList = dynamic(
+  () => import("@/Features/ui/miniAccordation"),
+  { ssr: false }
+);
 const MiniAccordion = [
   {
     question: "چگونه می‌توانم اتاق رزرو کنم؟",
@@ -19,10 +23,8 @@ const MiniAccordion = [
 ];
 function FaqRooms() {
   return (
-    <div className="w-[924px] min-h-[368px] max-h-[800px]  bg-[#E6F4F7] flex justify-between gap-6 mr-8">
-      <div className="flex flex-col justify-center  align-middle items-center ">
-        <MiniAccordionList items={MiniAccordion} />
-      </div>
+    <div className="w-full max-w-[924px] mx-auto bg-[#E6F4F7] rounded-2xl p-6">
+      <MiniAccordionList items={MiniAccordion} />
     </div>
   );
 }

@@ -8,7 +8,7 @@ import BasicModal from "../components/login/BasicModal";
 
 const navItems = [
   { href: "/", label: "خانه" },
-  { href: "/booking/rooms", label: "اتاق ها" },
+  { href: "/booking/", label: "اتاق ها" },
   { href: "/Restaurant", label: "رستوران ما" },
   { href: "/About-Us", label: "درباره ما" },
 ];

@@ -3,7 +3,7 @@
 import { Controller } from "react-hook-form";
 import { Mail, MapPinIcon, PhoneIcon, Instagram, Send } from "lucide-react";
 import { useState } from "react";
-import { useForm, useWatch } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import Button from "@/Features/ui/button";
@@ -13,6 +13,7 @@ import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import TextField from "@mui/material/TextField";
 import Alert from "../ui/ErrorMassages";
 import ScrollButton from "./ScrollButton";
+import { useWatch } from "react-hook-form";
 
 const schema = z.object({
   email: z
@@ -87,22 +88,26 @@ function Footer() {
               <nav className="flex flex-col gap-3 text-gray-700 text-sm">
                 <Link
                   href="/Home"
-                  className="hover:text-primary transition-colors">
+                  className="hover:text-primary transition-colors"
+                >
                   خانه
                 </Link>
                 <Link
                   href="/Rooms"
-                  className="hover:text-primary transition-colors">
+                  className="hover:text-primary transition-colors"
+                >
                   اتاق ها
                 </Link>
                 <Link
                   href="/Resturant"
-                  className="hover:text-primary transition-colors">
+                  className="hover:text-primary transition-colors"
+                >
                   رستوران هتل
                 </Link>
                 <Link
                   href="/About"
-                  className="hover:text-primary transition-colors">
+                  className="hover:text-primary transition-colors"
+                >
                   درباره ما
                 </Link>
               </nav>
@@ -113,22 +118,26 @@ function Footer() {
               <nav className="flex flex-col gap-3 text-gray-700 text-sm">
                 <Link
                   href="#"
-                  className="flex items-center gap-3 hover:text-primary transition-colors">
+                  className="flex items-center gap-3 hover:text-primary transition-colors"
+                >
                   <Send className="size-4" /> تلگرام
                 </Link>
                 <Link
                   href="#"
-                  className="flex items-center gap-3 hover:text-primary transition-colors">
+                  className="flex items-center gap-3 hover:text-primary transition-colors"
+                >
                   <Instagram className="size-4" /> اینستاگرام
                 </Link>
                 <Link
                   href="#"
-                  className="flex items-center gap-3 hover:text-primary transition-colors">
+                  className="flex items-center gap-3 hover:text-primary transition-colors"
+                >
                   <WhatsAppIcon sx={{ fontSize: 18 }} /> واتساپ
                 </Link>
                 <Link
                   href="#"
-                  className="flex items-center gap-3 hover:text-primary transition-colors">
+                  className="flex items-center gap-3 hover:text-primary transition-colors"
+                >
                   <Mail className="size-4" /> ایمیل
                 </Link>
               </nav>
@@ -143,7 +152,8 @@ function Footer() {
 
               <form
                 onSubmit={handleSubmit(onSubmit)}
-                className="flex items-center bg-gray-100 rounded-xl overflow-hidden h-12 border border-transparent focus-within:border-primary transition-all">
+                className="flex items-center bg-gray-100 rounded-xl overflow-hidden h-12 border border-transparent focus-within:border-primary transition-all"
+              >
                 <Controller
                   name="email"
                   control={control}
@@ -170,7 +180,8 @@ function Footer() {
                   type="submit"
                   color="orange1"
                   className="h-full px-4 text-xs whitespace-nowrap disabled:opacity-50"
-                  disabled={!isValid || !email}>
+                  disabled={!isValid || !email}
+                >
                   تماس با ما
                 </Button>
               </form>

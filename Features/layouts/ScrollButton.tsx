@@ -33,10 +33,10 @@ const ScrollButton = () => {
       onClick={scrollToTop}
       variant="contained"
       sx={{
-        position: "fixed",
-        bottom: "40px",
-        right: "40px",
-        borderRadius: "50%",
+        position: "absolute",
+        bottom: "350px",
+        right: "740px",
+        borderRadius: "20%",
         minWidth: "50px",
         width: "50px",
         height: "50px",
@@ -46,7 +46,7 @@ const ScrollButton = () => {
         "&:hover": { backgroundColor: "#d4a35f" },
       }}
     >
-      <ArrowUpwardIcon sx={{ color: "white" }} />
+      <ArrowUpwardIcon sx={{ color: "black" }} />
     </Button>
   );
 };

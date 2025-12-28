@@ -11,10 +11,8 @@ export default function RootLayout({
         <meta name="theme-color" content="#1bb566" />
       </head>
       <body>
-        <main>
-          <SideBar />
-          {children}
-        </main>
+        <SideBar />
+        {children}
       </body>
     </html>
   );

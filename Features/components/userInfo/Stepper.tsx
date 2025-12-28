@@ -33,10 +33,10 @@ const ColorlibConnector = styled(StepConnector)(({ theme }) => ({
     },
   },
   [`& .${stepConnectorClasses.line}`]: {
-    height: 3,
-    border: 0,
+    height: 5,
+    border: 2,
     backgroundColor: theme.palette.grey[300],
-    borderRadius: 1,
+    borderRadius: 0,
   },
 }));
 
@@ -85,7 +85,7 @@ export default function CustomStepper() {
   const activeStep = getActiveStep();
 
   return (
-    <Box sx={{ width: "75%" }}>
+    <Box sx={{ width: "100%" }}>
       <Stepper
         alternativeLabel
         activeStep={activeStep}

@@ -1,7 +1,8 @@
 "use client";
 import { Circle } from "lucide-react";
-import WhyCard from "@/Features/ui/WhyCard";
+const WhyCard = dynamic(() => import("@/Features/ui/WhyCard"), { ssr: false });
 import Image from "next/image";
+import dynamic from "next/dynamic";
 const WhyCardsItems = [
   {
     icon: <Image src="/routing.png" alt="routing" width={38} height={38} />,
@@ -16,7 +17,7 @@ const WhyCardsItems = [
       "از استقبال فرودگاهی تا سرویس اتاق ۲۴ ساعته. موجان برای آسایش شما آماده است.",
   },
   {
-    icon: <Image src="/reverse.png" alt="" width={38} height={38} />,
+    icon: <Image src="/crown.png" alt="" width={38} height={38} />,
     head: "ترکیب فضای مدرن و آرامش ساحلی",
     description:
       "فضاهای داخلی الهام‌گرفته از رنگ‌های دریا و طبیعت، برای ایجاد حس آرامش و انرژی مثبت.",
