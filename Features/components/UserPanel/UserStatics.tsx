@@ -22,7 +22,7 @@ function UserStatics({ items }: StaticDetailProps) {
 
           <h1 className="stroke-primary"> {formatFaNumber(cat.number)} </h1>
         </div>
-      ))}{" "}
+      ))}
     </div>
   );
 }

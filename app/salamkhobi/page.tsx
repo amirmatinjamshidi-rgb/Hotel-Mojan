@@ -1,5 +1,5 @@
 import ReservationInfoTable from "@/Features/components/Reservation/ReservationInfoTable";
-import ListPagination from "../../Features/components/UserPanel/ListPagination";
+import ListPagination from "@/Features/components/UserPanel/ListPagination";
 
 const page = () => {
   return (

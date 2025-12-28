@@ -1,5 +1,5 @@
 "use client";
-import SideBar from "../../Features/components/UserPanel/SideBar";
+import SideBar from "@/Features/components/UserPanel/SideBar";
 export default function RootLayout({
   children,
 }: {
@@ -11,10 +11,8 @@ export default function RootLayout({
         <meta name="theme-color" content="#1bb566" />
       </head>
       <body>
-        <main>
-          <SideBar />
-          {children}
-        </main>
+        <SideBar />
+        {children}
       </body>
     </html>
   );

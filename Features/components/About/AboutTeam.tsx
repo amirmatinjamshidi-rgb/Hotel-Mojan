@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 
 import member1 from "@/public/member1.png";
-import member2 from "@/public/member2.png";
+// import member2 from "@/public/member2.png";
 import member3 from "@/public/member3.png";
 import member4 from "@/public/member4.png";
 
@@ -22,7 +22,7 @@ const teamMembers = [
   },
   {
     id: 2,
-    image: member2,
+    image: member4,
     name: "عبداله سعید ایلینی",
   },
   {
@@ -42,7 +42,7 @@ const teamMembers = [
   },
   {
     id: 6,
-    image: member2,
+    image: member4,
     name: "عبداله سعید ایلینی",
   },
   {
