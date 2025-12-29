@@ -1,5 +1,5 @@
-import UserPanelGeneralities from "@/Features/components/UserPanel/UserPanelGeneralities";
-import UserPanelHeader from "@/Features/components/UserPanel/UserPanelHeader";
+import UserPanelGeneralities from "@/Features/components/UserPanel/Dashboard/UserPanelGeneralities";
+import UserPanelHeader from "@/Features/components/UserPanel/Dashboard/UserPanelHeader";
 import React from "react";
 
 function page() {
