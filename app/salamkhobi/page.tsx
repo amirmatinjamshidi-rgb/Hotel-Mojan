@@ -1,13 +1,18 @@
-import ReservationInfoTable from "@/Features/components/Reservation/ReservationInfoTable";
-import ListPagination from "@/Features/components/UserPanel/ListPagination";
+import UserPanelComingReservation from "@/Features/components/UserPanel/UserPanelComingReservation";
+import UserPanelGeneralities from "@/Features/components/UserPanel/UserPanelGeneralities";
+import UserPanelHeader from "@/Features/components/UserPanel/UserPanelHeader";
+import UserPanelRecentReservations from "@/Features/components/UserPanel/UserPanelRecentReservations";
+import React from "react";
 
-const page = () => {
+function page() {
   return (
-    <div>
-      <ReservationInfoTable />
-      <ListPagination />
+    <div className="flex flex-col justify-center items-center pt-10">
+      <UserPanelHeader />
+      <UserPanelGeneralities />
+      <UserPanelComingReservation />
+      <UserPanelRecentReservations />
     </div>
   );
-};
+}
 
 export default page;

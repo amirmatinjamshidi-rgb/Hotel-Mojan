@@ -1,6 +1,6 @@
 "use client";
 import SideBar from "@/Features/components/UserPanel/SideBar";
-import UserPanelHeader from "@/Features/components/UserPanel/UserPanelHeader";
+
 export default function RootLayout({
   children,
 }: {
@@ -11,7 +11,7 @@ export default function RootLayout({
       
 
       <SideBar />
-      <UserPanelHeader/>
+      
       {children}
     </div>
   );
