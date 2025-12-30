@@ -72,12 +72,15 @@ const roomTableInfo: RoomReservation[] = [
   },
 ];
 
-const ReservationInfoTable = ({ showButton = true, className ="" }) => {
+const ReservationInfoTable = ({ showButton = true, className = "" }) => {
   return (
     <div className=" bg-primaryBG text-textPrimary">
       {roomTableInfo.map((room) => {
         return (
-          <div className={`w-[70%]  flex flex-col gap-10 ${className}`} key={room.id}>
+          <div
+            className={`w-full max-w-[984px] flex flex-col gap-10 ${className}`}
+            key={room.id}
+          >
             <div className="flex flex-row justify-between items-center">
               <div className="flex flex-row gap-2 items-center ">
                 <div className="rounded-[100px] bg-secondary w-2 h-2"></div>
@@ -90,7 +93,8 @@ const ReservationInfoTable = ({ showButton = true, className ="" }) => {
                   <Button
                     variant="outlined"
                     startIcon={<Edit />}
-                    className="rounded-xl">
+                    className="rounded-xl"
+                  >
                     ویرایش مسافران
                   </Button>
                 )}

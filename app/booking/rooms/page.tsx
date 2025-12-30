@@ -1,5 +1,3 @@
-"use client";
-
 import dynamic from "next/dynamic";
 import Typography from "@mui/material/Typography";
 import Breadcrumbs from "@mui/material/Breadcrumbs";
@@ -8,36 +6,28 @@ import { Circle, Star } from "lucide-react";
 import NavigateBeforeOutlinedIcon from "@mui/icons-material/NavigateBeforeOutlined";
 
 const FrequantQuestions = dynamic(
-  () => import("@/Features/components/RoomCard/FrequantQuestions"),
-  { ssr: false }
+  () => import("@/Features/components/RoomCard/FrequantQuestions")
 );
 const RoomAbout = dynamic(
-  () => import("@/Features/components/RoomCard/RoomAbout"),
-  { ssr: false }
+  () => import("@/Features/components/RoomCard/RoomAbout")
 );
 const SimilarRooms = dynamic(
-  () => import("@/Features/components/RoomCard/SimilarRooms"),
-  { ssr: false }
+  () => import("@/Features/components/RoomCard/SimilarRooms")
 );
 const ReservationRulesComponent = dynamic(
-  () => import("@/Features/components/rules/ReservationRulesComponent"),
-  { ssr: false }
+  () => import("@/Features/components/rules/ReservationRulesComponent")
 );
 const GallerySection = dynamic(
-  () => import("@/Features/components/RoomCard/GallerySection"),
-  { ssr: false }
+  () => import("@/Features/components/RoomCard/GallerySection")
 );
 const NavigateRoomCard = dynamic(
-  () => import("@/Features/components/RoomCard/Navigate"),
-  { ssr: false }
+  () => import("@/Features/components/RoomCard/Navigate")
 );
 const FaqRooms = dynamic(
-  () => import("@/Features/components/RoomCard/FaqRooms"),
-  { ssr: false }
+  () => import("@/Features/components/RoomCard/FaqRooms")
 );
 const SideBarBox = dynamic(
-  () => import("@/Features/components/rooms/sideBarBox"),
-  { ssr: false }
+  () => import("@/Features/components/rooms/sideBarBox")
 );
 
 const items = [
