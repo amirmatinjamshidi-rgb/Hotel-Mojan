@@ -59,7 +59,7 @@ const UserProfile = () => {
               className="py-2.5 px-4 placeholder:text-textSecondary bg-primaryThead w-full rounded-lg"
               placeholder="کدملی"
             />
-          </div>
+          </div>https://github.com/amirmatinjamshidi-rgb/Hotel-Mojan-Admin-Panel.git
         </div>
       </div>
       <div className="w-full flex flex-col gap-4 ">
