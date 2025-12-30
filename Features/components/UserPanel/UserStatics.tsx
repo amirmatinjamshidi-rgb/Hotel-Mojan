@@ -28,7 +28,7 @@ function UserStatics({ items }: StaticDetailProps) {
             {formatFaNumber(cat.number)}{" "}
           </h1>
         </div>
-      ))}{" "}
+      ))}
     </div>
   );
 }

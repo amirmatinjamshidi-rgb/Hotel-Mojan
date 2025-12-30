@@ -1,18 +1,18 @@
 "use client";
-import SideBar from "../../Features/components/UserPanel/SideBar";
+import SideBar from "@/Features/components/UserPanel/SideBar";
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html>
-      <head>
-        <meta name="theme-color" content="#1bb566" />
-      </head>
+    <div className="flex flex-row p-4 gap-10">
+      
 
       <SideBar />
+      
       {children}
-    </html>
+    </div>
   );
 }

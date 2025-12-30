@@ -1,13 +1,13 @@
-import ReservationInfoTable from "@/Features/components/Reservation/ReservationInfoTable";
-import ListPagination from "../../Features/components/UserPanel/ListPagination";
 
-const page = () => {
+import UserProfile from "@/Features/components/UserPanel/UserAccount/UserProfile";
+import React from "react";
+
+function page() {
   return (
-    <div>
-      <ReservationInfoTable />
-      <ListPagination />
+    <div className="flex flex-col justify-center items-center pt-10">
+      <UserProfile />
     </div>
   );
-};
+}
 
 export default page;
