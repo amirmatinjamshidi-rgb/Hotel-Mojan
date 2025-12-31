@@ -2,7 +2,7 @@ import React from "react";
 import dynamic from "next/dynamic";
 
 const ReservationInfoTable = dynamic(
-  () => import("@/Features/components/Reservation/ReservationInfoTable")
+  () => import("@/Features/components/Tables/ReservationInfoTable")
 );
 const ReservationRulesComponent = dynamic(
   () => import("@/Features/components/rules/ReservationRulesComponent")

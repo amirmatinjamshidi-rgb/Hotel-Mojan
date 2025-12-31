@@ -1,11 +1,11 @@
 
-import UserProfile from "@/Features/components/UserPanel/UserAccount/UserProfile";
+import ReservationInfoTable from "@/Features/components/Tables/ReservationInfoTable";
 import React from "react";
 
 function page() {
   return (
     <div className="flex flex-col justify-center items-center pt-10">
-      <UserProfile />
+      <ReservationInfoTable />
     </div>
   );
 }

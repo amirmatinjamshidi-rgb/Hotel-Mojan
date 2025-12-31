@@ -11,7 +11,7 @@ const VoucherMaliInfo = dynamic(
   () => import("../../../Features/components/Voucher/VoucherMaliInfo")
 );
 const ReservationInfoTable = dynamic(
-  () => import("@/Features/components/Reservation/ReservationInfoTable")
+  () => import("@/Features/components/Tables/ReservationInfoTable")
 );
 const VoucherRules = dynamic(
   () => import("../../../Features/components/Voucher/VoucherRules")
