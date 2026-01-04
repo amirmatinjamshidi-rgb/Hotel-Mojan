@@ -99,7 +99,7 @@ const passengerColumns: Column<Passenger>[] = [
 
 const ReservationInfoTable = ({
   showButton = true,
-  
+
   className = "",
 }) => {
   return (
@@ -151,11 +151,7 @@ const ReservationInfoTable = ({
               </div>
 
               <div className="border border-primaryBorder rounded-lg overflow-hidden">
-                <Table
-                  data={room.passengers}
-                  columns={passengerColumns}
-                  
-                />
+                <Table data={room.passengers} columns={passengerColumns} />
               </div>
             </div>
           </div>
