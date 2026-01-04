@@ -8,7 +8,16 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 
-const names = ["زن", "مرد", "کروسان"];
+const names = [
+  "زن",
+  "مرد",
+  "کروسان",
+  "معینی پور",
+  "کیک یزدی",
+  "کلوچه دارچینی",
+  "تیتاپ",
+  "کیک دژمن پز",
+];
 
 export default function GenderChoose() {
   const theme = useTheme();
@@ -48,7 +57,6 @@ export default function GenderChoose() {
 
       <Select
         labelId="gender-label"
-        multiple
         value={personName}
         onChange={handleChange}
         input={<OutlinedInput label="جنسیت" />}

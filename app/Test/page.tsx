@@ -93,9 +93,9 @@ export default function ReservationRulesComponent() {
                 {cat.rule2 && <li>{cat.rule2}</li>}{" "}
               </ul>{" "}
             </div>
-          ))}{" "}
-        </div>{" "}
-      </div>{" "}
+          ))}
+        </div>
+      </div>
     </div>
   );
 }

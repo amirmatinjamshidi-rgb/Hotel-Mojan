@@ -62,7 +62,6 @@ export default function TimeChoose() {
         </InputLabel>
         <Select
           labelId="demo-multiple-name-label"
-          multiple
           value={personName}
           onChange={handleChange}
           input={<OutlinedInput label="انتخاب ساعت ورود" />}

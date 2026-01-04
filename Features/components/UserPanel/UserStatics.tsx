@@ -12,7 +12,7 @@ interface StaticDetailProps {
 }
 function UserStatics({ items }: StaticDetailProps) {
   return (
-    <div className="flex flex-row shrink-0 border allBorder rounded-md  align-middle items-center w-full mx-auto max-w-[1016px] p-3 justify-between max-h-[100px] ">
+    <div className="flex flex-row shrink-0 border px-6 py-4 allBorder rounded-md  align-middle items-center w-full mx-auto max-w-[1016px] justify-between max-h-[100px] ">
       {items.map((cat) => (
         <div
           key={cat.id}

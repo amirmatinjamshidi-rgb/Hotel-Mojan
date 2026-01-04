@@ -59,7 +59,6 @@ export default function SideBarBox() {
       >
         <InputLabel sx={{ fontSize: 12 }}>انتخاب ساعت ورود</InputLabel>
         <Select
-          multiple
           value={arrival}
           onChange={handleArrival}
           input={<OutlinedInput label="انتخاب ساعت ورود" />}
@@ -93,7 +92,6 @@ export default function SideBarBox() {
       >
         <InputLabel sx={{ fontSize: 12 }}>انتخاب ساعت خروج</InputLabel>
         <Select
-          multiple
           value={departure}
           onChange={handleDeparture}
           input={<OutlinedInput label="انتخاب ساعت خروج" />}

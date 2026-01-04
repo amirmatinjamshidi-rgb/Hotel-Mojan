@@ -42,22 +42,24 @@ export default function NumberCountryChoose() {
         "& fieldset": {
           borderColor: "rgba(216,227,231,0.5)",
         },
-      }}>
+      }}
+    >
       <InputLabel
         id="gender-label"
         sx={{
           top: "-6px",
           fontSize: 16,
-        }}>
+        }}
+      >
         کشور {formatFaNumber(98)}+ IR
       </InputLabel>
 
       <Select
         labelId="gender-label"
-        multiple
         value={value}
         onChange={handleChange}
-        input={<OutlinedInput label="کشور" />}>
+        input={<OutlinedInput label="کشور" />}
+      >
         {countries.map((item) => (
           <MenuItem
             key={item.name}
@@ -66,7 +68,8 @@ export default function NumberCountryChoose() {
               fontWeight: value.includes(item.name)
                 ? theme.typography.fontWeightMedium
                 : theme.typography.fontWeightRegular,
-            }}>
+            }}
+          >
             <Box display="flex" alignItems="center" gap={1}>
               <Image src={item.flag} alt={"flags"} width={12} height={12} />
               <span>{item.name}</span>

@@ -24,7 +24,6 @@ export default function CustomSearchInput({ items }: CustomSearchInputProps) {
 
   return (
     <FormControl
-      fullWidth
       sx={{
         maxWidth: 499,
         width: "60%",

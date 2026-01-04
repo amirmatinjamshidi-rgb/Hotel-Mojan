@@ -56,8 +56,8 @@ const sidebarProps = [
 ];
 function SideBar() {
   return (
-    <aside className="sticky top-0 right-0 w-2/12 p-4 allBorder border rounded-2xl shadow-2xl  transition-all ease-in-out duration-150 hover:shadow-gray-400">
-      <div className="flex flex-col gap-12 ">
+    <aside className="sticky top-0 right-0 w-2/12 p-4 allBorder border rounded-2xl shadow-2xl h-screen transition-all ease-in-out duration-150 hover:shadow-gray-400">
+      <div className="flex flex-col gap-12 justify-between">
         <Image src="/NewLogo.png" alt="Logo" height={70} width={90} />
 
         <nav className="flex flex-col gap-2" dir="rtl">
@@ -89,7 +89,7 @@ function SideBar() {
           size="medium"
           color="white"
           className="
-                  w-full flex flex-row items-center gap-3
+                  w-full flex flex-row items-center gap-3 
                   justify-start
                   text-gray-400 hover:text-black
                   hover:bg-secondaryHover
@@ -100,7 +100,7 @@ function SideBar() {
             <LogOut />
           </span>
 
-          <span className="text-sm font-medium">خروج</span>
+          <span className="text-sm font-medium ">خروج</span>
         </Button>
       </div>
     </aside>
