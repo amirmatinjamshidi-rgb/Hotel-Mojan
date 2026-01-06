@@ -55,7 +55,7 @@ const messagesColumns: Column<MessagesList>[] = [
   },
   {
     key: "message",
-    header: "شماره تراکنش ",
+    header: "پیام  ",
     thClassName: "px-10 py-3.5 border-b border-primaryBorder",
     tdClassName: "px-10 py-3.5 border-b border-primaryBorder text-center",
     cell: (row) => row.message,
