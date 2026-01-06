@@ -3,7 +3,7 @@ import { formatFaNumber } from "@/Features/utils/formatNumber";
 type PreviuosReservationItems = {
   id: number;
   head: string;
-  tag: string;
+  status: boolean;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   timeString: any[];
   timeNumber: number;
@@ -22,9 +22,15 @@ function PreviuosReservations({ items }: props) {
         >
           <h3 className="flex align-middle justify-between px-1">
             {cat.head}
-            <span className=" bg-[#157A6E33] text-[#157A6E] max-w-[91px] max-h-[36px] mx-auto border border-emerald-800 rounded-lg">
-              {cat.tag}
-            </span>
+            <div className="w-[1/5] bg-primaryThead p-1 rounded-lg">
+              <span>
+                {cat.status ? (
+                  <span className="text-primary">پرداخت شده</span>
+                ) : (
+                  <span className="text-error">پرداخت نشده</span>
+                )}
+              </span>
+            </div>
           </h3>
           <span className="flex align-middle justify-between px-1">
             <p className="flex flex-row align-middle gap-1 text-textSecondary">

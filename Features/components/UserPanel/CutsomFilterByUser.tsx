@@ -8,7 +8,6 @@ import { CircleX } from "lucide-react";
 export interface FilterItem {
   id: string | number;
   name: string;
-  
 }
 
 interface CustomFilterByUserProps {
@@ -27,7 +26,7 @@ export default function CustomFilterByUser({
   };
 
   return (
-    <div className="w-full">
+    <div className="">
       {title && (
         <h4 className="font-sans mb-3 text-sm font-bold text-primary">
           {title}
@@ -43,15 +42,16 @@ export default function CustomFilterByUser({
               radius="md"
               onClick={() => handleClick(cat.id)}
               className={`
-                flex items-center gap-2 px-4 py-2 text-sm transition-all duration-200 border-2 border-solid
+                flex items-center gap-2 px-4 py-2 text-sm transition-all duration-200  border allBorder
                 ${
                   isActive
                     ? "bg-primaryAccent! text-primaryActive! border-primaryActive hover:bg-primaryAccent!"
                     : "bg-white text-primary border-[#D8E3E7] hover:bg-gray-50 hover:border-blue-300"
                 }
-              `}>
+              `}
+            >
               <span>{cat.name}</span>
-              
+
               {isActive && (
                 <CircleX
                   size={16}
