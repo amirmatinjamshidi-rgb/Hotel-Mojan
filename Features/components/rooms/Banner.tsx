@@ -48,9 +48,10 @@ function RoomBanner() {
         <Image
           src="/img.png"
           alt="Hotel view"
-          fill
-          className="object-cover rounded-2xl lg:rounded-r-none"
-          priority
+          width={451}
+          height={200}
+          className="object-cover rounded-2xl lg:rounded-r-none aspect-auto"
+          priority={true}
         />
       </div>
     </section>

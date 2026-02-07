@@ -30,7 +30,8 @@
     ".next/dev/types/**/*.ts",
     "**/*.mts",
     "app/notfound/layou",
-    "app/Admin/Dashboard"
+    "app/Admin/Dashboard",
+    "globals.d.ts"
   ],
   "exclude": ["node_modules"]
 }

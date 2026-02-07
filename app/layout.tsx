@@ -1,10 +1,17 @@
 import type { Metadata } from "next";
-import { Vazirmatn } from "next/font/google";
+import { Vazirmatn, Roboto } from "next/font/google";
 import "./globals.css";
+
 import Navbar from "@/Features/layouts/Navbar";
 import Footer from "@/Features/layouts/Footer";
 import MuiProvider from "@/Features/provider/MuiProvider";
 import ClientLayout from "./clientLayout";
+
+const roboto = Roboto({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-roboto",
+});
 
 const vazirmatn = Vazirmatn({
   subsets: ["arabic", "latin"],
@@ -24,11 +31,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="fa" dir="rtl" className={vazirmatn.variable}>
+    <html
+      lang="fa"
+      dir="rtl"
+      className={`${vazirmatn.variable} ${roboto.variable}`}
+    >
       <head>
         <meta name="theme-color" content="#1bb566" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
       </head>
-      <body className="font-vazirmatn">
+      <body className={`${vazirmatn.variable} ${roboto.variable}`}>
         <MuiProvider>
           <Navbar />
           <ClientLayout>

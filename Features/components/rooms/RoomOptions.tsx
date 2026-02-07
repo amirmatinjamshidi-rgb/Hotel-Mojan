@@ -54,7 +54,13 @@ export default function RoomOptions() {
                 }
               `}
             >
-              <Image src={cat.icon} alt={cat.name} width={20} height={20} />
+              <Image
+                src={cat.icon}
+                alt={cat.name}
+                width={24}
+                height={24}
+                className="h-5 w-auto object-contain"
+              />
               <span>{cat.name}</span>
             </div>
           );

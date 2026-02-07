@@ -27,7 +27,7 @@ function HeroBanner() {
           alt="Hotel view"
           fill
           className="object-cover"
-          priority
+          priority={true}
         />
       </div>
     </section>

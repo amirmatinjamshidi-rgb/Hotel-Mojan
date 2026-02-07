@@ -11,9 +11,13 @@ import Link from "next/link";
 import Image from "next/image";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import TextField from "@mui/material/TextField";
+import HighlightOffIcon from "@mui/icons-material/HighlightOff";
+
 import Alert from "../ui/ErrorMassages";
 import ScrollButton from "./ScrollButton";
 import { useWatch } from "react-hook-form";
+import IconButton from "@mui/material/IconButton";
+import { red } from "@mui/material/colors";
 
 const schema = z.object({
   email: z
@@ -70,7 +74,7 @@ function Footer() {
                 src="/Logo.png"
                 width={100}
                 height={128}
-                className="object-contain"
+                className="object-contain "
               />
               <div className="text-gray-600 text-sm leading-relaxed">
                 <p>
@@ -160,9 +164,27 @@ function Footer() {
                   render={({ field }) => (
                     <TextField
                       {...field}
+                      type="text"
                       placeholder="ایمیل خود را بنویسید..."
                       onFocus={() => setFocused(true)}
                       onBlur={() => setFocused(false)}
+                      InputProps={{
+                        endAdornment: field.value ? (
+                          <IconButton
+                            size="small"
+                            onClick={() => field.onChange("")}
+                            sx={{
+                              color: red[500],
+                              borderRadius: "50%",
+                              width: 28,
+                              height: 28,
+                              marginRight: "4px",
+                            }}
+                          >
+                            <HighlightOffIcon sx={{ fontSize: 20 }} />
+                          </IconButton>
+                        ) : null,
+                      }}
                       sx={{
                         flex: 1,
                         "& .MuiInputBase-root": {
@@ -176,6 +198,7 @@ function Footer() {
                     />
                   )}
                 />
+
                 <Button
                   type="submit"
                   color="orange1"

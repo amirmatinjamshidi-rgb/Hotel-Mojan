@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Button from "@/Features/ui/button";
 import { ArrowLeft } from "lucide-react";
-
+import RoomNameSearch from "@/Features/components/Landing/roomnameSearch";
 function Notfound() {
   return (
     <div className="bg-[#E6F4F7] flex flex-col items-center justify-center gap-20 p-4 md:p-20 min-h-screen">
@@ -30,9 +30,10 @@ function Notfound() {
         size="medium"
         className="w-[216px] text-white mt-10 flex items-center gap-2"
       >
-        <ArrowLeft className="rotate-180" /> 
+        <ArrowLeft className="rotate-180" />
         صفحه قبل
       </Button>
+      <RoomNameSearch />
     </div>
   );
 }
