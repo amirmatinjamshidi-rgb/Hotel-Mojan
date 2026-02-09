@@ -22,9 +22,15 @@ export function StepOtp({ user, onSuccess, onClose }: StepOtpProps) {
     defaultValues: { otp: "" },
   });
 
-  const [otpDigits, setOtpDigits] = useState<string[]>(["", "", "", "", "", ""]);
+  const [otpDigits, setOtpDigits] = useState<string[]>([
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+  ]);
   const inputsRef = useRef<Array<HTMLInputElement | null>>([]);
-  
 
   const handleChange = (index: number, value: string) => {
     if (!/^\d?$/.test(value)) return;
@@ -34,7 +40,10 @@ export function StepOtp({ user, onSuccess, onClose }: StepOtpProps) {
     if (value && index < 5) inputsRef.current[index + 1]?.focus();
   };
 
-  const handleKeyDown = (index: number, e: React.KeyboardEvent<HTMLInputElement>) => {
+  const handleKeyDown = (
+    index: number,
+    e: React.KeyboardEvent<HTMLInputElement>,
+  ) => {
     if (e.key === "Backspace" && !otpDigits[index] && index > 0) {
       inputsRef.current[index - 1]?.focus();
     }
@@ -42,7 +51,8 @@ export function StepOtp({ user, onSuccess, onClose }: StepOtpProps) {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (otpDigits.join("") !== user.otp) return alert("کد وارد شده اشتباه است!");
+    if (otpDigits.join("") !== user.otp)
+      return alert("کد وارد شده اشتباه است!");
     onSuccess();
   };
 
@@ -53,18 +63,29 @@ export function StepOtp({ user, onSuccess, onClose }: StepOtpProps) {
       </div>
 
       <div className="flex flex-col gap-10 items-center">
-        <Image src={Logo} alt="Mojan Hotel" width={96} height={96} className="w-24 h-24" />
+        <Image
+          src={Logo}
+          alt="Mojan Hotel"
+          width={96}
+          height={96}
+          className="w-24 h-24"
+        />
         <h2 className="text-xl font-bold">کد تایید را وارد کنید</h2>
-        <p className="text-sm text-center">کد ۶ رقمی به شماره {user.phone} ارسال شد</p>
+        <p className="text-sm text-center">
+          کد ۶ رقمی به شماره {user.phone} ارسال شد
+        </p>
 
-        <form onSubmit={handleSubmit} className="flex gap-2 justify-center mt-4">
+        <form
+          onSubmit={handleSubmit}
+          className="flex gap-2 justify-center mt-4"
+        >
           {otpDigits.map((digit, i) => (
             <input
               key={i}
               type="text"
               maxLength={1}
               value={digit}
-              ref={(el) => (inputsRef.current[i] = el)}
+              // ref={(el) => (inputsRef.current[i] = el)}
               onChange={(e) => handleChange(i, e.target.value)}
               onKeyDown={(e) => handleKeyDown(i, e)}
               className="w-12 h-12 text-center border rounded-lg text-lg focus:outline-none focus:border-primary"
@@ -72,7 +93,11 @@ export function StepOtp({ user, onSuccess, onClose }: StepOtpProps) {
           ))}
         </form>
 
-        <Button type="submit" onClick={handleSubmit} className="mt-6 py-3.5 px-20 w-full bg-primary-500 hover:bg-primary-400 text-white rounded-lg">
+        <Button
+          type="submit"
+          onClick={handleSubmit}
+          className="mt-6 py-3.5 px-20 w-full bg-primary-500 hover:bg-primary-400 text-white rounded-lg"
+        >
           تایید
         </Button>
       </div>
