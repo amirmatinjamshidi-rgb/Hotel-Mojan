@@ -85,7 +85,9 @@ export function StepOtp({ user, onSuccess, onClose }: StepOtpProps) {
               type="text"
               maxLength={1}
               value={digit}
-              // ref={(el) => (inputsRef.current[i] = el)}
+              ref={(el) => {
+                inputsRef.current[i] = el;
+              }}
               onChange={(e) => handleChange(i, e.target.value)}
               onKeyDown={(e) => handleKeyDown(i, e)}
               className="w-12 h-12 text-center border rounded-lg text-lg focus:outline-none focus:border-primary"
