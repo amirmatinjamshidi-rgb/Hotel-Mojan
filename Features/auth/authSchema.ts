@@ -1,4 +1,3 @@
-
 import { z } from "zod";
 
 export const phoneSchema = z.object({
@@ -9,16 +8,21 @@ export const phoneSchema = z.object({
 });
 
 export const otpSchema = z.object({
-  otp: z.string().min(5, {
-    message: "کد تایید باید ۵ رقم باشد",
-  }),
+  otp: z.string().length(6, "کد تایید باید ۶ رقم باشد"),
 });
 
-export const userInfoSchema = z.object({
-  fullName: z.string().min(3, "نام و نام خانوادگی باید حداقل ۳ حرف باشد"),
-  nationalId: z.string().regex(/^\d{10}$/, "کد ملی باید دقیقا ۱۰ رقم باشد"),
+export const passwordSchema = z.object({
+  password: z
+    .string()
+    .min(8, "پسورد حداقل ۸ کاراکتر باشد")
+    .max(16, "پسورد حداکثر ۱۶ کاراکتر باشد")
+    .regex(/[A-Z]/, "حداقل یک حرف بزرگ داشته باشد")
+    .regex(/[a-z]/, "حداقل یک حرف کوچک داشته باشد")
+    .regex(/\d/, "حداقل یک عدد داشته باشد")
+    .regex(/[@#$%^&*!]/, "حداقل یک کاراکتر خاص داشته باشد"),
 });
 
-export type UserInfoFormValues = z.infer<typeof userInfoSchema>;
 export type PhoneFormValues = z.infer<typeof phoneSchema>;
 export type OtpFormValues = z.infer<typeof otpSchema>;
+export type PasswordFormValues = z.infer<typeof passwordSchema>;
+                          

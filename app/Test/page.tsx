@@ -46,26 +46,20 @@ const RulesDetails: RuleItem[] = [
 export default function ReservationRulesComponent() {
   return (
     <div>
-      {" "}
       <h1 className="flex items-center gap-2">
-        {" "}
         <Circle
           className="stroke-secondary bg-secondary rounded-full"
           size={15}
-        />{" "}
-        درباره اتاق دو تخته نخل اکونومی{" "}
-      </h1>{" "}
+        />
+        درباره اتاق دو تخته نخل اکونومی
+      </h1>
       <div className="max-w-[984px] w-full mx-auto flex gap-8">
-        {" "}
         <div className="flex flex-col gap-6 min-w-[140px]">
-          {" "}
           {Time.map((cat) => (
             <div key={cat.id} className="flex flex-col gap-2">
-              {" "}
               <h3 className="flex items-center gap-2 font-medium">
-                {" "}
-                <Clock size={15} /> {cat.name}{" "}
-              </h3>{" "}
+                <Clock size={15} /> {cat.name}
+              </h3>
               <Button
                 color="gray"
                 radius="md"
@@ -73,25 +67,21 @@ export default function ReservationRulesComponent() {
                 border="none"
                 className="w-24"
               >
-                {" "}
-                {cat.time}{" "}
-              </Button>{" "}
+                {cat.time}
+              </Button>
             </div>
-          ))}{" "}
-        </div>{" "}
-        <Divider orientation="vertical" flexItem />{" "}
+          ))}
+        </div>
+        <Divider orientation="vertical" flexItem />
         <div className="flex flex-col gap-6">
-          {" "}
           {RulesDetails.map((cat) => (
             <div key={cat.id}>
-              {" "}
-              <h2 className="font-semibold mb-2">{cat.head}</h2>{" "}
+              <h2 className="font-semibold mb-2">{cat.head}</h2>
               <ul className="list-disc list-inside space-y-1 text-sm leading-6">
-                {" "}
-                <li>{cat.rule}</li> {cat.rule2 && <li>{cat.rule2}</li>}{" "}
-                {cat.rule2 && <li>{cat.rule2}</li>}{" "}
-                {cat.rule2 && <li>{cat.rule2}</li>}{" "}
-              </ul>{" "}
+                <li>{cat.rule}</li> {cat.rule2 && <li>{cat.rule2}</li>}
+                {cat.rule2 && <li>{cat.rule2}</li>}
+                {cat.rule2 && <li>{cat.rule2}</li>}
+              </ul>
             </div>
           ))}
         </div>

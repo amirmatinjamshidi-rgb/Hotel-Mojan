@@ -3,6 +3,8 @@
 import dynamic from "next/dynamic";
 import Container from "@mui/material/Container";
 import Stack from "@mui/material/Stack";
+import { useSearchParams } from "next/navigation";
+import { useEffect } from "react";
 
 const FAQ = dynamic(() => import("@/Features/components/Landing/FAQ"), {
   ssr: false,
@@ -32,6 +34,15 @@ const HeroBanner = dynamic(
 );
 
 export default function Page() {
+
+  const searchParams = useSearchParams();
+  const authRequired = searchParams.get("auth");
+
+  useEffect(() => {
+    if (authRequired === "required") {
+      alert("لطفاً ابتدا وارد اکانت خود شوید")!;
+    }
+  }, [authRequired]);
   return (
     <main className=" overflow-x-hidden">
       <Container maxWidth="xl" sx={{ px: { xs: 2, md: 4, lg: 4 } }}>
