@@ -11,7 +11,7 @@ const UserPanelHeader = () => {
   return (
     <div className="w-[70%] bg-white border border-primaryBorder rounded-lg h-16 flex flex-row items-center justify-between px-4 py-2">
       <div className="flex flex-row gap-2 items-center">
-        <Image width={40} height={40} src={user?.avatar ?? ""} alt="remy" className="h-10 w-10 rounded-[100%] border border-black" />
+        <Image width={40} height={40} src={user?.avatar ?? ""} alt="remy" className="h-10 w-10 rounded-[100%] " />
         <span>{user?.name}</span>
       </div>
       <div className="flex flex-row gap-1">

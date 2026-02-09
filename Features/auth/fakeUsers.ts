@@ -14,7 +14,7 @@ export const fakeUsers: FakeUserType[] = [
     phone: "09912327476",
     password: "@Amir1384",
     otp: "111111",
-    avatar: "/member1.png",
+    avatar: "/AmirK.jpg",
   },
   {
     id: "2",
@@ -22,7 +22,7 @@ export const fakeUsers: FakeUserType[] = [
     phone: "09120742295",
     password: "@Matin1385",
     otp: "111111",
-    avatar: "/member2.png",
+    avatar: "/Amirmatin.jpg",
   },
   {
     id: "3",
