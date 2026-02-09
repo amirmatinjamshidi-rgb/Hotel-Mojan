@@ -12,6 +12,8 @@ import {
 import Link from "next/link";
 import Image from "next/image";
 import Button from "@/Features/ui/button";
+import { useRouter } from "next/navigation";
+import { useAuthStore } from "@/Features/auth/AuthStore";
 
 type sidebarProps = {
   id: number;
@@ -55,6 +57,15 @@ const sidebarProps = [
   },
 ];
 function SideBar() {
+  const router = useRouter();
+  const logout = useAuthStore((state) => state.logout);
+
+  const handleLogout = () => {
+  logout();
+  alert("با موفقیت خارج شدید 👋");
+  router.replace("/");
+};
+
   return (
     <aside className="sticky top-0 right-0 w-2/12 p-4 allBorder border rounded-2xl shadow-2xl h-screen transition-all ease-in-out duration-150 hover:shadow-gray-400">
       <div className="flex flex-col gap-12 justify-between">
@@ -84,7 +95,9 @@ function SideBar() {
             </Link>
           ))}
         </nav>
+        
         <Button
+        onClick={handleLogout}
           radius="md"
           size="medium"
           color="white"
@@ -102,6 +115,7 @@ function SideBar() {
 
           <span className="text-sm font-medium ">خروج</span>
         </Button>
+       
       </div>
     </aside>
   );

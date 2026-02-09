@@ -5,6 +5,8 @@ import Button from "@/Features/ui/button";
 import Link from "next/link";
 import { User, Menu, X } from "lucide-react";
 import BasicModal from "../components/login/BasicModal";
+import { useAuthStore } from "@/Features/auth/AuthStore";
+
 
 const navItems = [
   { href: "/", label: "خانه" },
@@ -13,7 +15,10 @@ const navItems = [
   { href: "/About-Us", label: "درباره ما" },
 ];
 
+
 function Navbar() {
+  const {  isAuthenticated, user } = useAuthStore();
+
   const [isOpen, setIsOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -51,17 +56,33 @@ function Navbar() {
         </div>
 
         <div className="flex items-center gap-4">
-          <Button
-            onClick={() => setIsModalOpen(true)}
-            color="white"
-            border="blue"
-            text="blue"
-            size="small"
-            className="hidden md:flex rounded-md items-center gap-2 px-4 h-10 border border-primary text-primary"
-          >
-            <User size={20} />
-            <span className="text-xs">ورود | ثبت نام</span>
-          </Button>
+          {!isAuthenticated ? (
+            <Button
+              onClick={() => setIsModalOpen(true)}
+              color="white"
+              border="blue"
+              text="blue"
+              size="small"
+              className="hidden md:flex rounded-md items-center gap-2 px-4 h-10 border border-primary text-primary"
+            >
+              <User size={20} />
+              <span className="text-xs">ورود | ثبت نام</span>
+            </Button>
+          ) : (
+            <Link href="/UserPanel/UserAccount">
+              <div className="flex items-center gap-2">
+                <Image
+                  src={user?.avatar ?? "/default-avatar.png"}
+                  width={24}
+                  height={24}
+                  alt={user?.name ?? "user"}
+                  className="rounded-full"
+                />
+                <span className="text-xs">{user?.name}</span>
+              </div>
+            </Link>
+          )}
+
           <BasicModal
             open={isModalOpen}
             onClose={() => setIsModalOpen(false)}
