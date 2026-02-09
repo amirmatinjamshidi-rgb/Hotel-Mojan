@@ -11,7 +11,7 @@ const Leaflet = dynamic(() => import("./Leaflet"), {
 
 const AboutRahHa = () => {
   return (
-    <div className="flex bg-primaryAccent justify-center p-8">
+    <div className="flex bg-primaryAccent justify-center">
       <div className="flex flex-row gap-24 items-center">
         <div className="flex flex-col gap-5">
           <div className="flex gap-2">
