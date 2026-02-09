@@ -40,13 +40,13 @@ const sidebarProps = [
     route: "/UserPanel/Transactions",
     icon: <WalletCards />,
   },
-  {
-    id: 5,
-    name: "امتیازات و نظرات",
-    route: "/UserPanel/MassagesAndPoints",
-    icon: <MessageSquare />,
-  },
-  { id: 6, name: "پیام‌ها", route: "/UserPanel/Massages", icon: <Mail /> },
+  // {
+  //   id: 5,
+  //   name: "امتیازات و نظرات",
+  //   route: "/UserPanel/MassagesAndPoints",
+  //   icon: <MessageSquare />,
+  // },
+  // { id: 6, name: "پیام‌ها", route: "/UserPanel/Massages", icon: <Mail /> },
   {
     id: 7,
     name: "حساب کاربری",

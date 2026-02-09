@@ -26,14 +26,6 @@ const ContactInfo = [
       "ما را در شبکه‌های اجتماعی دنبال کنید و از آخرین اخبار، جشنواره‌ها و تخفیف‌ها باخبر شوید.",
     info: "@mojanhotel",
   },
-  {
-    id: 4,
-    icon: <Globe className="stroke-secondary w-9 h-9" />,
-    title: "شبکه‌های اجتماعی",
-    description:
-      "ما را در شبکه‌های اجتماعی دنبال کنید و از آخرین اخبار، جشنواره‌ها و تخفیف‌ها باخبر شوید.",
-    info: "@mojanhotel",
-  },
 ];
 
 const AboutQuickContact = () => {
@@ -45,7 +37,7 @@ const AboutQuickContact = () => {
           تماس سریع هتل ساحلی موجان
         </span>
       </div>
-      <div className="h-[222px] flex flex-row justify-center gap-8">
+      <div className="h-[222px] flex flex-row justify-center gap-21 ">
         {ContactInfo.map((contact) => {
           return (
             <div

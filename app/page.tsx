@@ -9,32 +9,32 @@ const FAQ = dynamic(() => import("@/Features/components/Landing/FAQ"), {
 });
 const WhySection = dynamic(
   () => import("@/Features/components/Landing/whySection"),
-  { ssr: false }
+  { ssr: false },
 );
 const Reservation = dynamic(
   () => import("@/Features/components/Landing/reservation"),
-  { ssr: false }
+  { ssr: false },
 );
 const OffCardSwiper = dynamic(
   () => import("@/Features/components/Landing/RoomOffer"),
-  { ssr: false }
+  { ssr: false },
 );
 const Facilities = dynamic(
   () => import("@/Features/components/Landing/Facilities"),
-  { ssr: false }
+  { ssr: false },
 );
 const VideoGallery = dynamic(() => import("@/Features/ui/Gallery"), {
   ssr: false,
 });
 const HeroBanner = dynamic(
   () => import("@/Features/components/Landing/HeroBanner"),
-  { ssr: false }
+  { ssr: false },
 );
 
 export default function Page() {
   return (
-    <main className="w-full overflow-x-hidden">
-      <Container maxWidth="xl" sx={{ px: { xs: 2, md: 4, lg: 0 } }}>
+    <main className=" overflow-x-hidden">
+      <Container maxWidth="xl" sx={{ px: { xs: 2, md: 4, lg: 4 } }}>
         <Stack
           spacing={{ xs: 8, md: 12, lg: 16 }}
           sx={{ py: { xs: 4, md: 8, lg: 12 } }}
