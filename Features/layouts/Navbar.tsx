@@ -66,7 +66,7 @@ function Navbar() {
               className="hidden md:flex rounded-md items-center gap-2 px-4 h-10 border border-primary text-primary"
             >
               <User size={20} />
-              <span className="text-xs">ورود | ثبت نا sdbkbم</span>
+              <span className="text-xs">ورود | ثبت نام</span>
             </Button>
           ) : (
             <Link href="/UserPanel/UserAccount">

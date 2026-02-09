@@ -35,8 +35,8 @@ export const fakeUsers: FakeUserType[] = [
   {
     id: "4",
     name: "کاربر مهمان",
-    phone: "09111111111",
-    password: "adminadmin",
+    phone: "09123456789",
+    password: "@Admin1234",
     otp: "111111",
     avatar: "/member3.png",
   },
