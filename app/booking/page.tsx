@@ -2,33 +2,33 @@ import React from "react";
 import dynamic from "next/dynamic";
 
 const Filterbox = dynamic(
-  () => import("@/Features/components/rooms/Filterbox")
+  () => import("@/Features/components/rooms/Filterbox"),
 );
 const RoomCard = dynamic(
   () => import("@/Features/components/shop/RoomCard"),
-  {}
+  {},
 );
 const FilterBy = dynamic(
   () => import("@/Features/components/rooms/FilterBy"),
-  {}
+  {},
 );
 const RoomBanner = dynamic(
   () => import("@/Features/components/rooms/Banner"),
-  {}
+  {},
 );
 
 function Page() {
   return (
-    <main className="w-full flex justify-center ">
+    <main className="w-full flex justify-center mx-auto">
       <div
         className="
           w-full
-         
           px-6
           py-8
+          mx-auto 
         "
       >
-        <div className="flex gap-8 ">
+        <div className="flex gap-8 mx-auto">
           <Filterbox />
 
           <section className=" flex flex-col items-start gap-4">
